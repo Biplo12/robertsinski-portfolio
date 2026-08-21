@@ -53,10 +53,11 @@ export const projects: Project[] = [
   },
   {
     name: 'BoardFlow',
-    logo: '/logos/boardflow.png',
+    logo: '/logos/boardflow-mark.png',
+    caseStudy: '/boardflow',
     description:
       'Whiteboard for teams. Shapes, notes, images, and everyone drawing on the same board at once.',
-    stack: ['Next.js', 'Convex', 'Liveblocks', 'Clerk'],
+    stack: ['Next.js', 'Convex', 'Liveblocks', 'Redux'],
     repo: 'https://github.com/Biplo12/BoardFlow',
     demo: 'https://board-flow.vercel.app/',
     demoLabel: 'Live',

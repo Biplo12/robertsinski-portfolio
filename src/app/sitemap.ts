@@ -19,6 +19,11 @@ const sitemap = (): MetadataRoute.Sitemap => {
       changeFrequency: 'yearly',
       priority: 0.8,
     },
+    {
+      url: `${site.url}/boardflow`,
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
   ];
 };
 
