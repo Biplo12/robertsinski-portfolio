@@ -19,7 +19,7 @@ export const projects: Project[] = [
     logo: '/klaps.svg',
     logoBleed: true,
     description:
-      'Nationwide guide to special screenings and classic cinema in Poland. Six services behind one site: the pages people read, the API that owns the data, a collector, a social bot, an admin panel and a mailer for cinemas.',
+      'Nationwide guide to special screenings and classic cinema in Poland. Six services behind one site: the site itself, the API that owns the data, a collector, a social bot, an admin panel and a mailer for cinemas.',
     stack: ['Next.js', 'NestJS', 'Bun', 'PostgreSQL', 'Docker'],
     repo: 'https://github.com/klaps-hq',
     repoLabel: 'klaps-hq',

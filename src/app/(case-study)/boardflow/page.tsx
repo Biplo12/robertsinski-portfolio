@@ -6,7 +6,7 @@ import DecisionsSection from './_components/decisions-section';
 import SplitSection from './_components/split-section';
 
 const description =
-  'How BoardFlow is built: what belongs in a realtime room, what belongs in a database, and why the stroke you are drawing is neither.';
+  'How BoardFlow is built: what belongs in a realtime room, what belongs in a database, and where the line between them runs.';
 
 export const metadata: Metadata = {
   title: 'BoardFlow, a case study',

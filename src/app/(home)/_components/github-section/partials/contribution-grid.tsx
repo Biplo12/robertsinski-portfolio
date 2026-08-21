@@ -17,6 +17,34 @@ const levelClass = [
 const monthName = (date: string): string =>
   new Date(date).toLocaleString('en', { month: 'short' });
 
+const dayLabel = (day: ContributionDay): string => {
+  const [year, month, date] = day.date.split('-');
+  const when = `${date}.${month}.${year}`;
+
+  if (day.count === 0) {
+    return `No contributions on ${when}`;
+  }
+
+  if (day.count === 1) {
+    return `1 contribution on ${when}`;
+  }
+
+  return `${day.count} contributions on ${when}`;
+};
+
+/* Tooltips near the edges would overflow the card, so they anchor differently. */
+const tooltipAnchor = (index: number, total: number): string => {
+  if (index < 4) {
+    return 'left-0';
+  }
+
+  if (index > total - 5) {
+    return 'right-0';
+  }
+
+  return 'left-1/2 -translate-x-1/2';
+};
+
 const ContributionGrid: React.FC<ContributionGridProps> = ({
   weeks,
 }): React.JSX.Element => {
@@ -42,14 +70,23 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
       </div>
 
       <div className='mt-1 flex w-full gap-[2px]'>
-        {weeks.map((week) => (
+        {weeks.map((week, index) => (
           <div key={week[0].date} className='flex flex-1 flex-col gap-[2px]'>
             {week.map((day) => (
               <span
                 key={day.date}
-                title={`${day.count} contributions on ${day.date}`}
-                className={`aspect-square w-full rounded-[2px] ${levelClass[day.level]}`}
-              />
+                className='group relative aspect-square w-full'
+              >
+                <span
+                  className={`block size-full rounded-[2px] ${levelClass[day.level]}`}
+                />
+                <span
+                  role='tooltip'
+                  className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/10 bg-[#14161d] px-2 py-1 text-[0.7rem] whitespace-nowrap text-foreground shadow-lg group-hover:block ${tooltipAnchor(index, weeks.length)}`}
+                >
+                  {dayLabel(day)}
+                </span>
+              </span>
             ))}
           </div>
         ))}

@@ -45,7 +45,7 @@ export const boardflowDecisions: BoardflowDecision[] = [
     body: 'A board belongs to an organisation, and being in an organisation is a row with a role. Invitations are separate rows with a token and an email. Opening a room checks that membership first, so a shared URL alone does not get anyone in.',
   },
   {
-    title: 'Auth moved off Clerk, and the accounts came along',
-    body: 'The project started on Clerk and now runs on Convex Auth, which put everything behind one system instead of two. Existing accounts were not thrown away: a migration reads users from the Clerk API and matches them by their old id, which is why the users table still keeps that field.',
+    title: 'Auth moved from Clerk to Convex Auth',
+    body: 'The project started on Clerk and now runs on Convex Auth, which put everything behind one system instead of two. Existing accounts were kept: a migration reads users from the Clerk API and matches them by their old id, which is why the users table still has that field.',
   },
 ];
