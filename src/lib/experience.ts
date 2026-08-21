@@ -7,7 +7,8 @@ export interface Role {
 
 export interface Job {
   company: string;
-  logo: string;
+  logo?: string;
+  logoBleed?: boolean;
   duration: string;
   location: string;
   contract?: boolean;
@@ -27,6 +28,21 @@ export const experience: Job[] = [
         summary:
           'Frontend for the company store and the internal panels around it. New pages and features, plus fixes to what was already there.',
         stack: ['Next.js', 'TypeScript', 'React', 'Tailwind'],
+      },
+    ],
+  },
+  {
+    company: 'Gravity Rifters',
+    logo: '/logos/gravity-rifters.png',
+    logoBleed: true,
+    duration: '1 yr 8 mos',
+    location: 'Remote',
+    roles: [
+      {
+        title: 'Web Developer',
+        period: 'Jan 2025 to Aug 2026',
+        summary:
+          'Built the site for the game and the wiki that goes with it, plus internal tools the team used day to day. Set up and configured the server everything runs on.',
       },
     ],
   },

@@ -10,7 +10,7 @@ const DecisionsSection: React.FC = (): React.JSX.Element => {
         Decisions worth explaining
       </h2>
       <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/70'>
-        Four choices that shaped the rest of the project.
+        Five choices that shaped the rest of the project.
       </p>
 
       <ul className='mt-6'>

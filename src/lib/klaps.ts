@@ -38,7 +38,7 @@ export const klapsServices: KlapsService[] = [
   },
   {
     name: 'studio.klaps.space',
-    role: 'Admin panel on its own subdomain. Browsing and editing everything the collector saved, plus traffic numbers pulled from analytics providers.',
+    role: 'Admin panel on its own subdomain for browsing and editing what the collector saved. Traffic numbers from Google Analytics and Search Console sit next to the data they explain.',
     stack: ['Next.js 16', 'TanStack Table', 'jose'],
     tag: 'private',
   },
@@ -62,6 +62,10 @@ export const klapsDecisions: KlapsDecision[] = [
   {
     title: 'Images are copied, not linked',
     body: 'Stills, posters and photos come from an open movie database. Linking straight to their files means the site breaks when a path changes or a host throttles. Every image is mirrored to our own object storage as the film is saved, and a separate script fills in the ones added before that was in place.',
+  },
+  {
+    title: 'Every service ships the same way',
+    body: 'Each repository carries the same set of workflows: build, typecheck, tests where there are tests, and a check that the pull request title follows conventional commits. Merging to dev deploys to the development environment, merging to main deploys to production, and the target is read from the branch instead of being written down twice. GitHub environments hold the secrets for each, images go to the registry, and the server pulls them.',
   },
   {
     title: 'Writes go in batches, and only one service writes',

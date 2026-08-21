@@ -13,7 +13,7 @@ export const orderflowProcesses: OrderflowProcess[] = [
   {
     name: 'api',
     role: 'Takes the order over HTTP and answers 202 straight away. It writes the order row and the event that announces it in a single transaction, then it is done.',
-    stack: ['Fastify 5', 'PostgreSQL 16'],
+    stack: ['Fastify 5', 'Drizzle', 'PostgreSQL 16'],
   },
   {
     name: 'outbox-relay',

@@ -26,7 +26,14 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
             />
           ) : null}
           {project.name}
+          {project.repoLabel ? (
+            <span className='text-xs font-normal text-foreground/60'>
+              @{project.repoLabel}
+              {project.repoNote ? ` · ${project.repoNote}` : ''}
+            </span>
+          ) : null}
         </h3>
+
         <div className='flex shrink-0 items-center gap-3 text-xs'>
           {project.caseStudy ? (
             <Link
@@ -41,7 +48,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
               href={project.demo}
               target='_blank'
               rel='noreferrer'
-              className='inline-flex items-center gap-1 text-signal hover:underline hover:underline-offset-4'
+              className='inline-flex items-center gap-1 text-foreground/60 transition-colors hover:text-foreground'
             >
               {project.demoLabel}
               <ArrowUpRight aria-hidden className='size-3' />
@@ -53,7 +60,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
               target='_blank'
               rel='noreferrer'
               aria-label={`${project.name} on GitHub`}
-              className='text-foreground/60 transition-colors hover:text-foreground'
+              className='text-foreground/50 transition-colors hover:text-foreground'
             >
               <FaGithub aria-hidden className='size-4' />
             </a>
