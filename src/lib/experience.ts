@@ -37,6 +37,7 @@ export const experience: Job[] = [
     logoBleed: true,
     duration: '1 yr 8 mos',
     location: 'Remote',
+    contract: true,
     roles: [
       {
         title: 'Fullstack Developer',

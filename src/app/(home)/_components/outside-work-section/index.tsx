@@ -11,9 +11,10 @@ const OutsideWorkSection: React.FC = (): React.JSX.Element => {
         I got into self-hosting not long ago and keep adding to it. Proxmox on
         the machine, everything else in Docker: Plex, Jellyfin and the arr apps
         for the library, Home Assistant for the house, Frigate for the cameras
-        with detection running locally, Nextcloud for files, Nginx Proxy Manager
-        in front of it all. It is where I try things out before using them
-        anywhere else.
+        with detection running locally, Nextcloud for files, Pi-hole taking care
+        of ads for every device, Nginx Proxy Manager in front of it all, and a
+        VPN so I can reach any of it from outside. It is where I try things out
+        before using them anywhere else.
       </p>
 
       <p className='mt-4 max-w-[62ch] leading-relaxed text-foreground/85'>
