@@ -16,9 +16,40 @@ const ResumeTabs: React.FC<ResumeTabsProps> = ({
   active,
   onChange,
 }): React.JSX.Element => {
+  const move = (step: number): void => {
+    const current = tabs.findIndex((tab) => tab.id === active);
+    const next = (current + step + tabs.length) % tabs.length;
+
+    onChange(tabs[next].id);
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>): void => {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+      event.preventDefault();
+      move(1);
+    }
+
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      move(-1);
+    }
+
+    if (event.key === 'Home') {
+      event.preventDefault();
+      onChange(tabs[0].id);
+    }
+
+    if (event.key === 'End') {
+      event.preventDefault();
+      onChange(tabs[tabs.length - 1].id);
+    }
+  };
+
   return (
     <div
       role='tablist'
+      aria-label='Background'
+      onKeyDown={handleKeyDown}
       className='glass-pill relative grid w-56 grid-cols-2 rounded-full p-1'
     >
       <span
@@ -34,13 +65,14 @@ const ResumeTabs: React.FC<ResumeTabsProps> = ({
           key={tab.id}
           type='button'
           role='tab'
+          tabIndex={active === tab.id ? 0 : -1}
           aria-selected={active === tab.id}
           aria-controls={`resume-panel-${tab.id}`}
           onClick={() => onChange(tab.id)}
           className={
             active === tab.id
               ? 'relative z-10 rounded-full py-1 text-sm text-foreground'
-              : 'relative z-10 rounded-full py-1 text-sm text-foreground/55 transition-colors hover:text-foreground/80'
+              : 'relative z-10 rounded-full py-1 text-sm text-foreground/60 transition-colors hover:text-foreground/85'
           }
         >
           {tab.label}

@@ -17,7 +17,7 @@ const SchoolRow: React.FC<SchoolRowProps> = ({
       <div className='min-w-0 flex-1'>
         <div className='flex flex-wrap items-baseline gap-x-2'>
           <h3 className='font-medium'>{school.name}</h3>
-          <span className='ml-auto text-xs text-foreground/45'>
+          <span className='ml-auto text-xs text-foreground/60'>
             {school.period}
           </span>
         </div>

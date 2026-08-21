@@ -33,7 +33,7 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
           return (
             <span
               key={week[0].date}
-              className='flex-1 text-[0.6rem] whitespace-nowrap text-foreground/45'
+              className='flex-1 text-[0.6rem] whitespace-nowrap text-foreground/60'
             >
               {isNewMonth ? monthName(week[0].date) : ''}
             </span>

@@ -9,7 +9,7 @@ import SocialLinks from './partials/social-links';
 
 const HeroSection: React.FC = (): React.JSX.Element => {
   return (
-    <article className='glass glass-sheen rise rounded-[2rem] px-8 pt-9 pb-8'>
+    <article className='glass glass-sheen rounded-[2rem] px-8 pt-9 pb-8'>
       <h1 className='font-display text-[2.5rem] leading-[1.05] font-semibold tracking-tight'>
         <span className='font-light text-foreground/70'>hey, </span>
         Robert here.

@@ -6,6 +6,7 @@ export interface Project {
   logoBleed?: boolean;
   repo?: string;
   private?: boolean;
+  caseStudy?: string;
   demo?: string;
   demoLabel?: string;
 }
@@ -15,6 +16,7 @@ export const projects: Project[] = [
     name: 'klaps.space',
     logo: '/klaps.svg',
     logoBleed: true,
+    caseStudy: '/klaps',
     description:
       'Guide to special screenings and classic cinema across Poland. What is playing, where, and when.',
     stack: ['Next.js', 'Bun', 'Leaflet', 'shadcn/ui'],
@@ -28,7 +30,7 @@ export const projects: Project[] = [
     logoBleed: true,
     description:
       'REST API behind Klaps. Serves screenings, venues and films to the site and the bots.',
-    stack: ['NestJS', 'Drizzle', 'MySQL', 'Jest'],
+    stack: ['NestJS', 'Drizzle', 'PostgreSQL', 'Jest'],
     repo: 'https://github.com/klaps-hq/api.klaps.space',
   },
   {
@@ -61,9 +63,10 @@ export const projects: Project[] = [
   },
   {
     name: 'orderflow-engine',
+    caseStudy: '/orderflow',
     description:
       'Order processing that keeps going when something breaks. Queues, retries, event log.',
-    stack: ['Fastify', 'BullMQ', 'Redis', 'Postgres'],
+    stack: ['Fastify', 'BullMQ', 'Redis', 'PostgreSQL'],
     repo: 'https://github.com/Biplo12/orderflow-engine',
   },
 ];

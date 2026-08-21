@@ -10,7 +10,7 @@ import TechSection from './_components/tech-section';
 const HomePage: React.FC = (): React.JSX.Element => {
   return (
     <div className='flex flex-1 justify-center px-6 py-16'>
-      <div className='flex w-full max-w-3xl flex-col gap-4'>
+      <div className='stagger flex w-full max-w-3xl flex-col gap-4'>
         <HeroSection />
         <ResumeSection />
         <ProjectsSection />

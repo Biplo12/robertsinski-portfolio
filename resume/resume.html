@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Robert Siński, fullstack developer</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 15mm 15mm;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      html {
+        color-scheme: light;
+      }
+
+      /* Scale knobs. Bump these, then re-render and confirm it is one page. */
+      :root {
+        --fs: 8.6pt;
+        --lh: 1.36;
+        --sec: 10px;
+        --ent: 8px;
+        --h1: 18pt;
+        --company: 10pt;
+        --small: 8.4pt;
+      }
+
+      body {
+        background: #fff;
+        font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+        font-size: var(--fs);
+        line-height: var(--lh);
+        color: #24272d;
+        -webkit-print-color-adjust: exact;
+      }
+
+      a {
+        color: #3a5a86;
+        text-decoration: none;
+      }
+
+      header {
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        font-size: var(--h1);
+        font-weight: 600;
+        line-height: 1.1;
+      }
+
+      .role {
+        font-size: 11pt;
+        color: #5f6570;
+        margin-top: 1px;
+      }
+
+      .contact {
+        margin-top: 8px;
+        font-size: var(--small);
+        color: #5f6570;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 14px;
+      }
+
+      h2 {
+        font-size: 9.4pt;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        color: #7b818c;
+        border-bottom: 1.2px solid #b9bec7;
+        padding-bottom: 5px;
+        margin-bottom: 12px;
+      }
+
+      section {
+        margin-bottom: var(--sec);
+      }
+
+      .entry {
+        margin-bottom: var(--ent);
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry + .entry {
+        border-top: 0.8px solid #e8eaee;
+        padding-top: var(--ent);
+      }
+
+      .line {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+      }
+
+      .line .meta {
+        margin-left: auto;
+      }
+
+      .duration {
+        margin-left: auto;
+        font-size: var(--small);
+        font-weight: 600;
+        color: #3d424a;
+        white-space: nowrap;
+      }
+
+      .tag {
+        font-size: 8.4pt;
+        color: #7b818c;
+        border: 0.8px solid #d5d9df;
+        border-radius: 999px;
+        padding: 0 6px;
+      }
+
+      .company {
+        font-weight: 600;
+        font-size: var(--company);
+      }
+
+      .meta {
+        font-size: var(--small);
+        color: #8b909a;
+        white-space: nowrap;
+      }
+
+      .role-line {
+        color: #3d424a;
+      }
+
+      .desc {
+        margin-top: 3px;
+        color: #4a4f58;
+      }
+
+      .roles {
+        position: relative;
+        list-style: none;
+        margin: 8px 0 0;
+        padding: 0;
+      }
+
+      .roles::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        left: 3px;
+        top: 6px;
+        bottom: 6px;
+        width: 2px;
+        background: #dcdfe4;
+      }
+
+      .roles li {
+        display: flex;
+        gap: 12px;
+      }
+
+      .roles li + li {
+        margin-top: 11px;
+      }
+
+      .dot {
+        position: relative;
+        z-index: 1;
+        flex: 0 0 8px;
+        width: 8px;
+        height: 8px;
+        margin-top: 5px;
+        border-radius: 50%;
+        background: #b9bec8;
+        box-shadow: 0 0 0 3px #fff;
+      }
+
+      .role-body {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .summary {
+        margin-bottom: var(--sec);
+        color: #3d424a;
+      }
+
+      .consent {
+        margin-top: 14px;
+        padding-top: 7px;
+        border-top: 0.8px solid #e8eaee;
+        font-size: 7.8pt;
+        line-height: 1.35;
+        color: #8b909a;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: auto 1fr auto 1fr;
+        column-gap: 12px;
+        row-gap: 5px;
+        align-items: baseline;
+      }
+
+      .skills dt {
+        color: #7b818c;
+        white-space: nowrap;
+      }
+
+      .skills dd {
+        color: #4a4f58;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Robert Siński</h1>
+      <div class="role">Fullstack developer</div>
+      <div class="contact">
+        <span>Katowice, Poland</span>
+        <span>robert.sinski@outlook.com</span>
+        <span><a href="https://robertsinski.dev">robertsinski.dev</a></span>
+        <span><a href="https://github.com/Biplo12">github.com/Biplo12</a></span>
+        <span
+          ><a href="https://www.linkedin.com/in/robert-si%C5%84ski/"
+            >linkedin.com/in/robert-siński</a
+          ></span
+        >
+      </div>
+    </header>
+
+    <p class="summary">
+      Four years of building web apps, mostly in TypeScript. I work on the
+      backend and the frontend, and on most projects I end up doing both.
+    </p>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="line">
+          <span class="company">Hurtopony</span>
+          <span class="duration">1 yr 5 mos</span>
+        </div>
+        <ul class="roles">
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div class="role-body">
+              <div class="line">
+                <span class="role-line">Frontend Web Developer</span>
+                <span class="meta">Apr 2025 to now</span>
+              </div>
+              <p class="desc">
+                I work on the frontend of the company store and the panels the
+                team uses internally. New pages and features, plus fixes to the
+                parts that were built before I joined.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="line">
+          <span class="company">Anfata Games</span>
+          <span class="duration">2 yrs 8 mos</span>
+        </div>
+        <ul class="roles">
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div class="role-body">
+              <div class="line">
+                <span class="role-line">Full Stack Engineer</span>
+                <span class="meta">Feb 2024 to Apr 2025</span>
+              </div>
+              <p class="desc">
+                Worked across the company sites and apps. New features,
+                serverless functions on Firestore and Parse, and the frontend
+                side of smart contract calls.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div class="role-body">
+              <div class="line">
+                <span class="role-line">Junior Full-stack Developer</span>
+                <span class="meta">Sep 2022 to Aug 2023</span>
+              </div>
+              <p class="desc">
+                Started with smaller features on the sites and apps, then moved
+                to writing Node and Python scripts that took over jobs people
+                had been doing by hand.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="line">
+          <span class="company">Fundacja Polskie Maki</span>
+          <span class="tag">contract</span>
+          <span class="duration">6 mos</span>
+        </div>
+        <ul class="roles">
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div class="role-body">
+              <div class="line">
+                <span class="role-line">Full-stack Developer</span>
+                <span class="meta">Oct 2023 to Mar 2024</span>
+              </div>
+              <p class="desc">
+                Two browser games for the foundation. Players join a
+                session without making an account, the way Kahoot works, and
+                the quizzes use the map and where the player is. Leaderboards
+                and a summary at the end.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <div class="entry">
+        <div class="line">
+          <span class="company">Klaps</span>
+          <span class="meta">
+            <a href="https://klaps.space">site</a> &middot;
+            <a href="https://github.com/klaps-hq">github</a>
+          </span>
+        </div>
+        <p class="desc">
+          A site that shows where and when older films are playing in Polish
+          cinemas. Four services behind it: the site, an API, a job that
+          collects screenings and fills in film data, and a bot that posts what
+          is coming up to social media. Descriptions come from Gemini, but the
+          wording variant is picked in code so they do not all read the same.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="line">
+          <span class="company">BoardFlow</span>
+          <span class="meta">
+            <a href="https://board-flow.vercel.app/">site</a> &middot;
+            <a href="https://github.com/Biplo12/BoardFlow">github</a>
+          </span>
+        </div>
+        <p class="desc">
+          A whiteboard people draw on together. Shapes, notes and images,
+          with everyone's changes showing up as they happen, and boards you can
+          invite people to.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="line">
+          <span class="company">orderflow-engine</span>
+          <span class="meta">
+            <a href="https://github.com/Biplo12/orderflow-engine">github</a>
+          </span>
+        </div>
+        <p class="desc">
+          Order processing built so a failure in one step does not lose the
+          order. Work moves through queues, failed jobs retry on their own, and
+          every state change lands in an event log.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt>
+        <dd>TypeScript, JavaScript, Python, SQL</dd>
+        <dt>Data</dt>
+        <dd>PostgreSQL, MySQL, Redis, Drizzle, BullMQ</dd>
+
+        <dt>Frontend</dt>
+        <dd>React, Next.js, Tailwind</dd>
+        <dt>Tooling</dt>
+        <dd>Docker, GitHub Actions, Git, Jest</dd>
+
+        <dt>Backend</dt>
+        <dd>NestJS, Fastify, Node, Bun</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="line">
+          <span class="company">Zespół Szkół Technicznych w Bytomiu</span>
+          <span class="meta">2018 to 2022</span>
+        </div>
+        <div class="role-line">IT technician</div>
+        <p class="desc">
+          Programming, databases and networking, plus the first websites I ever
+          put online.
+        </p>
+      </div>
+    </section>
+    <p class="consent">
+      I consent to the processing of the personal data in this document for the
+      purposes of the recruitment process, under Regulation (EU) 2016/679
+      (GDPR).
+    </p>
+  </body>
+</html>

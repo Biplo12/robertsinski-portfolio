@@ -19,7 +19,7 @@ const TechTile: React.FC<TechTileProps> = ({ item }): React.JSX.Element => {
       </span>
       <span className='min-w-0'>
         <span className='block truncate text-sm'>{name}</span>
-        <span className='block truncate text-xs text-foreground/50'>
+        <span className='block truncate text-xs text-foreground/60'>
           {note}
         </span>
       </span>

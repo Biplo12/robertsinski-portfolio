@@ -14,7 +14,7 @@ const RoleBody: React.FC<{ role: Role }> = ({ role }): React.JSX.Element => {
         <span className='text-sm font-medium text-foreground'>
           {role.title}
         </span>
-        <span className='text-xs text-foreground/45'>{role.period}</span>
+        <span className='text-xs text-foreground/60'>{role.period}</span>
       </div>
 
       {role.summary ? (
@@ -24,7 +24,7 @@ const RoleBody: React.FC<{ role: Role }> = ({ role }): React.JSX.Element => {
       ) : null}
 
       {role.stack ? (
-        <p className='mt-1.5 text-xs text-foreground/45'>
+        <p className='mt-1.5 text-xs text-foreground/60'>
           {role.stack.join(' · ')}
         </p>
       ) : null}
@@ -43,26 +43,29 @@ const JobRow: React.FC<JobRowProps> = ({ job }): React.JSX.Element => {
         <div className='flex flex-wrap items-baseline gap-x-2'>
           <h3 className='font-medium'>{job.company}</h3>
           {job.contract ? (
-            <span className='rounded-full border border-white/15 px-1.5 py-0.5 text-[0.65rem] text-foreground/55'>
+            <span className='rounded-full border border-white/15 px-1.5 py-0.5 text-[0.65rem] text-foreground/60'>
               contract
             </span>
           ) : null}
-          <span className='ml-auto text-xs text-foreground/45'>
+          <span className='ml-auto text-xs font-medium text-foreground/75'>
             {job.duration}
           </span>
         </div>
 
-        <p className='mt-0.5 text-xs text-foreground/45'>{job.location}</p>
+        <p className='mt-0.5 text-xs text-foreground/60'>{job.location}</p>
 
         {hasManyRoles ? (
-          <ul className='mt-3 space-y-4 border-l border-white/10 pl-4'>
+          /* Rail and dots share one axis: 2px line at 3px, 8px dot from 0. */
+          <ul className="relative mt-3 space-y-4 before:absolute before:top-1.5 before:bottom-1.5 before:left-[3px] before:z-0 before:w-[2px] before:bg-white/12 before:content-['']">
             {job.roles.map((role) => (
-              <li key={role.title} className='relative'>
+              <li key={role.title} className='flex gap-3'>
                 <span
                   aria-hidden
-                  className='absolute top-[0.45rem] -left-[19.5px] size-1.5 rounded-full bg-white/45'
+                  className='relative z-10 mt-[7px] size-2 shrink-0 rounded-full bg-white/50'
                 />
-                <RoleBody role={role} />
+                <div className='min-w-0 flex-1'>
+                  <RoleBody role={role} />
+                </div>
               </li>
             ))}
           </ul>
