@@ -2,8 +2,7 @@ import React from 'react';
 
 import GithubSection from './_components/github-section';
 import HeroSection from './_components/hero-section';
-import HomelabSection from './_components/homelab-section';
-import InterestsSection from './_components/interests-section';
+import OutsideWorkSection from './_components/outside-work-section';
 import ProjectsSection from './_components/projects-section';
 import ResumeSection from './_components/resume-section';
 import SiteFooter from './_components/site-footer';
@@ -17,9 +16,8 @@ const HomePage: React.FC = (): React.JSX.Element => {
         <ResumeSection />
         <ProjectsSection />
         <TechSection />
+        <OutsideWorkSection />
         <GithubSection />
-        <HomelabSection />
-        <InterestsSection />
         <SiteFooter />
       </div>
     </div>

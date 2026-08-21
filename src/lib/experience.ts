@@ -39,10 +39,11 @@ export const experience: Job[] = [
     location: 'Remote',
     roles: [
       {
-        title: 'Web Developer',
+        title: 'Fullstack Developer',
         period: 'Jan 2025 to Aug 2026',
         summary:
           'Built the site for the game and the wiki that goes with it, plus internal tools the team used day to day. Set up and configured the server everything runs on.',
+        stack: ['Next.js', 'Node', 'TypeScript', 'Docker'],
       },
     ],
   },
