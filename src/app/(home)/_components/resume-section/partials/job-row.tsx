@@ -70,7 +70,7 @@ const JobRow: React.FC<JobRowProps> = ({ job }): React.JSX.Element => {
               <li key={role.title} className='flex gap-3'>
                 <span
                   aria-hidden
-                  className='relative z-10 mt-[7px] size-2 shrink-0 rounded-full bg-white/50'
+                  className='relative z-10 mt-[7px] size-2 shrink-0 rounded-full bg-[#868c9e]'
                 />
                 <div className='min-w-0 flex-1'>
                   <RoleBody role={role} />
