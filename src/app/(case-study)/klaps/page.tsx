@@ -7,7 +7,7 @@ import KlapsHero from './_components/klaps-hero';
 import NotesSection from './_components/notes-section';
 
 const description =
-  'How Klaps is built: four services that collect cinema listings, own the data, serve the site and post screenings to social.';
+  'How Klaps is built: six services that collect cinema listings, own the data, serve the site and post screenings.';
 
 export const metadata: Metadata = {
   title: 'Klaps, a case study',

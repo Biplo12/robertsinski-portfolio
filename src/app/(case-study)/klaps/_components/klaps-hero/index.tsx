@@ -24,16 +24,15 @@ const KlapsHero: React.FC = (): React.JSX.Element => {
 
       <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/90'>
         Klaps shows where and when older films are playing in Polish cinemas.
-        Repertory screenings are scattered across the sites of individual
-        cinemas, published in different formats and often only a week ahead, so
-        finding them means checking a dozen places by hand.
+        These screenings sit on the websites of single cinemas, each one in a
+        different format, often only a week ahead, so finding them means
+        checking a dozen places by hand.
       </p>
 
       <p className='mt-4 max-w-[62ch] leading-relaxed text-foreground/90'>
         It runs as six services: the site, the API that owns the data, a
         collector, a social bot, an admin panel and a mailer for cinemas. I
-        built all of them, and the interesting part is not the stack but where
-        the seams are.
+        built all of them.
       </p>
 
       <div className='mt-7 flex flex-wrap items-center gap-2'>

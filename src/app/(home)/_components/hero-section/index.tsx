@@ -25,7 +25,7 @@ const HeroSection: React.FC = (): React.JSX.Element => {
       </p>
 
       <p className='mt-4 max-w-[54ch] leading-relaxed text-foreground/90'>
-        Mostly TypeScript. Next.js, NestJS, Fastify, MySQL, Postgres, Redis.
+        Mostly TypeScript. Next.js, NestJS, Fastify, PostgreSQL, MySQL, Redis.
       </p>
 
       <p className='mt-4 max-w-[54ch] leading-relaxed text-foreground/90'>

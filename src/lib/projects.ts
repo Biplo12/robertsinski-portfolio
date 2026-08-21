@@ -38,7 +38,7 @@ export const projects: Project[] = [
     logo: '/klaps.svg',
     logoBleed: true,
     description:
-      'Picks the best upcoming screening, draws an image for it, and posts it across social platforms.',
+      'Picks the best screening coming up, draws an image for it, and posts it on social.',
     stack: ['Bun', 'Satori', 'TypeScript'],
     repo: 'https://github.com/klaps-hq/klaps.radar',
   },
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     logo: '/klaps.svg',
     logoBleed: true,
     description:
-      'Data engine behind Klaps. Collects screenings from across the country, enriches films with an open movie database (stills, credits, trailers, biographies), and writes Polish meta descriptions with Gemini. Runs on a schedule in Docker.',
+      'Collects the data behind Klaps. Screenings from across the country, film details from an open movie database, and Polish descriptions written by Gemini. Runs on a schedule in Docker.',
     stack: ['Bun', 'TMDB', 'Gemini', 'Docker'],
     private: true,
   },

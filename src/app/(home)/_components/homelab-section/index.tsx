@@ -67,7 +67,7 @@ const HomelabSection: React.FC = (): React.JSX.Element => {
       </h2>
       <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/70'>
         Everything below runs at home, on my own hardware. It is also where I
-        break things without anybody filing a ticket.
+        try things out before using them anywhere else.
       </p>
 
       <dl className='mt-6 grid gap-y-3 sm:grid-cols-[5.5rem_1fr] sm:gap-x-5'>

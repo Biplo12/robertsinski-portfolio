@@ -10,8 +10,7 @@ const SplitSection: React.FC = (): React.JSX.Element => {
         Where each thing lives
       </h2>
       <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/70'>
-        Three layers, split by how long the data has to last: milliseconds,
-        the length of a session, or forever.
+        Three layers. What goes where depends on how long it has to last.
       </p>
 
       <ul className='mt-6'>

@@ -10,8 +10,8 @@ const PatternsSection: React.FC = (): React.JSX.Element => {
         What keeps it correct
       </h2>
       <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/70'>
-        Five guarantees. Each one is there because of a specific way the flow
-        can break.
+        Five guarantees, each one added after thinking about what happens
+        when a step fails.
       </p>
 
       <ul className='mt-6'>

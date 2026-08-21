@@ -19,8 +19,8 @@ const OrderflowHero: React.FC = (): React.JSX.Element => {
 
       <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/90'>
         Placing an order means reserving stock, charging a card and sending a
-        confirmation. Doing all three inside one request gives you the worst of
-        every world: the request blocks while it waits, a crash halfway through
+        confirmation. Do all three inside one request and every one of them can
+        go wrong: the request waits for all three, a crash halfway through
         loses the order, a retry can charge the card twice, and stock stays
         reserved for a payment that never arrived.
       </p>
