@@ -2,45 +2,62 @@ import React from 'react';
 
 import { site } from '@/lib/site';
 
-import PolishFlag from './partials/polish-flag';
+import KlapsLogo from './partials/klaps-logo';
+import LocationPill from './partials/location-pill';
 import ResumeButton from './partials/resume-button';
 import SocialLinks from './partials/social-links';
 
 const HeroSection: React.FC = (): React.JSX.Element => {
   return (
-    <div className='rise w-full max-w-md'>
-      <article className='rounded-md border bg-card px-7 pt-8 pb-7'>
-        <h1 className='font-display text-[2.35rem] leading-[1.08] tracking-tight'>
-          <span className='font-light'>hey, </span>
-          <span className='font-bold'>Robert here.</span>
-        </h1>
+    <article className='glass glass-sheen rise rounded-[2rem] px-8 pt-9 pb-8'>
+      <h1 className='font-display text-[2.5rem] leading-[1.05] font-semibold tracking-tight'>
+        <span className='font-light text-foreground/70'>hey, </span>
+        Robert here.
+      </h1>
 
-        <p className='mt-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground'>
-          Fullstack developer, Katowice
-          <PolishFlag />
-        </p>
+      <p className='mt-5 flex flex-wrap items-center gap-2 text-sm text-foreground/70'>
+        Fullstack developer
+        <LocationPill />
+      </p>
 
-        <p className='mt-6 leading-relaxed'>
-          I build web apps. Backend and frontend, four years so far.
-        </p>
+      <p className='mt-6 max-w-[54ch] leading-relaxed text-foreground/90'>
+        I build web apps. Backend and frontend, 4 years so far.
+      </p>
 
-        <p className='mt-4 leading-relaxed'>
-          If you need something built,{' '}
-          <a
-            href={`mailto:${site.email}`}
-            className='underline decoration-signal underline-offset-4 hover:decoration-foreground'
-          >
-            write to me
-          </a>
-          . I answer within a day.
-        </p>
+      <p className='mt-4 max-w-[54ch] leading-relaxed text-foreground/90'>
+        Mostly TypeScript. Next.js, NestJS, Fastify, MySQL, Postgres, Redis.
+      </p>
 
-        <div className='mt-7 flex items-center gap-2 border-t pt-5'>
-          <ResumeButton />
-          <SocialLinks />
-        </div>
-      </article>
-    </div>
+      <p className='mt-4 max-w-[54ch] leading-relaxed text-foreground/90'>
+        In my free time I work on{' '}
+        <a
+          href='https://klaps.space'
+          target='_blank'
+          rel='noreferrer'
+          className='whitespace-nowrap underline decoration-white/25 underline-offset-4 transition-colors hover:decoration-white/60'
+        >
+          <KlapsLogo />
+          Klaps
+        </a>
+        . It shows which old films play in Polish cinemas.
+      </p>
+
+      <p className='mt-6 max-w-[54ch] leading-relaxed text-foreground/90'>
+        If you need something built,{' '}
+        <a
+          href={`mailto:${site.email}`}
+          className='text-signal underline decoration-signal/50 underline-offset-4 hover:decoration-signal'
+        >
+          write to me
+        </a>
+        . I answer within a day.
+      </p>
+
+      <div className='mt-8 flex items-center gap-2'>
+        <ResumeButton />
+        <SocialLinks />
+      </div>
+    </article>
   );
 };
 

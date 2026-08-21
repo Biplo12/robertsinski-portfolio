@@ -46,7 +46,7 @@ const SocialLinks: React.FC = (): React.JSX.Element => {
           rel={rel}
           aria-label={name}
           title={name}
-          className='inline-flex size-9 items-center justify-center rounded border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground'
+          className='glass-pill inline-flex size-11 items-center justify-center rounded-full text-foreground/80 hover:text-foreground'
         >
           <Icon aria-hidden className='size-4' />
         </a>
