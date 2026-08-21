@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Outfit } from 'next/font/google';
 import React from 'react';
@@ -70,6 +71,7 @@ const RootLayout: React.FC<LayoutProps<'/'>> = ({
       {/* Browser extensions inject attributes here before React hydrates. */}
       <body className='min-h-full flex flex-col' suppressHydrationWarning>
         {children}
+        <Analytics />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
