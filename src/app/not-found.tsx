@@ -13,7 +13,7 @@ const NotFound: React.FC = (): React.JSX.Element => {
         </h1>
 
         <p className='mt-4 leading-relaxed text-foreground/85'>
-          That page does not exist, or it did and no longer does.
+          That page does not exist.
         </p>
 
         <Link

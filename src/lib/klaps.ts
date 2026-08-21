@@ -20,7 +20,7 @@ export const klapsServices: KlapsService[] = [
   },
   {
     name: 'api.klaps.space',
-    role: 'One place that owns the data. Serves the site and takes writes from the collector through internal endpoints, behind an API key, rate limits and health checks.',
+    role: 'One place that owns the data. Serves the site and takes writes from the collector through internal endpoints, behind an API key, with rate limits and health checks on top.',
     stack: ['NestJS 11', 'Drizzle', 'PostgreSQL', 'Pino', 'Jest'],
     repo: 'https://github.com/klaps-hq/api.klaps.space',
   },
@@ -65,7 +65,7 @@ export const klapsDecisions: KlapsDecision[] = [
   },
   {
     title: 'Every service ships the same way',
-    body: 'Each repository carries the same set of workflows: build, typecheck, tests where there are tests, and a check that the pull request title follows conventional commits. Merging to dev deploys to the development environment, merging to main deploys to production, and the target is read from the branch instead of being written down twice. GitHub environments hold the secrets for each, images go to the registry, and the server pulls them.',
+    body: 'Each repository has the same workflows: build, typecheck, tests where there are tests, and a check that the pull request title follows conventional commits. Merging to dev deploys to the development environment, merging to main deploys to production, and the target is read from the branch instead of being written down twice. GitHub environments hold the secrets for each, images go to the registry, and the server pulls them.',
   },
   {
     title: 'Writes go in batches, and only one service writes',
