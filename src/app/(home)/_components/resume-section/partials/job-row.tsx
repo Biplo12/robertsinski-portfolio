@@ -37,7 +37,16 @@ const JobRow: React.FC<JobRowProps> = ({ job }): React.JSX.Element => {
 
   return (
     <li className='flex gap-3 border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0'>
-      <LogoTile src={job.logo} name={job.company} />
+      {job.logo ? (
+        <LogoTile src={job.logo} name={job.company} bleed={job.logoBleed} />
+      ) : (
+        <span
+          aria-hidden
+          className='glass-pill flex size-10 shrink-0 items-center justify-center rounded-xl text-sm text-foreground/70'
+        >
+          {job.company.charAt(0)}
+        </span>
+      )}
 
       <div className='min-w-0 flex-1'>
         <div className='flex flex-wrap items-baseline gap-x-2'>

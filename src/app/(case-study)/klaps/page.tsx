@@ -4,7 +4,6 @@ import React from 'react';
 import ArchitectureSection from './_components/architecture-section';
 import DecisionsSection from './_components/decisions-section';
 import KlapsHero from './_components/klaps-hero';
-import NotesSection from './_components/notes-section';
 
 const description =
   'How Klaps is built: six services that collect cinema listings, own the data, serve the site and post screenings.';
@@ -28,7 +27,6 @@ const KlapsPage: React.FC = (): React.JSX.Element => {
         <KlapsHero />
         <ArchitectureSection />
         <DecisionsSection />
-        <NotesSection />
       </div>
     </div>
   );

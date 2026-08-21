@@ -5,10 +5,12 @@ export interface Project {
   logo?: string;
   logoBleed?: boolean;
   repo?: string;
-  private?: boolean;
-  caseStudy?: string;
+  repoLabel?: string;
+  repoNote?: string;
   demo?: string;
   demoLabel?: string;
+  caseStudy?: string;
+  private?: boolean;
 }
 
 export const projects: Project[] = [
@@ -16,40 +18,15 @@ export const projects: Project[] = [
     name: 'klaps.space',
     logo: '/klaps.svg',
     logoBleed: true,
-    caseStudy: '/klaps',
     description:
-      'Guide to special screenings and classic cinema across Poland. What is playing, where, and when.',
-    stack: ['Next.js', 'Bun', 'Leaflet', 'shadcn/ui'],
-    repo: 'https://github.com/klaps-hq/klaps.space',
+      'Nationwide guide to special screenings and classic cinema in Poland. Six services behind one site: the pages people read, the API that owns the data, a collector, a social bot, an admin panel and a mailer for cinemas.',
+    stack: ['Next.js', 'NestJS', 'Bun', 'PostgreSQL', 'Docker'],
+    repo: 'https://github.com/klaps-hq',
+    repoLabel: 'klaps-hq',
+    repoNote: '6 repos, 3 public',
     demo: 'https://klaps.space',
     demoLabel: 'Live',
-  },
-  {
-    name: 'api.klaps.space',
-    logo: '/klaps.svg',
-    logoBleed: true,
-    description:
-      'REST API behind Klaps. Serves screenings, venues and films to the site and the bots.',
-    stack: ['NestJS', 'Drizzle', 'PostgreSQL', 'Jest'],
-    repo: 'https://github.com/klaps-hq/api.klaps.space',
-  },
-  {
-    name: 'klaps.radar',
-    logo: '/klaps.svg',
-    logoBleed: true,
-    description:
-      'Picks the best screening coming up, draws an image for it, and posts it on social.',
-    stack: ['Bun', 'Satori', 'TypeScript'],
-    repo: 'https://github.com/klaps-hq/klaps.radar',
-  },
-  {
-    name: 'klaps-scrapper',
-    logo: '/klaps.svg',
-    logoBleed: true,
-    description:
-      'Collects the data behind Klaps. Screenings from across the country, film details from an open movie database, and Polish descriptions written by Gemini. Runs on a schedule in Docker.',
-    stack: ['Bun', 'TMDB', 'Gemini', 'Docker'],
-    private: true,
+    caseStudy: '/klaps',
   },
   {
     name: 'BoardFlow',
@@ -69,5 +46,12 @@ export const projects: Project[] = [
       'Order processing that keeps going when something breaks. Queues, retries, event log.',
     stack: ['Fastify', 'BullMQ', 'Redis', 'PostgreSQL'],
     repo: 'https://github.com/Biplo12/orderflow-engine',
+  },
+  {
+    name: 'backupmailer',
+    description:
+      'Backs up a database on a schedule and mails me the result, whether it worked or not. Runs as a container next to whatever it is backing up, with the dump and the logs written to the host.',
+    stack: ['Bun', 'Docker', 'MySQL', 'SMTP'],
+    repo: 'https://github.com/Biplo12/backupmailer',
   },
 ];
