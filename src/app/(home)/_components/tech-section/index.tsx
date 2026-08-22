@@ -14,7 +14,7 @@ const TechSection: React.FC = (): React.JSX.Element => {
         What I reach for on most projects.
       </p>
 
-      <ul className='mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3'>
+      <ul className='mt-5 grid grid-cols-2 gap-2 lg:grid-cols-3'>
         {tech.map((item) => (
           <TechTile key={item.name} item={item} />
         ))}
