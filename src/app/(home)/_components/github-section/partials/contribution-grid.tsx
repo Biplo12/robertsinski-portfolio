@@ -49,47 +49,49 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
   weeks,
 }): React.JSX.Element => {
   return (
-    <div className='w-full'>
-      <div className='flex w-full gap-[2px]'>
-        {weeks.map((week, index) => {
-          const previous = weeks[index - 1];
-          const isNewMonth =
-            !previous ||
-            new Date(previous[0].date).getMonth() !==
-              new Date(week[0].date).getMonth();
+    <div className='-mx-1 overflow-x-auto px-1 pb-1'>
+      <div className='w-full min-w-[760px] sm:min-w-0'>
+        <div className='flex w-full gap-[2px]'>
+          {weeks.map((week, index) => {
+            const previous = weeks[index - 1];
+            const isNewMonth =
+              !previous ||
+              new Date(previous[0].date).getMonth() !==
+                new Date(week[0].date).getMonth();
 
-          return (
-            <span
-              key={week[0].date}
-              className='flex-1 text-[0.6rem] whitespace-nowrap text-foreground/60'
-            >
-              {isNewMonth ? monthName(week[0].date) : ''}
-            </span>
-          );
-        })}
-      </div>
-
-      <div className='mt-1 flex w-full gap-[2px]'>
-        {weeks.map((week, index) => (
-          <div key={week[0].date} className='flex flex-1 flex-col gap-[2px]'>
-            {week.map((day) => (
+            return (
               <span
-                key={day.date}
-                className='group relative aspect-square w-full'
+                key={week[0].date}
+                className='flex-1 text-[0.6rem] whitespace-nowrap text-foreground/60'
               >
-                <span
-                  className={`block size-full rounded-[2px] ${levelClass[day.level]}`}
-                />
-                <span
-                  role='tooltip'
-                  className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/10 bg-[#14161d] px-2 py-1 text-[0.7rem] whitespace-nowrap text-foreground shadow-lg group-hover:block ${tooltipAnchor(index, weeks.length)}`}
-                >
-                  {dayLabel(day)}
-                </span>
+                {isNewMonth ? monthName(week[0].date) : ''}
               </span>
-            ))}
-          </div>
-        ))}
+            );
+          })}
+        </div>
+
+        <div className='mt-1 flex w-full gap-[2px]'>
+          {weeks.map((week, index) => (
+            <div key={week[0].date} className='flex flex-1 flex-col gap-[2px]'>
+              {week.map((day) => (
+                <span
+                  key={day.date}
+                  className='group relative aspect-square w-full'
+                >
+                  <span
+                    className={`block size-full rounded-[2px] ${levelClass[day.level]}`}
+                  />
+                  <span
+                    role='tooltip'
+                    className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/10 bg-[#14161d] px-2 py-1 text-[0.7rem] whitespace-nowrap text-foreground shadow-lg group-hover:block ${tooltipAnchor(index, weeks.length)}`}
+                  >
+                    {dayLabel(day)}
+                  </span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

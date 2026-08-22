@@ -16,20 +16,24 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
   return (
     <li className='border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0'>
       <div className='flex items-baseline justify-between gap-3'>
-        <h3 className='flex items-center gap-2 font-medium'>
-          {project.logo ? (
-            <LogoTile
-              src={project.logo}
-              name={project.name}
-              small
-              bleed={project.logoBleed}
-            />
-          ) : null}
-          {project.name}
+        <h3 className='flex min-w-0 flex-wrap items-center gap-x-2 font-medium'>
+          <span className='flex items-center gap-2'>
+            {project.logo ? (
+              <LogoTile
+                src={project.logo}
+                name={project.name}
+                small
+                bleed={project.logoBleed}
+              />
+            ) : null}
+            {project.name}
+          </span>
           {project.repoLabel ? (
-            <span className='text-xs font-normal text-foreground/60'>
+            <span className='text-xs font-normal whitespace-nowrap text-foreground/60'>
               @{project.repoLabel}
-              {project.repoNote ? ` · ${project.repoNote}` : ''}
+              {project.repoNote ? (
+                <span className='hidden sm:inline'>{` · ${project.repoNote}`}</span>
+              ) : null}
             </span>
           ) : null}
         </h3>

@@ -50,7 +50,7 @@ const ResumeTabs: React.FC<ResumeTabsProps> = ({
       role='tablist'
       aria-label='Background'
       onKeyDown={handleKeyDown}
-      className='glass-pill relative grid w-56 grid-cols-2 rounded-full p-1'
+      className='glass-pill relative grid w-full grid-cols-2 rounded-full p-1 sm:w-56'
     >
       <span
         aria-hidden
