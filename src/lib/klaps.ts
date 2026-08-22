@@ -20,7 +20,7 @@ export const klapsServices: KlapsService[] = [
   },
   {
     name: 'api.klaps.space',
-    role: 'One place that owns the data. Serves the site and takes writes from the collector through internal endpoints, behind an API key, with rate limits and health checks on top.',
+    role: 'The only service that talks to the database. Serves the site and takes writes from the collector through internal endpoints, behind an API key, with rate limits and health checks on top.',
     stack: ['NestJS 11', 'Drizzle', 'PostgreSQL', 'Pino', 'Jest'],
     repo: 'https://github.com/klaps-hq/api.klaps.space',
   },
@@ -52,15 +52,15 @@ export const klapsServices: KlapsService[] = [
 
 export const klapsDecisions: KlapsDecision[] = [
   {
-    title: 'Collecting runs in its own container, not inside the API',
+    title: 'Collecting runs in its own container',
     body: 'The collector talks to sources I do not control, so a slow response or changed markup would sit inside API requests. It runs as a long-lived container on its own schedule, waits until the API answers before it starts, and can be triggered by hand for a single entity. When collecting breaks, the site keeps serving what it already has.',
   },
   {
-    title: 'The model writes the description, the code picks the angle',
+    title: 'The descriptions come from a model, the variety from code',
     body: 'Descriptions come from Gemini. Asking it for a few hundred texts in a row gives a few hundred variations of the same sentence. The keyword and the style are chosen in code, seeded by the name of the film or cinema, so each entity gets a different angle. Length has to land between 130 and 160 characters and the text is requested again when it misses.',
   },
   {
-    title: 'Images are copied, not linked',
+    title: 'Images get copied to our own storage',
     body: 'Stills, posters and photos come from an open movie database. Linking straight to their files means the site breaks when a path changes or a host throttles. Every image is mirrored to our own object storage as the film is saved, and a separate script fills in the ones added before that was in place.',
   },
   {
@@ -68,7 +68,7 @@ export const klapsDecisions: KlapsDecision[] = [
     body: 'Each repository has the same workflows: build, typecheck, tests where there are tests, and a check that the pull request title follows conventional commits. Merging to dev deploys to the development environment, merging to main deploys to production, and the target is read from the branch instead of being written down twice. GitHub environments hold the secrets for each, images go to the registry, and the server pulls them.',
   },
   {
-    title: 'Writes go in batches, and only one service writes',
+    title: 'Only one service writes, and it writes in batches',
     body: 'One pass touches thousands of rows across cities, cinemas, showtimes and films, so the collector sends batch upserts to internal endpoints instead of a request per record. Everything else reads. The admin panel is the one exception and it edits through the same API, never the database.',
   },
 ];

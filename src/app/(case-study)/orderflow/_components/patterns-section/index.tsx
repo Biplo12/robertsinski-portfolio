@@ -9,11 +9,11 @@ const PatternsSection: React.FC = (): React.JSX.Element => {
       <h2 className='font-display text-lg font-semibold tracking-tight'>
         What keeps it correct
       </h2>
-      <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/70'>
+      <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
         Five guarantees, one for each way a step can fail.
       </p>
 
-      <ul className='mt-6'>
+      <ul className='mt-5'>
         {orderflowPatterns.map((pattern, index) => (
           <NumberedRow
             key={pattern.title}

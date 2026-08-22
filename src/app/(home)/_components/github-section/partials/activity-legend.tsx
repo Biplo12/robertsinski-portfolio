@@ -10,7 +10,7 @@ const levelClass = [
 
 const ActivityLegend: React.FC = (): React.JSX.Element => {
   return (
-    <div className='flex items-center gap-1.5 text-[0.65rem] text-foreground/60'>
+    <div className='flex items-center gap-1.5 text-[0.6875rem] text-foreground/60'>
       Less
       {levelClass.map((className) => (
         <span

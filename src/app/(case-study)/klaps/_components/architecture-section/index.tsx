@@ -11,16 +11,16 @@ const ArchitectureSection: React.FC = (): React.JSX.Element => {
       <h2 className='font-display text-lg font-semibold tracking-tight'>
         How it fits together
       </h2>
-      <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/70'>
+      <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
         Six services, and data moves in one direction. Only the collector
         writes, only the API owns the database, everything else reads.
       </p>
 
-      <div className='mt-6 text-foreground'>
+      <div className='mt-5 text-foreground'>
         <FlowDiagram />
       </div>
 
-      <ul className='mt-7'>
+      <ul className='mt-6'>
         {klapsServices.map((service) => (
           <SpecRow
             key={service.name}

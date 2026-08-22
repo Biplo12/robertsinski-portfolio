@@ -19,7 +19,7 @@ const NumberedRow: React.FC<NumberedRowProps> = ({
 
       <div className='min-w-0'>
         <h3 className='font-medium'>{title}</h3>
-        <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/70'>
+        <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
           {body}
         </p>
       </div>

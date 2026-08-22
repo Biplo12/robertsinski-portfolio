@@ -10,7 +10,7 @@ const TechSection: React.FC = (): React.JSX.Element => {
       <h2 className='font-display text-lg font-semibold tracking-tight'>
         Tools I use
       </h2>
-      <p className='mt-2 max-w-[54ch] text-sm text-foreground/60'>
+      <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
         What I reach for on most projects.
       </p>
 

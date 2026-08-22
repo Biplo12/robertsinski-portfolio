@@ -17,7 +17,7 @@ export const orderflowProcesses: OrderflowProcess[] = [
   },
   {
     name: 'outbox-relay',
-    role: 'Reads events that were written but not yet published and puts them on the queue. This is the only place where the database and the queue meet.',
+    role: 'Reads events that were written but not yet published and puts them on the queue. The only place where the database and the queue meet.',
     stack: ['BullMQ 5', 'Redis 7'],
   },
   {
@@ -56,6 +56,6 @@ export const orderflowPatterns: OrderflowPattern[] = [
   },
   {
     title: 'A failed payment undoes the reservation',
-    body: 'There is no transaction spanning the whole flow, so the way back is an event, not a rollback. When the payment fails, that fact travels back to the inventory step, which releases what it had reserved. The order ends in a consistent state without anything holding a lock in between.',
+    body: 'No transaction spans the whole flow, so there is nothing to roll back. When the payment fails, that goes out as another event, and the inventory step releases what it had reserved. The order still ends up in a correct state, and nothing was holding a lock while it waited.',
   },
 ];

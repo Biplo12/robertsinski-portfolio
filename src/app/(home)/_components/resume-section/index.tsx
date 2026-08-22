@@ -3,14 +3,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { education } from '@/lib/education';
-import { experience } from '@/lib/experience';
+import type { ResolvedJob } from '@/lib/experience';
 
 import JobRow from './partials/job-row';
 import type { ResumeTab } from './partials/resume-tabs';
 import ResumeTabs from './partials/resume-tabs';
 import SchoolRow from './partials/school-row';
 
-const ResumeSection: React.FC = (): React.JSX.Element => {
+interface ResumeSectionProps {
+  jobs: ResolvedJob[];
+}
+
+const ResumeSection: React.FC<ResumeSectionProps> = ({
+  jobs,
+}): React.JSX.Element => {
   const [active, setActive] = useState<ResumeTab>('work');
   const [height, setHeight] = useState<number>();
   const panelRef = useRef<HTMLDivElement>(null);
@@ -48,7 +54,7 @@ const ResumeSection: React.FC = (): React.JSX.Element => {
               aria-label='Work'
               className='panel-in'
             >
-              {experience.map((job) => (
+              {jobs.map((job) => (
                 <JobRow key={job.company} job={job} />
               ))}
             </ul>

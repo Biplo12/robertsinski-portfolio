@@ -11,16 +11,16 @@ const FlowSection: React.FC = (): React.JSX.Element => {
       <h2 className='font-display text-lg font-semibold tracking-tight'>
         How an order moves
       </h2>
-      <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/70'>
+      <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
         The request ends as soon as the order is stored. Everything after that
         happens in the background, one event at a time.
       </p>
 
-      <div className='mt-6 text-foreground'>
+      <div className='mt-5 text-foreground'>
         <QueueDiagram />
       </div>
 
-      <ul className='mt-7'>
+      <ul className='mt-6'>
         {orderflowProcesses.map((process) => (
           <SpecRow
             key={process.name}

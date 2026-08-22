@@ -24,6 +24,11 @@ const sitemap = (): MetadataRoute.Sitemap => {
       changeFrequency: 'yearly',
       priority: 0.8,
     },
+    {
+      url: `${site.url}/homelab`,
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    },
   ];
 };
 
