@@ -12,7 +12,7 @@ const LayersSection: React.FC = (): React.JSX.Element => {
         Two ways in from outside, and what sits under the services.
       </p>
 
-      <div className='mt-6 text-foreground'>
+      <div className='mt-5 text-foreground'>
         <LayerDiagram />
       </div>
     </section>

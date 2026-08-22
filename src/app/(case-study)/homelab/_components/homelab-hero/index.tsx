@@ -19,9 +19,9 @@ const HomelabHero: React.FC = (): React.JSX.Element => {
 
       <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/85'>
         One machine at home runs the media library, the house automation, the
-        cameras and my files. I started it to stop paying for things I could host
-        myself, and kept going because it is a good place to try things out when
-        nobody else depends on them.
+        cameras and my files. I started it to stop paying for things I could
+        host myself, and kept going because it is a good place to try things out
+        when nobody else depends on them.
       </p>
 
       <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>

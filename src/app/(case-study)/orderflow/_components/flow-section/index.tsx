@@ -16,11 +16,11 @@ const FlowSection: React.FC = (): React.JSX.Element => {
         happens in the background, one event at a time.
       </p>
 
-      <div className='mt-6 text-foreground'>
+      <div className='mt-5 text-foreground'>
         <QueueDiagram />
       </div>
 
-      <ul className='mt-7'>
+      <ul className='mt-6'>
         {orderflowProcesses.map((process) => (
           <SpecRow
             key={process.name}

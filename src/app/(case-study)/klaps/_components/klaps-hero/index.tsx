@@ -29,7 +29,7 @@ const KlapsHero: React.FC = (): React.JSX.Element => {
         checking a dozen places by hand.
       </p>
 
-      <p className='mt-4 max-w-[62ch] leading-relaxed text-foreground/85'>
+      <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>
         It runs as six services: the site, the API that owns the data, a
         collector, a social bot, an admin panel and a mailer for cinemas. I
         built all of them.

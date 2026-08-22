@@ -13,7 +13,7 @@ const PatternsSection: React.FC = (): React.JSX.Element => {
         Five guarantees, one for each way a step can fail.
       </p>
 
-      <ul className='mt-6'>
+      <ul className='mt-5'>
         {orderflowPatterns.map((pattern, index) => (
           <NumberedRow
             key={pattern.title}

@@ -32,13 +32,13 @@ const dayLabel = (day: ContributionDay): string => {
   return `${day.count} contributions on ${when}`;
 };
 
-/* Tooltips near the edges would overflow the card, so they anchor differently. */
+/* A tooltip is wider than a few columns, so it only fits centred over the middle third. */
 const tooltipAnchor = (index: number, total: number): string => {
-  if (index < 4) {
+  if (index < total / 3) {
     return 'left-0';
   }
 
-  if (index > total - 5) {
+  if (index > (total * 2) / 3) {
     return 'right-0';
   }
 

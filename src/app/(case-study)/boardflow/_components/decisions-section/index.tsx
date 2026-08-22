@@ -13,7 +13,7 @@ const DecisionsSection: React.FC = (): React.JSX.Element => {
         Five choices and the reasons behind them.
       </p>
 
-      <ul className='mt-6'>
+      <ul className='mt-5'>
         {boardflowDecisions.map((decision, index) => (
           <NumberedRow
             key={decision.title}

@@ -7,9 +7,7 @@ interface SchoolRowProps {
   school: School;
 }
 
-const SchoolRow: React.FC<SchoolRowProps> = ({
-  school,
-}): React.JSX.Element => {
+const SchoolRow: React.FC<SchoolRowProps> = ({ school }): React.JSX.Element => {
   return (
     <li className='flex gap-3 border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0'>
       <LogoTile src={school.logo} name={school.name} />
@@ -21,7 +19,9 @@ const SchoolRow: React.FC<SchoolRowProps> = ({
             {school.period}
           </span>
         </div>
-        <p className='mt-1 text-sm font-medium text-foreground'>{school.field}</p>
+        <p className='mt-1 text-sm font-medium text-foreground'>
+          {school.field}
+        </p>
 
         {school.summary ? (
           <p className='mt-1.5 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>

@@ -15,12 +15,12 @@ interface ContributionsResponse {
 }
 
 export const getContributions = async (
-  user: string
+  user: string,
 ): Promise<Contributions | null> => {
   try {
     const response = await fetch(
       `https://github-contributions-api.jogruber.de/v4/${user}?y=last`,
-      { next: { revalidate: 3600 } }
+      { next: { revalidate: 3600 } },
     );
 
     if (!response.ok) {

@@ -13,7 +13,7 @@ const DecisionsSection: React.FC = (): React.JSX.Element => {
         Five choices that shaped the rest of the project.
       </p>
 
-      <ul className='mt-6'>
+      <ul className='mt-5'>
         {klapsDecisions.map((decision, index) => (
           <NumberedRow
             key={decision.title}

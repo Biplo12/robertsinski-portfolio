@@ -77,7 +77,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
         </div>
       </div>
 
-      <p className='mt-1.5 max-w-[58ch] text-sm leading-relaxed text-foreground/60'>
+      <p className='mt-1.5 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
         {project.description}
       </p>
 

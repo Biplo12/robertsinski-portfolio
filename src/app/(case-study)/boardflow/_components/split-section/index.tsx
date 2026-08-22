@@ -13,7 +13,7 @@ const SplitSection: React.FC = (): React.JSX.Element => {
         Three layers. What goes where depends on how long it has to last.
       </p>
 
-      <ul className='mt-6'>
+      <ul className='mt-5'>
         {boardflowParts.map((part) => (
           <SpecRow
             key={part.name}

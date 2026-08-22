@@ -20,12 +20,12 @@ const OrderflowHero: React.FC = (): React.JSX.Element => {
       <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/85'>
         Placing an order means reserving stock, charging a card and sending a
         confirmation. Do all three inside one request and every one of them can
-        go wrong: the request waits for all three, a crash halfway through
-        loses the order, a retry can charge the card twice, and stock stays
-        reserved for a payment that never arrived.
+        go wrong: the request waits for all three, a crash halfway through loses
+        the order, a retry can charge the card twice, and stock stays reserved
+        for a payment that never arrived.
       </p>
 
-      <p className='mt-4 max-w-[62ch] leading-relaxed text-foreground/85'>
+      <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>
         This splits the job into five processes that talk only through a queue.
         No service calls another directly, and any of them can be restarted
         mid-flow without losing an order or repeating a charge.

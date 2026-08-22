@@ -20,15 +20,15 @@ const HeroSection: React.FC = (): React.JSX.Element => {
         <LocationPill />
       </p>
 
-      <p className='mt-5 max-w-[54ch] leading-relaxed text-foreground/85'>
+      <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/85'>
         I build web apps. Backend and frontend, 4 years so far.
       </p>
 
-      <p className='mt-3 max-w-[54ch] leading-relaxed text-foreground/85'>
-        Mostly TypeScript. Next.js, NestJS, Fastify, PostgreSQL, MySQL, Redis.
+      <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>
+        Mostly TypeScript, Next.js, NestJS, Fastify, PostgreSQL, MySQL, Redis.
       </p>
 
-      <p className='mt-3 max-w-[54ch] leading-relaxed text-foreground/85'>
+      <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>
         In my free time I work on{' '}
         <a
           href='https://klaps.space'
@@ -42,7 +42,7 @@ const HeroSection: React.FC = (): React.JSX.Element => {
         . It shows which old films play in Polish cinemas.
       </p>
 
-      <p className='mt-5 max-w-[54ch] leading-relaxed text-foreground/85'>
+      <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/85'>
         If you need something built,{' '}
         <a
           href={`mailto:${site.email}`}
@@ -53,7 +53,7 @@ const HeroSection: React.FC = (): React.JSX.Element => {
         . I answer within a day.
       </p>
 
-      <div className='mt-8 flex items-center gap-2'>
+      <div className='mt-7 flex items-center gap-2'>
         <ResumeButton />
         <SocialLinks />
       </div>

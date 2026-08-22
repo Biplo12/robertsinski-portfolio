@@ -16,11 +16,11 @@ const ArchitectureSection: React.FC = (): React.JSX.Element => {
         writes, only the API owns the database, everything else reads.
       </p>
 
-      <div className='mt-6 text-foreground'>
+      <div className='mt-5 text-foreground'>
         <FlowDiagram />
       </div>
 
-      <ul className='mt-7'>
+      <ul className='mt-6'>
         {klapsServices.map((service) => (
           <SpecRow
             key={service.name}

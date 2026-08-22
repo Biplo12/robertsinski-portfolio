@@ -13,7 +13,7 @@ const DecisionsSection: React.FC = (): React.JSX.Element => {
         Six choices and what each one protects against.
       </p>
 
-      <ul className='mt-6'>
+      <ul className='mt-5'>
         {homelabDecisions.map((decision, index) => (
           <NumberedRow
             key={decision.title}

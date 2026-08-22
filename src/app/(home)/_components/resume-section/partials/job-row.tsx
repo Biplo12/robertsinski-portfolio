@@ -1,13 +1,15 @@
 import React from 'react';
 
 import LogoTile from '@/components/logo-tile';
-import type { Job, Role } from '@/lib/experience';
+import type { ResolvedJob, ResolvedRole } from '@/lib/experience';
 
 interface JobRowProps {
-  job: Job;
+  job: ResolvedJob;
 }
 
-const RoleBody: React.FC<{ role: Role }> = ({ role }): React.JSX.Element => {
+const RoleBody: React.FC<{ role: ResolvedRole }> = ({
+  role,
+}): React.JSX.Element => {
   return (
     <>
       <div className='flex flex-wrap items-baseline gap-x-2'>
