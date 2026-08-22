@@ -24,7 +24,7 @@ const SchoolRow: React.FC<SchoolRowProps> = ({
         <p className='mt-1 text-sm font-medium text-foreground'>{school.field}</p>
 
         {school.summary ? (
-          <p className='mt-1.5 max-w-[62ch] text-[0.8125rem] leading-relaxed text-foreground/60'>
+          <p className='mt-1.5 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
             {school.summary}
           </p>
         ) : null}

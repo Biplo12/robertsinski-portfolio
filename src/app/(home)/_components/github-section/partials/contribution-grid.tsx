@@ -49,7 +49,7 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
   weeks,
 }): React.JSX.Element => {
   return (
-    <div className='-mx-1 overflow-x-auto px-1 pb-1'>
+    <div className='-mx-1 overflow-x-auto px-1 pb-1 sm:mx-0 sm:overflow-visible sm:px-0 sm:pb-0'>
       <div className='w-full min-w-[760px] sm:min-w-0'>
         <div className='flex w-full gap-[2px]'>
           {weeks.map((week, index) => {
@@ -62,7 +62,7 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
             return (
               <span
                 key={week[0].date}
-                className='flex-1 text-[0.6rem] whitespace-nowrap text-foreground/60'
+                className='flex-1 text-[0.6875rem] whitespace-nowrap text-foreground/60'
               >
                 {isNewMonth ? monthName(week[0].date) : ''}
               </span>
@@ -83,7 +83,7 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
                   />
                   <span
                     role='tooltip'
-                    className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/10 bg-[#14161d] px-2 py-1 text-[0.7rem] whitespace-nowrap text-foreground shadow-lg group-hover:block ${tooltipAnchor(index, weeks.length)}`}
+                    className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/10 bg-[#14161d] px-2 py-1 text-xs whitespace-nowrap text-foreground shadow-lg sm:group-hover:block ${tooltipAnchor(index, weeks.length)}`}
                   >
                     {dayLabel(day)}
                   </span>

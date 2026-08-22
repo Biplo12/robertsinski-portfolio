@@ -64,20 +64,20 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
               target='_blank'
               rel='noreferrer'
               aria-label={`${project.name} on GitHub`}
-              className='text-foreground/50 transition-colors hover:text-foreground'
+              className='text-foreground/60 transition-colors hover:text-foreground'
             >
               <FaGithub aria-hidden className='size-4' />
             </a>
           ) : null}
           {project.private ? (
-            <span className='rounded-full border border-white/15 px-1.5 py-0.5 text-[0.65rem] text-foreground/60'>
+            <span className='rounded-full border border-white/15 px-1.5 py-0.5 text-[0.6875rem] text-foreground/60'>
               private
             </span>
           ) : null}
         </div>
       </div>
 
-      <p className='mt-1.5 max-w-[58ch] text-sm leading-relaxed text-foreground/70'>
+      <p className='mt-1.5 max-w-[58ch] text-sm leading-relaxed text-foreground/60'>
         {project.description}
       </p>
 

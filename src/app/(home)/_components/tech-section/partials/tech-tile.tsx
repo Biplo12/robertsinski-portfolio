@@ -18,7 +18,7 @@ const TechTile: React.FC<TechTileProps> = ({ item }): React.JSX.Element => {
         <Icon aria-hidden className='size-4' style={{ color }} />
       </span>
       <span className='min-w-0'>
-        <span className='block text-[0.8125rem] leading-tight sm:text-sm'>
+        <span className='block text-sm leading-tight sm:text-sm'>
           {name}
         </span>
         <span className='mt-0.5 block text-xs leading-tight text-foreground/60'>

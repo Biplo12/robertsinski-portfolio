@@ -18,7 +18,7 @@ const RoleBody: React.FC<{ role: Role }> = ({ role }): React.JSX.Element => {
       </div>
 
       {role.summary ? (
-        <p className='mt-1.5 max-w-[62ch] text-[0.8125rem] leading-relaxed text-foreground/60'>
+        <p className='mt-1.5 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
           {role.summary}
         </p>
       ) : null}
@@ -42,7 +42,7 @@ const JobRow: React.FC<JobRowProps> = ({ job }): React.JSX.Element => {
       ) : (
         <span
           aria-hidden
-          className='glass-pill flex size-10 shrink-0 items-center justify-center rounded-xl text-sm text-foreground/70'
+          className='glass-pill flex size-10 shrink-0 items-center justify-center rounded-xl text-sm text-foreground/60'
         >
           {job.company.charAt(0)}
         </span>
@@ -52,11 +52,11 @@ const JobRow: React.FC<JobRowProps> = ({ job }): React.JSX.Element => {
         <div className='flex flex-wrap items-baseline gap-x-2'>
           <h3 className='font-medium'>{job.company}</h3>
           {job.contract ? (
-            <span className='rounded-full border border-white/15 px-1.5 py-0.5 text-[0.65rem] text-foreground/60'>
+            <span className='rounded-full border border-white/15 px-1.5 py-0.5 text-[0.6875rem] text-foreground/60'>
               contract
             </span>
           ) : null}
-          <span className='ml-auto text-xs font-medium text-foreground/75'>
+          <span className='ml-auto text-xs font-medium text-foreground/60'>
             {job.duration}
           </span>
         </div>

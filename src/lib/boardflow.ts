@@ -29,11 +29,11 @@ export const boardflowParts: BoardflowPart[] = [
 
 export const boardflowDecisions: BoardflowDecision[] = [
   {
-    title: 'Two backends, split by lifetime of the data',
-    body: 'Organisations, boards and who belongs where live in Convex, because they have to be there tomorrow. Cursors, selections and the shapes on the canvas live in a Liveblocks room, because they change dozens of times a second and only matter while someone is looking. Trying to keep both in one place would mean either writing every mouse move to a database or losing the board on refresh.',
+    title: 'Two backends, one for each kind of data',
+    body: 'Organisations, boards and who belongs where live in Convex, because they have to still be there the next time you open the app. Cursors, selections and the shapes on the canvas live in a Liveblocks room, because they change dozens of times a second and only matter while someone is looking. Trying to keep both in one place would mean either writing every mouse move to a database or losing the board on refresh.',
   },
   {
-    title: 'The stroke in progress is presence, not a layer',
+    title: 'A stroke becomes a layer only once it is finished',
     body: 'While the pencil is down, the points travel as presence, next to the cursor position. Only the finished stroke becomes a layer in storage. Everyone sees the line appear as it is drawn, and the undo history gets one entry for the stroke instead of one for every point along it.',
   },
   {
@@ -41,7 +41,7 @@ export const boardflowDecisions: BoardflowDecision[] = [
     body: 'Layers sit in a map keyed by id, and their order in a separate list of ids. Sending a shape to the front means reordering a short list of strings, not rewriting the shapes. Two people editing different shapes never touch the same value, so their changes cannot collide.',
   },
   {
-    title: 'Access comes from membership, not from the link',
+    title: 'Access comes from being in the organisation',
     body: 'A board belongs to an organisation, and being in an organisation is a row with a role. Invitations are separate rows with a token and an email. Opening a room checks that membership first, so a shared URL alone does not get anyone in.',
   },
   {

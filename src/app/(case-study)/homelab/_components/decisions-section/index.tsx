@@ -1,7 +1,7 @@
 import React from 'react';
 
 import NumberedRow from '@/components/numbered-row';
-import { klapsDecisions } from '@/lib/klaps';
+import { homelabDecisions } from '@/lib/homelab';
 
 const DecisionsSection: React.FC = (): React.JSX.Element => {
   return (
@@ -10,11 +10,11 @@ const DecisionsSection: React.FC = (): React.JSX.Element => {
         Decisions
       </h2>
       <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
-        Five choices that shaped the rest of the project.
+        Six choices and what each one protects against.
       </p>
 
       <ul className='mt-6'>
-        {klapsDecisions.map((decision, index) => (
+        {homelabDecisions.map((decision, index) => (
           <NumberedRow
             key={decision.title}
             index={index}
