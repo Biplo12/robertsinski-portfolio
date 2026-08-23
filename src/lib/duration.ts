@@ -45,11 +45,11 @@ export const formatDuration = (months: number): string => {
   const parts: string[] = [];
 
   if (years > 0) {
-    parts.push(`${years} ${years === 1 ? 'yr' : 'yrs'}`);
+    parts.push(`${years} ${years === 1 ? 'year' : 'years'}`);
   }
 
   if (rest > 0) {
-    parts.push(`${rest} ${rest === 1 ? 'mo' : 'mos'}`);
+    parts.push(`${rest} ${rest === 1 ? 'month' : 'months'}`);
   }
 
   return parts.join(' ');
