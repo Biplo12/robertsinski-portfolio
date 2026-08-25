@@ -15,7 +15,7 @@ const HeroSection: React.FC = (): React.JSX.Element => {
         Robert here.
       </h1>
 
-      <p className='mt-5 flex flex-wrap items-center gap-2 text-sm text-foreground/60'>
+      <p className='mt-5 flex flex-wrap items-center gap-2 text-lg text-foreground/85'>
         Fullstack developer
         <LocationPill />
       </p>
