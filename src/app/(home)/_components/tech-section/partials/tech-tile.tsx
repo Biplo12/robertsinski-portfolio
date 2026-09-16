@@ -10,7 +10,7 @@ const TechTile: React.FC<TechTileProps> = ({ item }): React.JSX.Element => {
   const { name, note, color, Icon } = item;
 
   return (
-    <li className='glass-pill flex items-center gap-2.5 rounded-2xl px-2.5 py-2.5 sm:gap-3 sm:px-3'>
+    <li className='glass-pill flex items-center gap-2 rounded-2xl px-2.5 py-2.5 sm:gap-3 sm:px-3'>
       <span
         className='flex size-8 shrink-0 items-center justify-center rounded-lg'
         style={{ backgroundColor: `${color}1f` }}
@@ -19,7 +19,7 @@ const TechTile: React.FC<TechTileProps> = ({ item }): React.JSX.Element => {
       </span>
       <span className='min-w-0'>
         <span className='block text-sm leading-tight sm:text-sm'>{name}</span>
-        <span className='mt-0.5 block text-xs leading-tight text-foreground/60'>
+        <span className='mt-0.5 block type-meta leading-tight text-ink-muted'>
           {note}
         </span>
       </span>

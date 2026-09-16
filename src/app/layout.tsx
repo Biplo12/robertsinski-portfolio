@@ -1,24 +1,32 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono, Outfit } from 'next/font/google';
+import {
+  Bricolage_Grotesque,
+  JetBrains_Mono,
+  Public_Sans,
+} from 'next/font/google';
 import React from 'react';
 
 import { site } from '@/lib/site';
 
 import './globals.css';
 
-const outfit = Outfit({
-  variable: '--font-outfit',
+// Display face: a grotesque with deliberately uneven joints and a width axis,
+// so headlines have a voice instead of reading as default UI type.
+const bricolage = Bricolage_Grotesque({
+  variable: '--font-bricolage',
   subsets: ['latin', 'latin-ext'],
 });
 
-const geist = Geist({
-  variable: '--font-geist',
+// Text face: quiet and highly legible, chosen to stay out of the display's way.
+const publicSans = Public_Sans({
+  variable: '--font-public-sans',
   subsets: ['latin', 'latin-ext'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+// Mono is reserved for what is literally code or data: stacks, dates, counts.
+const mono = JetBrains_Mono({
+  variable: '--font-mono-code',
   subsets: ['latin'],
 });
 
@@ -66,7 +74,7 @@ const RootLayout: React.FC<LayoutProps<'/'>> = ({
   return (
     <html
       lang='en'
-      className={`${outfit.variable} ${geist.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${bricolage.variable} ${publicSans.variable} ${mono.variable} h-full antialiased`}
     >
       {/* Browser extensions inject attributes here before React hydrates. */}
       <body className='min-h-full flex flex-col' suppressHydrationWarning>

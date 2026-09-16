@@ -7,17 +7,17 @@ const OrderflowHero: React.FC = (): React.JSX.Element => {
     <article className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
       <Link
         href='/'
-        className='inline-flex items-center gap-1.5 text-xs text-foreground/60 transition-colors hover:text-foreground'
+        className='inline-flex items-center gap-1.5 type-meta text-ink-muted transition-colors hover:text-foreground'
       >
         <ArrowLeft aria-hidden className='size-3' />
         Back
       </Link>
 
-      <h1 className='font-display mt-6 text-[2rem] leading-none font-semibold tracking-tight'>
+      <h1 className='type-title mt-5'>
         orderflow-engine
       </h1>
 
-      <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/85'>
+      <p className='mt-5 max-w-[62ch] leading-relaxed text-ink'>
         Placing an order means reserving stock, charging a card and sending a
         confirmation. Do all three inside one request and every one of them can
         go wrong: the request waits for all three, a crash halfway through loses
@@ -25,7 +25,7 @@ const OrderflowHero: React.FC = (): React.JSX.Element => {
         for a payment that never arrived.
       </p>
 
-      <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>
+      <p className='mt-3 max-w-[62ch] leading-relaxed text-ink'>
         This splits the job into five processes that talk only through a queue.
         No service calls another directly, and any of them can be restarted
         mid-flow without losing an order or repeating a charge.
@@ -36,7 +36,7 @@ const OrderflowHero: React.FC = (): React.JSX.Element => {
           href='https://github.com/Biplo12/orderflow-engine'
           target='_blank'
           rel='noreferrer'
-          className='inline-flex h-10 items-center gap-2 rounded-full bg-foreground px-4 text-sm font-medium text-background transition-transform hover:-translate-y-0.5'
+          className='inline-flex h-10 items-center gap-2 rounded-full bg-foreground px-4 type-body font-medium text-background transition-transform hover:-translate-y-0.5'
         >
           Read the code
           <ArrowUpRight aria-hidden className='size-3.5' />

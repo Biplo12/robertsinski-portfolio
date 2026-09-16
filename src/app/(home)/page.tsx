@@ -13,9 +13,13 @@ import TechSection from './_components/tech-section';
 
 const HomePage: React.FC = (): React.JSX.Element => {
   return (
-    <div className='flex flex-1 justify-center px-6 py-16'>
-      <div className='stagger flex w-full max-w-3xl flex-col gap-4'>
+    <div className='flex flex-1 flex-col items-center px-6 pt-10 pb-16'>
+      {/* The hero runs wider than the column of cards below it. */}
+      <div className='rise w-full max-w-[1080px]'>
         <HeroSection />
+      </div>
+
+      <div className='stagger mt-20 flex w-full max-w-3xl flex-col gap-3'>
         <ResumeSection jobs={resolveExperience()} />
         <ProjectsSection />
         <TechSection />

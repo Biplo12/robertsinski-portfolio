@@ -13,7 +13,7 @@ const ServiceTile: React.FC<ServiceTileProps> = ({
   const { name, color, logo } = item;
 
   return (
-    <li className='glass-pill flex items-center gap-2.5 rounded-2xl px-2.5 py-2.5 sm:gap-3 sm:px-3'>
+    <li className='glass-pill flex items-center gap-2 rounded-2xl px-2.5 py-2.5 sm:gap-3 sm:px-3'>
       <span
         className='flex size-8 shrink-0 items-center justify-center rounded-lg'
         style={{ backgroundColor: `${color}1f` }}

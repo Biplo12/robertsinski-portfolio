@@ -9,26 +9,26 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
     <article className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
       <Link
         href='/'
-        className='inline-flex items-center gap-1.5 text-xs text-foreground/60 transition-colors hover:text-foreground'
+        className='inline-flex items-center gap-1.5 type-meta text-ink-muted transition-colors hover:text-foreground'
       >
         <ArrowLeft aria-hidden className='size-3' />
         Back
       </Link>
 
-      <div className='mt-6 flex items-center gap-3'>
+      <div className='mt-5 flex items-center gap-3'>
         <LogoTile src='/logos/boardflow-mark.png' name='BoardFlow' />
-        <h1 className='font-display text-[2rem] leading-none font-semibold tracking-tight'>
+        <h1 className='type-title'>
           BoardFlow
         </h1>
       </div>
 
-      <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/85'>
+      <p className='mt-5 max-w-[62ch] leading-relaxed text-ink'>
         A whiteboard several people draw on at the same time. Shapes, notes,
         text, images and freehand strokes, with cursors moving around and
         changes showing up as they happen.
       </p>
 
-      <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>
+      <p className='mt-3 max-w-[62ch] leading-relaxed text-ink'>
         Boards live inside organisations you can invite people to. Anything on a
         board can be selected, resized, deleted or moved between layers, and the
         whole board has undo and redo.
@@ -39,7 +39,7 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
           href='https://board-flow.vercel.app/'
           target='_blank'
           rel='noreferrer'
-          className='inline-flex h-10 items-center gap-2 rounded-full bg-foreground px-4 text-sm font-medium text-background transition-transform hover:-translate-y-0.5'
+          className='inline-flex h-10 items-center gap-2 rounded-full bg-foreground px-4 type-body font-medium text-background transition-transform hover:-translate-y-0.5'
         >
           Open the board
           <ArrowUpRight aria-hidden className='size-3.5' />
@@ -48,7 +48,7 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
           href='https://github.com/Biplo12/BoardFlow'
           target='_blank'
           rel='noreferrer'
-          className='glass-pill inline-flex h-10 items-center gap-2 rounded-full px-4 text-sm'
+          className='glass-pill inline-flex h-10 items-center gap-2 rounded-full px-4 type-body'
         >
           github.com/Biplo12/BoardFlow
           <ArrowUpRight aria-hidden className='size-3.5' />

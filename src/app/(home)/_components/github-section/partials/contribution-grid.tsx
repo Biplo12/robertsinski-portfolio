@@ -62,7 +62,7 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
             return (
               <span
                 key={week[0].date}
-                className='flex-1 text-[0.6875rem] whitespace-nowrap text-foreground/60'
+                className='flex-1 type-micro whitespace-nowrap text-ink-muted'
               >
                 {isNewMonth ? monthName(week[0].date) : ''}
               </span>
@@ -83,7 +83,7 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
                   />
                   <span
                     role='tooltip'
-                    className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/10 bg-[#14161d] px-2 py-1 text-xs whitespace-nowrap text-foreground shadow-lg sm:group-hover:block ${tooltipAnchor(index, weeks.length)}`}
+                    className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/10 bg-[#14161d] px-2 py-1 type-meta whitespace-nowrap text-foreground shadow-lg sm:group-hover:block ${tooltipAnchor(index, weeks.length)}`}
                   >
                     {dayLabel(day)}
                   </span>

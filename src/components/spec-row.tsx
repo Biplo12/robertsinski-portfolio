@@ -21,7 +21,7 @@ const SpecRow: React.FC<SpecRowProps> = ({
       <div className='flex flex-wrap items-baseline gap-x-2'>
         <h3 className='font-medium'>{name}</h3>
         {tag ? (
-          <span className='rounded-full border border-white/15 px-1.5 py-0.5 text-[0.6875rem] text-foreground/60'>
+          <span className='rounded-full border border-white/15 px-1.5 py-0.5 type-micro text-ink-muted'>
             {tag}
           </span>
         ) : null}
@@ -30,7 +30,7 @@ const SpecRow: React.FC<SpecRowProps> = ({
             href={repo}
             target='_blank'
             rel='noreferrer'
-            className='ml-auto inline-flex items-center gap-1 text-xs text-foreground/60 transition-colors hover:text-foreground'
+            className='ml-auto inline-flex items-center gap-1.5 type-meta text-ink-muted transition-colors hover:text-foreground'
           >
             repo
             <ArrowUpRight aria-hidden className='size-3' />
@@ -38,11 +38,11 @@ const SpecRow: React.FC<SpecRowProps> = ({
         ) : null}
       </div>
 
-      <p className='mt-1.5 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
+      <p className='mt-1.5 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
         {role}
       </p>
 
-      <p className='mt-2 text-xs text-foreground/60'>{stack.join(' · ')}</p>
+      <p className='mt-2 type-meta text-ink-muted'>{stack.join(' · ')}</p>
     </li>
   );
 };

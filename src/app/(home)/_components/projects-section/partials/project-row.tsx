@@ -29,7 +29,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
             {project.name}
           </span>
           {project.repoLabel ? (
-            <span className='text-xs font-normal whitespace-nowrap text-foreground/60'>
+            <span className='type-meta font-normal whitespace-nowrap text-ink-muted'>
               @{project.repoLabel}
               {project.repoNote ? (
                 <span className='hidden sm:inline'>{` · ${project.repoNote}`}</span>
@@ -38,7 +38,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
           ) : null}
         </h3>
 
-        <div className='flex shrink-0 items-center gap-3 text-xs'>
+        <div className='flex shrink-0 items-center gap-3 type-meta'>
           {project.caseStudy ? (
             <Link
               href={project.caseStudy}
@@ -52,7 +52,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
               href={project.demo}
               target='_blank'
               rel='noreferrer'
-              className='inline-flex items-center gap-1 text-foreground/60 transition-colors hover:text-foreground'
+              className='inline-flex items-center gap-1.5 text-ink-muted transition-colors hover:text-foreground'
             >
               {project.demoLabel}
               <ArrowUpRight aria-hidden className='size-3' />
@@ -64,24 +64,24 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
               target='_blank'
               rel='noreferrer'
               aria-label={`${project.name} on GitHub`}
-              className='text-foreground/60 transition-colors hover:text-foreground'
+              className='text-ink-muted transition-colors hover:text-foreground'
             >
               <FaGithub aria-hidden className='size-4' />
             </a>
           ) : null}
           {project.private ? (
-            <span className='rounded-full border border-white/15 px-1.5 py-0.5 text-[0.6875rem] text-foreground/60'>
+            <span className='rounded-full border border-white/15 px-1.5 py-0.5 type-micro text-ink-muted'>
               private
             </span>
           ) : null}
         </div>
       </div>
 
-      <p className='mt-1.5 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
+      <p className='mt-1.5 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
         {project.description}
       </p>
 
-      <p className='mt-2 text-xs text-foreground/60'>
+      <p className='mt-2 type-meta text-ink-muted'>
         {project.stack.join(' · ')}
       </p>
     </li>

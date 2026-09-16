@@ -3,17 +3,17 @@ import React from 'react';
 const OutsideWorkSection: React.FC = (): React.JSX.Element => {
   return (
     <section className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
-      <h2 className='font-display text-lg font-semibold tracking-tight'>
+      <h2 className='type-heading'>
         Outside work
       </h2>
 
-      <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/85'>
+      <p className='mt-5 max-w-[62ch] leading-relaxed text-ink'>
         I watch a lot of films, mostly older ones. That is where Klaps came
         from: I kept missing screenings I would have gone to if I had known
         about them.
       </p>
 
-      <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>
+      <p className='mt-3 max-w-[62ch] leading-relaxed text-ink'>
         I also started playing golf recently. Still bad at it, and still going
         back.
       </p>

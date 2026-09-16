@@ -13,20 +13,20 @@ const RoleBody: React.FC<{ role: ResolvedRole }> = ({
   return (
     <>
       <div className='flex flex-wrap items-baseline gap-x-2'>
-        <span className='text-sm font-medium text-foreground'>
+        <span className='type-body font-medium text-foreground'>
           {role.title}
         </span>
-        <span className='text-xs text-foreground/60'>{role.period}</span>
+        <span className='type-meta text-ink-muted'>{role.period}</span>
       </div>
 
       {role.summary ? (
-        <p className='mt-1.5 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
+        <p className='mt-1.5 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
           {role.summary}
         </p>
       ) : null}
 
       {role.stack ? (
-        <p className='mt-1.5 text-xs text-foreground/60'>
+        <p className='mt-1.5 type-meta text-ink-muted'>
           {role.stack.join(' · ')}
         </p>
       ) : null}
@@ -44,7 +44,7 @@ const JobRow: React.FC<JobRowProps> = ({ job }): React.JSX.Element => {
       ) : (
         <span
           aria-hidden
-          className='glass-pill flex size-10 shrink-0 items-center justify-center rounded-xl text-sm text-foreground/60'
+          className='glass-pill flex size-10 shrink-0 items-center justify-center rounded-xl type-body text-ink-muted'
         >
           {job.company.charAt(0)}
         </span>
@@ -54,16 +54,16 @@ const JobRow: React.FC<JobRowProps> = ({ job }): React.JSX.Element => {
         <div className='flex flex-wrap items-baseline gap-x-2'>
           <h3 className='font-medium'>{job.company}</h3>
           {job.contract ? (
-            <span className='rounded-full border border-white/15 px-1.5 py-0.5 text-[0.6875rem] text-foreground/60'>
+            <span className='rounded-full border border-white/15 px-1.5 py-0.5 type-micro text-ink-muted'>
               contract
             </span>
           ) : null}
-          <span className='ml-auto text-xs font-medium text-foreground/60'>
+          <span className='ml-auto type-meta font-medium text-ink-muted'>
             {job.duration}
           </span>
         </div>
 
-        <p className='mt-0.5 text-xs text-foreground/60'>{job.location}</p>
+        <p className='mt-0.5 type-meta text-ink-muted'>{job.location}</p>
 
         {hasManyRoles ? (
           /* Rail and dots share one axis: 2px line at 3px, 8px dot from 0. */

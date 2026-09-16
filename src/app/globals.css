@@ -8,14 +8,30 @@
   --color-ring: var(--ring);
   --color-signal: var(--signal);
   --color-muted-foreground: var(--muted-foreground);
-  --font-sans: var(--font-geist);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-outfit);
+  --font-sans: var(--font-public-sans);
+  --font-mono: var(--font-mono-code);
+  --font-heading: var(--font-bricolage);
+
+  /* Ink: four steps of emphasis, so contrast carries hierarchy instead of a
+     scatter of one-off opacities. Redefined inside .on-cloth for the hero,
+     where the type sits on lit fabric rather than on black. */
+  --color-ink-strong: rgb(255 255 255 / 0.96);
+  --color-ink: rgb(242 243 247 / 0.86);
+  --color-ink-muted: rgb(242 243 247 / 0.62);
+  --color-ink-faint: rgb(242 243 247 / 0.42);
+
+  /* Leading: one ladder, tightest at the top. Every type step picks a rung
+     from here rather than inventing its own number. */
+  --leading-flat: 1;
+  --leading-tight: 1.12;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
 }
 
-/* One theme: cool near-black under translucent glass layers. */
+/* One theme: black under translucent glass layers. */
 :root {
-  --background: #05060a;
+  --background: #000000;
   --foreground: #f2f3f7;
   --card: rgb(255 255 255 / 0.1);
   --border: rgb(255 255 255 / 0.14);
@@ -38,21 +54,234 @@
   }
 }
 
-/* Display face: Outfit carries headlines; body text stays in Geist. */
-.font-display {
-  font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+/* Vertical rhythm.
+   Five named gaps instead of a different mt-* on every element. Applied with
+   the owl selector so a block spaces its own children and nothing has to know
+   what follows it. */
+.stack-hair > * + * {
+  margin-top: 0.375rem;
 }
 
-/* Aurora: the colour that glass refracts. */
-body::before {
-  content: '';
-  position: fixed;
-  inset: -20%;
-  z-index: -1;
+.stack-tight > * + * {
+  margin-top: 0.5rem;
+}
+
+.stack-snug > * + * {
+  margin-top: 0.75rem;
+}
+
+.stack-base > * + * {
+  margin-top: 1.25rem;
+}
+
+.stack-loose > * + * {
+  margin-top: 1.75rem;
+}
+
+/* On the cloth the same ink roles need more light to hold against a lit,
+   moving background. */
+.on-cloth {
+  --color-ink-strong: rgb(255 255 255 / 0.98);
+  --color-ink: rgb(255 255 255 / 0.9);
+  --color-ink-muted: rgb(255 255 255 / 0.68);
+  --color-ink-faint: rgb(255 255 255 / 0.48);
+}
+
+/* Type scale.
+   Two families and seven steps. Display steps take Bricolage, which runs wide
+   and needs tracking pulled in hard; text steps take Public Sans at its
+   natural spacing. Each step fixes size, weight, leading and tracking
+   together, because those four are what make a step read as itself. */
+
+.type-display,
+.type-title,
+.type-heading {
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+}
+
+.type-display {
+  text-wrap: balance;
+  font-size: clamp(2.5rem, 6.4vw, 4.25rem);
+  font-weight: 600;
+  line-height: var(--leading-flat);
+  letter-spacing: -0.042em;
+}
+
+.type-title {
+  text-wrap: balance;
+  font-size: clamp(1.75rem, 3.4vw, 2.375rem);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.032em;
+}
+
+.type-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: -0.022em;
+}
+
+.type-lead {
+  text-wrap: balance;
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  letter-spacing: -0.008em;
+}
+
+.type-body {
+  text-wrap: pretty;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  letter-spacing: -0.002em;
+}
+
+.type-meta {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: var(--leading-normal);
+}
+
+.type-micro {
+  font-family: var(--font-mono-code), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: var(--leading-snug);
+  letter-spacing: 0.02em;
+}
+
+/* Kept for pages that still set their own sizes. */
+.font-display {
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+/* Satin: a lit fold of blue silk, the surface the hero headline sits on. */
+.satin {
+  background-image: linear-gradient(
+    124deg,
+    #5499c7 10%,
+    #062e6b 31%,
+    #054277 69%,
+    #43799b 100%
+  );
+}
+/* Glow: the lamp sitting off the top-left corner of the cloth. */
+.satin-glow {
+  pointer-events: none;
   background-image:
-    radial-gradient(52% 52% at 28% 30%, rgb(62 96 220 / 0.22), transparent 72%),
-    radial-gradient(46% 48% at 74% 74%, rgb(112 84 210 / 0.16), transparent 72%);
-  filter: blur(60px);
+    radial-gradient(
+      40% 48% at 10% -6%,
+      rgb(232 247 255 / 0.4),
+      transparent 64%
+    ),
+    radial-gradient(46% 56% at 90% 100%, rgb(2 10 32 / 0.34), transparent 72%);
+}
+/* Hero pills: no halo, just a lit edge. A bright inset line along the top
+   left and a fainter one along the bottom right stand in for the rim of glass
+   catching the lamp; the two gradients are the sheen across the face. */
+.hero-pill {
+  position: relative;
+  isolation: isolate;
+  border-radius: 100px;
+  background: rgb(255 255 255 / 0.04);
+  box-shadow:
+    inset 1px 1px 0 rgb(255 255 255 / 0.2),
+    inset -1px -1px 0 rgb(255 255 255 / 0.08);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero-pill::before,
+.hero-pill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero-pill::before {
+  background: linear-gradient(
+    rgb(205 236 250 / 0.28) 0%,
+    rgb(0 114 156 / 0) 64%
+  );
+}
+
+.hero-pill::after {
+  background: linear-gradient(
+    rgb(0 114 156 / 0) 83%,
+    rgb(205 236 250 / 0.18) 100%
+  );
+}
+
+.hero-pill:hover {
+  background: rgb(18 16 16 / 0.42);
+  box-shadow:
+    inset 1px 1px 0 rgb(255 255 255 / 0.3),
+    inset -1px -1px 0 rgb(255 255 255 / 0.12);
+  transform: scale(1.02);
+}
+
+/* Quiet pill: dimmer sheen, and it stays put on hover. */
+.hero-pill-quiet::before {
+  background: linear-gradient(
+    rgb(205 236 250 / 0.16) 0%,
+    rgb(0 114 156 / 0) 64%
+  );
+}
+
+.hero-pill-quiet::after {
+  background: linear-gradient(
+    rgb(0 114 156 / 0) 83%,
+    rgb(205 236 250 / 0.1) 100%
+  );
+}
+
+.hero-pill-quiet:hover {
+  background: rgb(20 20 20 / 0.22);
+  transform: none;
+}
+
+/* Card edge: a lit rim, brighter at the top left and faint at the bottom
+   right. Drawn with inset shadows rather than a masked gradient border: a mask
+   clipped to a 74px radius does not land on the curve and the rim comes out
+   stepped, while inset shadows are antialiased against the same radius. */
+.card-edge {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow:
+    inset 1px 1px 0 rgb(216 239 255 / 0.5),
+    inset 2px 2px 3px -2px rgb(216 239 255 / 0.3),
+    inset -1px -1px 0 rgb(186 220 248 / 0.16);
+}
+
+/* Pointer sheen: the highlight rides on top and is screened, so it only ever
+   adds light to the cloth. */
+.pointer-sheen {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pointer-sheen {
+    display: none;
+  }
 }
 
 /* Liquid glass: translucent fill, blurred backdrop, specular edge. */
@@ -172,7 +401,8 @@ body::before {
     animation: none;
   }
 
-  .glass-pill:hover {
+  .glass-pill:hover,
+  .hero-pill:hover {
     transform: none;
   }
 }

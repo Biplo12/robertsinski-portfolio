@@ -7,10 +7,10 @@ import TechTile from './partials/tech-tile';
 const TechSection: React.FC = (): React.JSX.Element => {
   return (
     <section className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
-      <h2 className='font-display text-lg font-semibold tracking-tight'>
+      <h2 className='type-heading'>
         Tools I use
       </h2>
-      <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
+      <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
         What I reach for on most projects.
       </p>
 

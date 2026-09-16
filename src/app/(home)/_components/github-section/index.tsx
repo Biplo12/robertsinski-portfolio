@@ -12,14 +12,14 @@ const GithubSection = async (): Promise<React.JSX.Element> => {
   return (
     <section className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
       <div className='flex flex-wrap items-baseline justify-between gap-3'>
-        <h2 className='font-display text-lg font-semibold tracking-tight'>
+        <h2 className='type-heading'>
           GitHub activity
         </h2>
         <a
           href={site.github}
           target='_blank'
           rel='noreferrer'
-          className='text-xs text-foreground/60 transition-colors hover:text-foreground'
+          className='type-meta text-ink-muted transition-colors hover:text-foreground'
         >
           @Biplo12
         </a>
@@ -27,7 +27,7 @@ const GithubSection = async (): Promise<React.JSX.Element> => {
 
       {contributions ? (
         <>
-          <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
+          <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
             {contributions.total} contributions in the last year.
           </p>
 
@@ -35,12 +35,12 @@ const GithubSection = async (): Promise<React.JSX.Element> => {
             <ContributionGrid weeks={contributions.weeks} />
           </div>
 
-          <div className='mt-4 flex justify-end'>
+          <div className='mt-5 flex justify-end'>
             <ActivityLegend />
           </div>
         </>
       ) : (
-        <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
+        <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
           The contribution graph is unavailable right now. The commits are on my
           profile.
         </p>

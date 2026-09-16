@@ -15,16 +15,16 @@ const SchoolRow: React.FC<SchoolRowProps> = ({ school }): React.JSX.Element => {
       <div className='min-w-0 flex-1'>
         <div className='flex flex-wrap items-baseline gap-x-2'>
           <h3 className='font-medium'>{school.name}</h3>
-          <span className='ml-auto text-xs text-foreground/60'>
+          <span className='ml-auto type-meta text-ink-muted'>
             {school.period}
           </span>
         </div>
-        <p className='mt-1 text-sm font-medium text-foreground'>
+        <p className='mt-1 type-body font-medium text-foreground'>
           {school.field}
         </p>
 
         {school.summary ? (
-          <p className='mt-1.5 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
+          <p className='mt-1.5 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
             {school.summary}
           </p>
         ) : null}

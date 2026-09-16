@@ -72,7 +72,7 @@ const ResumeTabs: React.FC<ResumeTabsProps> = ({
           className={
             active === tab.id
               ? 'relative z-10 cursor-pointer rounded-full py-1 text-sm text-foreground'
-              : 'relative z-10 cursor-pointer rounded-full py-1 text-sm text-foreground/60 transition-colors hover:text-foreground/85'
+              : 'relative z-10 cursor-pointer rounded-full py-1 text-sm text-ink-muted transition-colors hover:text-ink'
           }
         >
           {tab.label}

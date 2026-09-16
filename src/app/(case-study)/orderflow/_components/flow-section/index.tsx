@@ -8,10 +8,10 @@ import QueueDiagram from './partials/queue-diagram';
 const FlowSection: React.FC = (): React.JSX.Element => {
   return (
     <section className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
-      <h2 className='font-display text-lg font-semibold tracking-tight'>
+      <h2 className='type-heading'>
         How an order moves
       </h2>
-      <p className='mt-2 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
+      <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
         The request ends as soon as the order is stored. Everything after that
         happens in the background, one event at a time.
       </p>
@@ -20,7 +20,7 @@ const FlowSection: React.FC = (): React.JSX.Element => {
         <QueueDiagram />
       </div>
 
-      <ul className='mt-6'>
+      <ul className='mt-5'>
         {orderflowProcesses.map((process) => (
           <SpecRow
             key={process.name}
