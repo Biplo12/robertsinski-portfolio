@@ -54,9 +54,9 @@ void main() {
   gloss /= 7.0;
 
   vec2 offset = (vUv - uPointer) * vec2(uAspect, 1.0);
-  float near = 1.0 - smoothstep(0.0, 0.38, length(offset));
+  float near = 1.0 - smoothstep(0.0, 0.34, length(offset));
 
-  fragColor = vec4(TINT * gloss * near * near * uStrength * 11.0, 1.0);
+  fragColor = vec4(TINT * gloss * near * near * uStrength * 5.5, 1.0);
 }`;
 
 const compile = (
