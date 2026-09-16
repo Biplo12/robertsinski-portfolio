@@ -9,22 +9,25 @@ interface SchoolRowProps {
 
 const SchoolRow: React.FC<SchoolRowProps> = ({ school }): React.JSX.Element => {
   return (
-    <li className='flex gap-3 border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0'>
-      <LogoTile src={school.logo} name={school.name} />
+    <li className='grid gap-x-10 gap-y-4 border-t border-white/8 py-7 first:border-t-0 first:pt-0 last:pb-0 sm:grid-cols-[15rem_1fr]'>
+      <div className='flex items-start gap-3'>
+        <LogoTile src={school.logo} name={school.name} />
 
-      <div className='min-w-0 flex-1'>
-        <div className='flex flex-wrap items-baseline gap-x-2'>
-          <h3 className='type-body font-semibold'>{school.name}</h3>
-          <span className='ml-auto type-meta text-ink-muted'>
-            {school.period}
-          </span>
+        <div className='min-w-0'>
+          <h3 className='type-body font-semibold text-ink-strong'>
+            {school.name}
+          </h3>
+          <p className='mt-1 type-meta text-ink-faint'>{school.period}</p>
         </div>
-        <p className='mt-1 type-body font-medium text-foreground'>
+      </div>
+
+      <div className='min-w-0'>
+        <h4 className='type-body font-semibold text-ink-strong'>
           {school.field}
-        </p>
+        </h4>
 
         {school.summary ? (
-          <p className='mt-1.5 max-w-[62ch] type-body text-ink-muted'>
+          <p className='mt-2 max-w-[68ch] type-body text-ink-muted'>
             {school.summary}
           </p>
         ) : null}
