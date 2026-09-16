@@ -18,13 +18,13 @@ const HomelabSection: React.FC = (): React.JSX.Element => {
         </Link>
       </div>
 
-      <p className='mt-5 max-w-[62ch] type-body text-ink'>
+      <p className='mt-5 max-w-[70ch] type-body text-ink'>
         One machine at home runs the media library, the house automation, the
         cameras and my files. Proxmox underneath, services in Docker, cameras
         processed on the GPU, backups on their own box.
       </p>
 
-      <p className='mt-3 max-w-[62ch] type-body text-ink'>
+      <p className='mt-3 max-w-[70ch] type-body text-ink'>
         There are two domains. One resolves only inside the house and I reach it
         from anywhere over NetBird. The other sits behind Cloudflare, for the
         few things other people use, like Jellyfin and Plex.

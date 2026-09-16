@@ -10,7 +10,7 @@ const TechSection: React.FC = (): React.JSX.Element => {
       <h2 className='type-heading'>
         Tools I use
       </h2>
-      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
+      <p className='mt-2 max-w-[70ch] type-body text-ink-muted'>
         What I reach for on most projects.
       </p>
 
