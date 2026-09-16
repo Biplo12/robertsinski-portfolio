@@ -1,20 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="0.85">
-      <stop offset="0.1" stop-color="#5499c7"/>
-      <stop offset="0.31" stop-color="#062e6b"/>
-      <stop offset="0.69" stop-color="#054277"/>
-      <stop offset="1" stop-color="#43799b"/>
+    <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="0.9">
+      <stop offset="0.05" stop-color="#6aa9d4"/>
+      <stop offset="0.38" stop-color="#062e6b"/>
+      <stop offset="0.72" stop-color="#054277"/>
+      <stop offset="1" stop-color="#2f6791"/>
     </linearGradient>
-    <linearGradient id="fold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#d8efff" stop-opacity=".55"/>
-      <stop offset="0.55" stop-color="#d8efff" stop-opacity="0"/>
+    <linearGradient id="sheen" x1="0.1" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#dbf0ff" stop-opacity=".5"/>
+      <stop offset="0.6" stop-color="#dbf0ff" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="15" fill="#000"/>
-  <rect x="2" y="2" width="60" height="60" rx="13" fill="url(#cloth)"/>
-  <path d="M2 34c14-4 22-14 26-32h20C42 22 26 38 2 46z" fill="url(#fold)"/>
-  <text x="32" y="44" text-anchor="middle"
-        font-family="Segoe UI, Helvetica, Arial, sans-serif"
-        font-size="31" font-weight="700" letter-spacing="-1.5" fill="#fff">RS</text>
+
+  <rect width="64" height="64" rx="15" fill="url(#cloth)"/>
+  <path d="M0 30C15 26 25 15 30 0h16C40 22 22 36 0 44z" fill="url(#sheen)"/>
+
+  <!-- Terminal prompt: chevron and caret. -->
+  <path d="M18 22l11 10-11 10" fill="none" stroke="#fff" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 42h12" fill="none" stroke="#fff" stroke-width="6"
+        stroke-linecap="round" opacity=".85"/>
 </svg>
