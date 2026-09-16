@@ -6,6 +6,7 @@ import ContactButton from './partials/contact-button';
 import GithubButton from './partials/github-button';
 import KlapsLogo from './partials/klaps-logo';
 import LocationPill from './partials/location-pill';
+import Portrait from './partials/portrait';
 import ResumeButton from './partials/resume-button';
 import SatinBackdrop from './partials/satin-backdrop';
 import WorkButton from './partials/work-button';
@@ -16,10 +17,14 @@ const HeroSection: React.FC = (): React.JSX.Element => {
       <article className='on-cloth stack-loose relative isolate w-full overflow-hidden rounded-[2.25rem] px-7 py-14 shadow-[0_40px_120px_-40px_rgb(6_40_92/0.8)] sm:rounded-[74px] sm:px-16 sm:py-20'>
         <SatinBackdrop />
 
-        <p className='type-meta flex flex-wrap items-center gap-2 text-ink-strong'>
-          Fullstack developer
-          <LocationPill />
-        </p>
+        <div className='flex items-start justify-between gap-6'>
+          <p className='type-meta flex flex-wrap items-center gap-2 text-ink-strong'>
+            Fullstack developer
+            <LocationPill />
+          </p>
+
+          <Portrait />
+        </div>
 
         <h1 className='type-display text-ink-strong'>
           <span className='text-ink-faint'>hey, </span>

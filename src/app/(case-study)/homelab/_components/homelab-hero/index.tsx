@@ -4,7 +4,7 @@ import React from 'react';
 
 const HomelabHero: React.FC = (): React.JSX.Element => {
   return (
-    <article className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
+    <article className='section-panel px-8 pt-7 pb-8'>
       <Link
         href='/'
         className='inline-flex items-center gap-1.5 type-meta text-ink-muted transition-colors hover:text-foreground'

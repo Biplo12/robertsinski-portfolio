@@ -1,47 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <!-- Same dye as the hero card. -->
-    <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="0.9">
-      <stop offset="0.05" stop-color="#6aa9d4"/>
-      <stop offset="0.36" stop-color="#062e6b"/>
-      <stop offset="0.72" stop-color="#054277"/>
-      <stop offset="1" stop-color="#2f6791"/>
+    <linearGradient id="tile" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#2f7fbe"/>
+      <stop offset="1" stop-color="#0a2f66"/>
     </linearGradient>
-
-    <linearGradient id="crest" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#dff2ff" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#dff2ff" stop-opacity=".85"/>
-      <stop offset="1" stop-color="#dff2ff" stop-opacity="0"/>
-    </linearGradient>
-
-    <linearGradient id="shade" x1="1" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#01142f" stop-opacity=".7"/>
-      <stop offset="1" stop-color="#01142f" stop-opacity="0"/>
-    </linearGradient>
-
-    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="3.2"/>
-    </filter>
-
-    <clipPath id="tile">
-      <rect width="64" height="64" rx="15"/>
-    </clipPath>
   </defs>
-
-  <g clip-path="url(#tile)">
-    <rect width="64" height="64" fill="url(#cloth)"/>
-    <!-- Folds: lit crests running with the weave, one shadow across them. -->
-    <path d="M-8 26C10 20 22 8 28-10l12 6C32 16 14 32-8 40z"
-          fill="url(#crest)" filter="url(#soft)"/>
-    <path d="M6 72C26 62 40 44 48 20l10 8C50 52 34 68 18 78z"
-          fill="url(#crest)" filter="url(#soft)" opacity=".55"/>
-    <path d="M40 -6C48 18 56 34 74 44v28C44 58 32 30 28 0z"
-          fill="url(#shade)" filter="url(#soft)"/>
-  </g>
-
-  <text x="32" y="44" text-anchor="middle"
-        font-family="Segoe UI, Helvetica, Arial, sans-serif"
-        font-size="30" font-weight="700" letter-spacing="-1.8"
-        fill="#fff" stroke="#03203f" stroke-width="3.4"
-        paint-order="stroke" stroke-linejoin="round">RS</text>
+  <rect width="64" height="64" rx="14" fill="url(#tile)"/>
+  <text x="32" y="45.5" text-anchor="middle"
+        font-family="Helvetica, Arial, sans-serif"
+        font-size="38" font-weight="700" fill="#fff">R</text>
 </svg>

@@ -8,7 +8,7 @@ import ProjectRow from './partials/project-row';
 
 const ProjectsSection: React.FC = (): React.JSX.Element => {
   return (
-    <section id='projects' className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
+    <section id='projects' className='section-panel px-8 pt-7 pb-8'>
       <div className='flex items-baseline justify-between gap-3'>
         <h2 className='type-heading'>
           Projects

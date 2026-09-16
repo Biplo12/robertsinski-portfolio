@@ -10,7 +10,7 @@ const GithubSection = async (): Promise<React.JSX.Element> => {
   const contributions = await getContributions('Biplo12');
 
   return (
-    <section className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
+    <section className='section-panel px-8 pt-7 pb-8'>
       <div className='flex flex-wrap items-baseline justify-between gap-3'>
         <h2 className='type-heading'>
           GitHub activity

@@ -37,7 +37,7 @@ const ResumeSection: React.FC<ResumeSectionProps> = ({
   }, [active]);
 
   return (
-    <section className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
+    <section className='section-panel px-8 pt-7 pb-8'>
       <h2 className='sr-only'>Background</h2>
       <ResumeTabs active={active} onChange={setActive} />
 

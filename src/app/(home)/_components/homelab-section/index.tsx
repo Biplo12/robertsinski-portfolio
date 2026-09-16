@@ -4,7 +4,7 @@ import React from 'react';
 
 const HomelabSection: React.FC = (): React.JSX.Element => {
   return (
-    <section className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
+    <section className='section-panel px-8 pt-7 pb-8'>
       <div className='flex flex-wrap items-baseline justify-between gap-3'>
         <h2 className='type-heading'>
           Homelab

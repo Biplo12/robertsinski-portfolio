@@ -5,7 +5,7 @@ import { boardflowDecisions } from '@/lib/boardflow';
 
 const DecisionsSection: React.FC = (): React.JSX.Element => {
   return (
-    <section className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
+    <section className='section-panel px-8 pt-7 pb-8'>
       <h2 className='type-heading'>
         Decisions
       </h2>
