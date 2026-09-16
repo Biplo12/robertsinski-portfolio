@@ -51,6 +51,13 @@
 
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
@@ -101,7 +108,7 @@
 
 .type-display {
   text-wrap: balance;
-  font-size: clamp(2.5rem, 6.4vw, 4.25rem);
+  font-size: clamp(2.25rem, 5.2vw, 3.5rem);
   font-weight: 600;
   line-height: var(--leading-flat);
   letter-spacing: -0.042em;

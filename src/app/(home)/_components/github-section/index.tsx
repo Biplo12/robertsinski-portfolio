@@ -5,6 +5,7 @@ import { getContributions } from '@/lib/github';
 import { site } from '@/lib/site';
 
 import ActivityLegend from './partials/activity-legend';
+import ActivityStats from './partials/activity-stats';
 import ContributionGrid from './partials/contribution-grid';
 
 const GithubSection = async (): Promise<React.JSX.Element> => {
@@ -37,7 +38,8 @@ const GithubSection = async (): Promise<React.JSX.Element> => {
             <ContributionGrid weeks={contributions.weeks} />
           </div>
 
-          <div className='mt-5 flex justify-end'>
+          <div className='mt-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3'>
+            <ActivityStats weeks={contributions.weeks} />
             <ActivityLegend />
           </div>
         </>

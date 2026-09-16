@@ -3,17 +3,16 @@ import React from 'react';
 import { site } from '@/lib/site';
 
 import ContactButton from './partials/contact-button';
-import GithubButton from './partials/github-button';
 import KlapsLogo from './partials/klaps-logo';
 import LocationPill from './partials/location-pill';
 import ResumeButton from './partials/resume-button';
 import SatinBackdrop from './partials/satin-backdrop';
-import WorkButton from './partials/work-button';
+import SocialLinks from './partials/social-links';
 
 const HeroSection: React.FC = (): React.JSX.Element => {
   return (
     <section className='w-full'>
-      <article className='on-cloth stack-loose relative isolate w-full overflow-hidden rounded-[2.25rem] px-7 py-14 shadow-[0_40px_120px_-40px_rgb(6_40_92/0.8)] sm:rounded-[74px] sm:px-16 sm:py-20'>
+      <article className='on-cloth stack-base relative isolate w-full overflow-hidden rounded-[2.25rem] px-7 py-11 shadow-[0_40px_120px_-40px_rgb(6_40_92/0.8)] sm:rounded-[74px] sm:px-14 sm:py-14'>
         <SatinBackdrop />
 
         <p className='type-meta flex flex-wrap items-center gap-2 text-ink-strong'>
@@ -71,9 +70,11 @@ const HeroSection: React.FC = (): React.JSX.Element => {
 
         <div className='flex flex-wrap items-center gap-3'>
           <ContactButton />
-          <WorkButton />
-          <GithubButton />
           <ResumeButton />
+
+          <span className='ml-1 flex items-center gap-2'>
+            <SocialLinks />
+          </span>
         </div>
       </article>
     </section>

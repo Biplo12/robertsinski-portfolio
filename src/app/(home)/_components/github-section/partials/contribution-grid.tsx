@@ -50,8 +50,8 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
 }): React.JSX.Element => {
   return (
     <div className='-mx-1 overflow-x-auto px-1 pb-1 sm:mx-0 sm:overflow-visible sm:px-0 sm:pb-0'>
-      <div className='w-full min-w-[760px] sm:min-w-0'>
-        <div className='flex w-full gap-[2px]'>
+      <div className='w-full min-w-[700px] sm:min-w-0'>
+        <div className='flex w-full gap-[4px]'>
           {weeks.map((week, index) => {
             const previous = weeks[index - 1];
             const isNewMonth =
@@ -62,7 +62,7 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
             return (
               <span
                 key={week[0].date}
-                className='flex-1 type-micro whitespace-nowrap text-ink-muted'
+                className='flex-1 type-micro whitespace-nowrap text-ink-faint'
               >
                 {isNewMonth ? monthName(week[0].date) : ''}
               </span>
@@ -70,9 +70,9 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
           })}
         </div>
 
-        <div className='mt-1 flex w-full gap-[2px]'>
+        <div className='mt-1 flex w-full gap-[4px]'>
           {weeks.map((week, index) => (
-            <div key={week[0].date} className='flex flex-1 flex-col gap-[2px]'>
+            <div key={week[0].date} className='flex flex-1 flex-col gap-[4px]'>
               {week.map((day) => (
                 <span
                   key={day.date}
@@ -83,7 +83,7 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
                   />
                   <span
                     role='tooltip'
-                    className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/10 bg-[#14161d] px-2 py-1 type-meta whitespace-nowrap text-foreground shadow-lg sm:group-hover:block ${tooltipAnchor(index, weeks.length)}`}
+                    className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/12 bg-[#101116] px-2 py-1 type-meta whitespace-nowrap text-foreground shadow-lg sm:group-hover:block ${tooltipAnchor(index, weeks.length)}`}
                   >
                     {dayLabel(day)}
                   </span>

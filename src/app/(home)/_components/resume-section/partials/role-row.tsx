@@ -40,23 +40,22 @@ const RoleRow: React.FC<RoleRowProps> = ({
         ) : null}
       </span>
 
+      {/* Repeated in full on every row. Blanking the cell for a second title
+          at the same employer left a hole, and a rule bridging the gap read as
+          a stray line. */}
       <span className='flex items-center gap-2.5 sm:items-start'>
-        {leading ? (
-          <>
-            {job.logo ? (
-              <LogoTile
-                src={job.logo}
-                name={job.company}
-                bleed={job.logoBleed}
-                small
-              />
-            ) : null}
-
-            <span className='type-body font-semibold text-ink-strong'>
-              {job.company}
-            </span>
-          </>
+        {job.logo ? (
+          <LogoTile
+            src={job.logo}
+            name={job.company}
+            bleed={job.logoBleed}
+            small
+          />
         ) : null}
+
+        <span className='type-body font-semibold text-ink-strong'>
+          {job.company}
+        </span>
       </span>
 
       <span className='min-w-0'>
