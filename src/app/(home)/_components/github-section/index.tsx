@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SectionHeader from '@/components/section-header';
 import { getContributions } from '@/lib/github';
 import { site } from '@/lib/site';
 
@@ -11,27 +12,28 @@ const GithubSection = async (): Promise<React.JSX.Element> => {
 
   return (
     <section className='section-panel px-8 pt-7 pb-8'>
-      <div className='flex flex-wrap items-baseline justify-between gap-3'>
-        <h2 className='type-heading'>
-          GitHub activity
-        </h2>
-        <a
-          href={site.github}
-          target='_blank'
-          rel='noreferrer'
-          className='type-meta text-ink-muted transition-colors hover:text-foreground'
-        >
-          @Biplo12
-        </a>
-      </div>
+      <SectionHeader
+        title='GitHub activity'
+        note={
+          contributions
+            ? `${contributions.total} contributions in the last year.`
+            : undefined
+        }
+        action={
+          <a
+            href={site.github}
+            target='_blank'
+            rel='noreferrer'
+            className='type-meta text-ink-muted transition-colors hover:text-foreground'
+          >
+            @Biplo12
+          </a>
+        }
+      />
 
       {contributions ? (
         <>
-          <p className='mt-2 max-w-[70ch] type-body text-ink-muted'>
-            {contributions.total} contributions in the last year.
-          </p>
-
-          <div className='mt-5'>
+          <div className='mt-7'>
             <ContributionGrid weeks={contributions.weeks} />
           </div>
 

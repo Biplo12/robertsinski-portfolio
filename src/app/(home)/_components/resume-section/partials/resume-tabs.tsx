@@ -50,16 +50,8 @@ const ResumeTabs: React.FC<ResumeTabsProps> = ({
       role='tablist'
       aria-label='Background'
       onKeyDown={handleKeyDown}
-      className='glass-pill relative grid w-full grid-cols-2 rounded-full p-1 sm:w-56'
+      className='flex gap-7 border-b border-white/8'
     >
-      <span
-        aria-hidden
-        className='absolute top-1 bottom-1 left-1 w-[calc(50%-0.25rem)] rounded-full bg-white/20 transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none'
-        style={{
-          transform:
-            active === 'education' ? 'translateX(100%)' : 'translateX(0)',
-        }}
-      />
       {tabs.map((tab) => (
         <button
           key={tab.id}
@@ -69,11 +61,11 @@ const ResumeTabs: React.FC<ResumeTabsProps> = ({
           aria-selected={active === tab.id}
           aria-controls={`resume-panel-${tab.id}`}
           onClick={() => onChange(tab.id)}
-          className={
+          className={`relative cursor-pointer pb-3 type-meta transition-colors after:absolute after:inset-x-0 after:-bottom-px after:h-px after:content-[''] ${
             active === tab.id
-              ? 'relative z-10 cursor-pointer rounded-full py-1 type-meta text-foreground'
-              : 'relative z-10 cursor-pointer rounded-full py-1 type-meta text-ink-muted transition-colors hover:text-ink'
-          }
+              ? 'text-ink-strong after:bg-ink-strong'
+              : 'text-ink-faint after:bg-transparent hover:text-ink'
+          }`}
         >
           {tab.label}
         </button>

@@ -1,21 +1,22 @@
 import Image from 'next/image';
 import React from 'react';
 
+import SectionHeader from '@/components/section-header';
 import { site } from '@/lib/site';
 
 const OutsideWorkSection: React.FC = (): React.JSX.Element => {
   return (
     <section className='section-panel flex flex-col gap-7 px-8 pt-7 pb-8 sm:flex-row sm:items-start sm:gap-10'>
       <div className='min-w-0 flex-1'>
-        <h2 className='type-heading'>Outside work</h2>
+        <SectionHeader title='Outside work' />
 
-        <p className='mt-5 max-w-[70ch] type-body text-ink'>
+        <p className='mt-7 max-w-[70ch] type-body text-ink-muted'>
           I watch a lot of films, mostly older ones. That is where Klaps came
           from: I kept missing screenings I would have gone to if I had known
           about them.
         </p>
 
-        <p className='mt-3 max-w-[70ch] type-body text-ink'>
+        <p className='mt-3 max-w-[70ch] type-body text-ink-muted'>
           I also started playing golf recently. Still bad at it, and still
           going back.
         </p>
