@@ -45,18 +45,27 @@ const vec3 TINT = vec3(0.76, 0.87, 1.0);
 void main() {
   vec2 tex = vec2(vUv.x, 1.0 - vUv.y);
 
+  // The cloth peaks around 0.62 luminance, so normalise against that before
+  // the curve: raising raw luminance to a power makes already-bright folds
+  // run away while dark ones stay black.
   float gloss = 0.0;
   for (int i = -3; i <= 3; i++) {
     vec3 cloth = texture(uCloth, tex + ALONG * float(i) * 0.007).rgb;
     float luminance = dot(cloth, vec3(0.299, 0.587, 0.114));
-    gloss += luminance * luminance * luminance;
+    float normalised = clamp(luminance / 0.62, 0.0, 1.0);
+    gloss += normalised * normalised;
   }
   gloss /= 7.0;
 
   vec2 offset = (vUv - uPointer) * vec2(uAspect, 1.0);
-  float near = 1.0 - smoothstep(0.0, 0.3, length(offset));
+  float near = 1.0 - smoothstep(0.0, 0.32, length(offset));
 
-  fragColor = vec4(TINT * gloss * near * near * uStrength * 2.6, 1.0);
+  // Reinhard: rolls the highlight off asymptotically instead of clipping, so
+  // the bright folds near the buttons stop blowing out.
+  float light = gloss * near * near * uStrength * 1.6;
+  light = light / (1.0 + light);
+
+  fragColor = vec4(TINT * light * 0.85, 1.0);
 }`;
 
 const compile = (
