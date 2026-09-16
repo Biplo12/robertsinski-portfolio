@@ -22,13 +22,13 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
         </h1>
       </div>
 
-      <p className='mt-5 max-w-[62ch] leading-relaxed text-ink'>
+      <p className='mt-5 max-w-[62ch] type-body text-ink'>
         A whiteboard several people draw on at the same time. Shapes, notes,
         text, images and freehand strokes, with cursors moving around and
         changes showing up as they happen.
       </p>
 
-      <p className='mt-3 max-w-[62ch] leading-relaxed text-ink'>
+      <p className='mt-3 max-w-[62ch] type-body text-ink'>
         Boards live inside organisations you can invite people to. Anything on a
         board can be selected, resized, deleted or moved between layers, and the
         whole board has undo and redo.

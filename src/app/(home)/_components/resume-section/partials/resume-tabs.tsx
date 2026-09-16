@@ -71,8 +71,8 @@ const ResumeTabs: React.FC<ResumeTabsProps> = ({
           onClick={() => onChange(tab.id)}
           className={
             active === tab.id
-              ? 'relative z-10 cursor-pointer rounded-full py-1 text-sm text-foreground'
-              : 'relative z-10 cursor-pointer rounded-full py-1 text-sm text-ink-muted transition-colors hover:text-ink'
+              ? 'relative z-10 cursor-pointer rounded-full py-1 type-meta text-foreground'
+              : 'relative z-10 cursor-pointer rounded-full py-1 type-meta text-ink-muted transition-colors hover:text-ink'
           }
         >
           {tab.label}

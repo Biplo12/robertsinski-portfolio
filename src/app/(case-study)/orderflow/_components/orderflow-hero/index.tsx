@@ -17,7 +17,7 @@ const OrderflowHero: React.FC = (): React.JSX.Element => {
         orderflow-engine
       </h1>
 
-      <p className='mt-5 max-w-[62ch] leading-relaxed text-ink'>
+      <p className='mt-5 max-w-[62ch] type-body text-ink'>
         Placing an order means reserving stock, charging a card and sending a
         confirmation. Do all three inside one request and every one of them can
         go wrong: the request waits for all three, a crash halfway through loses
@@ -25,7 +25,7 @@ const OrderflowHero: React.FC = (): React.JSX.Element => {
         for a payment that never arrived.
       </p>
 
-      <p className='mt-3 max-w-[62ch] leading-relaxed text-ink'>
+      <p className='mt-3 max-w-[62ch] type-body text-ink'>
         This splits the job into five processes that talk only through a queue.
         No service calls another directly, and any of them can be restarted
         mid-flow without losing an order or repeating a charge.

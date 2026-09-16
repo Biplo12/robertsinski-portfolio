@@ -16,7 +16,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
   return (
     <li className='border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0'>
       <div className='flex items-baseline justify-between gap-3'>
-        <h3 className='flex min-w-0 flex-wrap items-center gap-x-2 font-medium'>
+        <h3 className='flex min-w-0 flex-wrap items-center gap-x-2 type-body font-semibold'>
           <span className='flex items-center gap-2'>
             {project.logo ? (
               <LogoTile
@@ -77,7 +77,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
         </div>
       </div>
 
-      <p className='mt-1.5 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+      <p className='mt-1.5 max-w-[62ch] type-body text-ink-muted'>
         {project.description}
       </p>
 

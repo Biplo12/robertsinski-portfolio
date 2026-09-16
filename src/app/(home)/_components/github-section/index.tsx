@@ -27,7 +27,7 @@ const GithubSection = async (): Promise<React.JSX.Element> => {
 
       {contributions ? (
         <>
-          <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+          <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
             {contributions.total} contributions in the last year.
           </p>
 
@@ -40,7 +40,7 @@ const GithubSection = async (): Promise<React.JSX.Element> => {
           </div>
         </>
       ) : (
-        <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+        <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
           The contribution graph is unavailable right now. The commits are on my
           profile.
         </p>

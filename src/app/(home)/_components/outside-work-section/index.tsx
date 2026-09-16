@@ -7,13 +7,13 @@ const OutsideWorkSection: React.FC = (): React.JSX.Element => {
         Outside work
       </h2>
 
-      <p className='mt-5 max-w-[62ch] leading-relaxed text-ink'>
+      <p className='mt-5 max-w-[62ch] type-body text-ink'>
         I watch a lot of films, mostly older ones. That is where Klaps came
         from: I kept missing screenings I would have gone to if I had known
         about them.
       </p>
 
-      <p className='mt-3 max-w-[62ch] leading-relaxed text-ink'>
+      <p className='mt-3 max-w-[62ch] type-body text-ink'>
         I also started playing golf recently. Still bad at it, and still going
         back.
       </p>

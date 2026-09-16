@@ -27,7 +27,7 @@ const ServiceTile: React.FC<ServiceTileProps> = ({
           className='size-4.5'
         />
       </span>
-      <span className='min-w-0 text-sm leading-tight'>{name}</span>
+      <span className='min-w-0 type-meta'>{name}</span>
     </li>
   );
 };

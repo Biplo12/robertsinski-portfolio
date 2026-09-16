@@ -11,7 +11,7 @@ const FlowSection: React.FC = (): React.JSX.Element => {
       <h2 className='type-heading'>
         How an order moves
       </h2>
-      <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
         The request ends as soon as the order is stored. Everything after that
         happens in the background, one event at a time.
       </p>

@@ -9,7 +9,7 @@ const DecisionsSection: React.FC = (): React.JSX.Element => {
       <h2 className='type-heading'>
         Decisions
       </h2>
-      <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
         Five choices that shaped the rest of the project.
       </p>
 

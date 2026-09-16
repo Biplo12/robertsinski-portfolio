@@ -20,7 +20,7 @@ const RoleBody: React.FC<{ role: ResolvedRole }> = ({
       </div>
 
       {role.summary ? (
-        <p className='mt-1.5 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+        <p className='mt-1.5 max-w-[62ch] type-body text-ink-muted'>
           {role.summary}
         </p>
       ) : null}
@@ -52,7 +52,7 @@ const JobRow: React.FC<JobRowProps> = ({ job }): React.JSX.Element => {
 
       <div className='min-w-0 flex-1'>
         <div className='flex flex-wrap items-baseline gap-x-2'>
-          <h3 className='font-medium'>{job.company}</h3>
+          <h3 className='type-body font-semibold'>{job.company}</h3>
           {job.contract ? (
             <span className='rounded-full border border-white/15 px-1.5 py-0.5 type-micro text-ink-muted'>
               contract

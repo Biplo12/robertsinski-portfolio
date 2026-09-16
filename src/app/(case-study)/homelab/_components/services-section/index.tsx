@@ -10,7 +10,7 @@ const ServicesSection: React.FC = (): React.JSX.Element => {
       <h2 className='type-heading'>
         What runs on it
       </h2>
-      <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
         Grouped by what each part is for.
       </p>
 

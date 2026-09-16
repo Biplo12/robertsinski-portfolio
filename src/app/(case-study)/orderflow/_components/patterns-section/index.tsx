@@ -9,7 +9,7 @@ const PatternsSection: React.FC = (): React.JSX.Element => {
       <h2 className='type-heading'>
         What keeps it correct
       </h2>
-      <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
         Five guarantees, one for each way a step can fail.
       </p>
 

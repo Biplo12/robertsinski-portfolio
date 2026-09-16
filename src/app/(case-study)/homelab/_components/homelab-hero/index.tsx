@@ -17,14 +17,14 @@ const HomelabHero: React.FC = (): React.JSX.Element => {
         Homelab
       </h1>
 
-      <p className='mt-5 max-w-[62ch] leading-relaxed text-ink'>
+      <p className='mt-5 max-w-[62ch] type-body text-ink'>
         One machine at home runs the media library, the house automation, the
         cameras and my files. I started it to stop paying for things I could
         host myself, and kept going because it is a good place to try things out
         when nobody else depends on them.
       </p>
 
-      <p className='mt-3 max-w-[62ch] leading-relaxed text-ink'>
+      <p className='mt-3 max-w-[62ch] type-body text-ink'>
         It is also where I picked up the things web projects never asked me for:
         virtual machines, a reverse proxy, DNS, certificates, backups, and
         getting in from outside without opening the router.

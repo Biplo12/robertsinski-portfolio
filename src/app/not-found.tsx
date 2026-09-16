@@ -12,7 +12,7 @@ const NotFound: React.FC = (): React.JSX.Element => {
           Nothing here.
         </h1>
 
-        <p className='mt-5 leading-relaxed text-ink'>
+        <p className='mt-5 text-ink'>
           That page does not exist.
         </p>
 

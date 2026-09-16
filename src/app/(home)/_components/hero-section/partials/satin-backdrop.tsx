@@ -25,7 +25,7 @@ const SatinBackdrop: React.FC = (): React.JSX.Element => {
         fill
         priority
         sizes='(max-width: 1080px) 100vw, 1080px'
-        className='object-cover'
+        className='rounded-[inherit] object-cover'
       />
       <div className='satin-glow absolute inset-0' />
       <div className='card-edge' />

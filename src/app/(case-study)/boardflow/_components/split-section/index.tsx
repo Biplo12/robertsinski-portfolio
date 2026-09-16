@@ -9,7 +9,7 @@ const SplitSection: React.FC = (): React.JSX.Element => {
       <h2 className='type-heading'>
         Where each thing lives
       </h2>
-      <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
         Three layers. What goes where depends on how long it has to last.
       </p>
 

@@ -160,7 +160,10 @@
 }
 
 /* Satin: a lit fold of blue silk, the surface the hero headline sits on. */
+/* Promoting the card to its own layer makes Chrome antialias the rounded
+   clip; without it the 74px corner saws through the image underneath. */
 .satin {
+  transform: translateZ(0);
   background-image: linear-gradient(
     124deg,
     #5499c7 10%,

@@ -19,7 +19,7 @@ const SpecRow: React.FC<SpecRowProps> = ({
   return (
     <li className='border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0'>
       <div className='flex flex-wrap items-baseline gap-x-2'>
-        <h3 className='font-medium'>{name}</h3>
+        <h3 className='type-body font-semibold'>{name}</h3>
         {tag ? (
           <span className='rounded-full border border-white/15 px-1.5 py-0.5 type-micro text-ink-muted'>
             {tag}
@@ -38,7 +38,7 @@ const SpecRow: React.FC<SpecRowProps> = ({
         ) : null}
       </div>
 
-      <p className='mt-1.5 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+      <p className='mt-1.5 max-w-[62ch] type-body text-ink-muted'>
         {role}
       </p>
 

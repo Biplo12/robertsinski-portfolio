@@ -14,7 +14,7 @@ const SchoolRow: React.FC<SchoolRowProps> = ({ school }): React.JSX.Element => {
 
       <div className='min-w-0 flex-1'>
         <div className='flex flex-wrap items-baseline gap-x-2'>
-          <h3 className='font-medium'>{school.name}</h3>
+          <h3 className='type-body font-semibold'>{school.name}</h3>
           <span className='ml-auto type-meta text-ink-muted'>
             {school.period}
           </span>
@@ -24,7 +24,7 @@ const SchoolRow: React.FC<SchoolRowProps> = ({ school }): React.JSX.Element => {
         </p>
 
         {school.summary ? (
-          <p className='mt-1.5 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+          <p className='mt-1.5 max-w-[62ch] type-body text-ink-muted'>
             {school.summary}
           </p>
         ) : null}

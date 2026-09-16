@@ -8,7 +8,7 @@ const LayersSection: React.FC = (): React.JSX.Element => {
       <h2 className='type-heading'>
         How it is put together
       </h2>
-      <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
         Two ways in from outside, and what sits under the services.
       </p>
 

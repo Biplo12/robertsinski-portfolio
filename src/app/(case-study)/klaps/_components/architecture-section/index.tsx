@@ -11,7 +11,7 @@ const ArchitectureSection: React.FC = (): React.JSX.Element => {
       <h2 className='type-heading'>
         How it fits together
       </h2>
-      <p className='mt-2 max-w-[62ch] type-body leading-relaxed text-ink-muted'>
+      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
         Six services, and data moves in one direction. Only the collector
         writes, only the API owns the database, everything else reads.
       </p>
