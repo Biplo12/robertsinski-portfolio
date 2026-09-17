@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { site } from '@/lib/site';
+
 import ContactButton from './partials/contact-button';
 import LocationPill from './partials/location-pill';
 import ResumeButton from './partials/resume-button';
@@ -48,7 +50,16 @@ const HeroSection: React.FC = (): React.JSX.Element => {
           </span>
         </div>
 
-        <p className='type-meta text-ink-muted'>
+        <p className='type-meta flex flex-wrap items-center gap-x-2 gap-y-1 text-ink-muted'>
+          {site.availability ? (
+            <span className='inline-flex items-center gap-2 text-ink'>
+              <span
+                aria-hidden
+                className='size-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_3px_rgb(52_211_153/0.2)]'
+              />
+              {site.availability}.
+            </span>
+          ) : null}
           Write to me and I answer within a day.
         </p>
       </article>

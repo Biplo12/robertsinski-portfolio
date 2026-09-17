@@ -462,3 +462,45 @@
     transform: none;
   }
 }
+
+/* One rule instead of a tooltip element per day. The grid draws 365 cells and
+   each carried its own hidden span, which was most of the weight of the page;
+   the label rides on the cell and only exists while the pointer is on it. */
+.day::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 20;
+  display: none;
+  margin-bottom: 0.5rem;
+  transform: translateX(-50%);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 0.375rem;
+  background: #101116;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: var(--leading-normal);
+  white-space: nowrap;
+  color: var(--foreground);
+  box-shadow: 0 10px 20px -6px rgb(0 0 0 / 0.55);
+}
+
+/* A tooltip near the edge would hang off the grid. */
+.day-start::after {
+  left: 0;
+  transform: none;
+}
+
+.day-end::after {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+@media (min-width: 640px) {
+  .day:hover::after {
+    display: block;
+  }
+}

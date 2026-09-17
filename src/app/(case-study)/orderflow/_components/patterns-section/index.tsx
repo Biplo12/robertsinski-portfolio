@@ -10,7 +10,7 @@ const PatternsSection: React.FC = (): React.JSX.Element => {
     <section className='section-panel grid gap-x-10 gap-y-6 px-8 pt-7 pb-8 sm:grid-cols-[16rem_minmax(0,1fr)]'>
       <SectionHeader
         title='What keeps it correct'
-        note='Five guarantees, one for each way a step can fail.'
+        note='Four guarantees, one for each way a step can fail.'
         stacked
       />
 

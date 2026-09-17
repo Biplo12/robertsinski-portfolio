@@ -32,17 +32,17 @@ const dayLabel = (day: ContributionDay): string => {
   return `${day.count} contributions on ${when}`;
 };
 
-/* A tooltip is wider than a few columns, so it only fits centred over the middle third. */
+/* A tooltip is wider than a few columns, so the ones near an edge align to it. */
 const tooltipAnchor = (index: number, total: number): string => {
   if (index < total / 3) {
-    return 'left-0';
+    return 'day-start';
   }
 
   if (index > (total * 2) / 3) {
-    return 'right-0';
+    return 'day-end';
   }
 
-  return 'left-1/2 -translate-x-1/2';
+  return '';
 };
 
 const ContributionGrid: React.FC<ContributionGridProps> = ({
@@ -76,18 +76,9 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
               {week.map((day) => (
                 <span
                   key={day.date}
-                  className='group relative aspect-square w-full'
-                >
-                  <span
-                    className={`block size-full rounded-[2px] ${levelClass[day.level]}`}
-                  />
-                  <span
-                    role='tooltip'
-                    className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/12 bg-[#101116] px-2 py-1 type-meta whitespace-nowrap text-foreground shadow-lg sm:group-hover:block ${tooltipAnchor(index, weeks.length)}`}
-                  >
-                    {dayLabel(day)}
-                  </span>
-                </span>
+                  data-label={dayLabel(day)}
+                  className={`day relative block aspect-square w-full rounded-[2px] ${levelClass[day.level]} ${tooltipAnchor(index, weeks.length)}`}
+                />
               ))}
             </div>
           ))}

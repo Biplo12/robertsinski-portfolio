@@ -45,12 +45,8 @@ export const orderflowPatterns: Note[] = [
     body: 'A queue that guarantees delivery will eventually deliver twice. Each worker keys its state on the order id with a unique constraint, so a repeated event is a no-op instead of a second reservation or a second charge. This is what makes retries safe.',
   },
   {
-    title: 'Failures retry with a growing delay',
-    body: 'A timeout usually means the other side is busy, not broken, so failing immediately only moves the problem. A job gets five attempts with the wait doubling from one second, which gives whatever went wrong time to come back.',
-  },
-  {
-    title: 'Jobs that keep failing get moved aside',
-    body: 'A job that will never succeed, because the data is wrong rather than the service down, would retry forever and hold up everything behind it. After the fifth attempt it lands in the dead_letters table where it can be read, and the queue moves on.',
+    title: 'Retries have a limit, and somewhere to land',
+    body: 'A timeout usually means the other side is busy, not broken, so a job gets five attempts with the wait doubling from one second. A job that will never succeed would retry forever and hold up everything behind it, so after the fifth it lands in the dead_letters table and the queue moves on.',
   },
   {
     title: 'A failed payment undoes the reservation',
