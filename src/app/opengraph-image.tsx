@@ -31,8 +31,6 @@ const Image = async (): Promise<ImageResponse> => {
           height: '100%',
           display: 'flex',
           background: '#000',
-          padding: 40,
-          boxSizing: 'border-box',
         }}
       >
         <div
@@ -41,9 +39,8 @@ const Image = async (): Promise<ImageResponse> => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            padding: 88,
+            padding: 96,
             boxSizing: 'border-box',
-            borderRadius: 56,
             backgroundImage: `url(${clothSrc})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
