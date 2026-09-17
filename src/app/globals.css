@@ -415,42 +415,40 @@
 
 /* The hero is on screen at load, so it arrives on its own: the card first,
    then its lines one after another. */
-.hero-in {
-  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-}
-
-.hero-in > * {
-  animation: rise 0.66s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+/* Only the lines move. The card holds a canvas, a large texture and two blend
+   layers, and animating that whole subtree at once is what made the entrance
+   stutter. The card is simply there; its contents arrive. */
+.hero-in > * + * {
+  animation: rise 0.44s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
 .hero-in > *:nth-child(2) {
-  animation-delay: 0.18s;
+  animation-delay: 0.04s;
 }
 
 .hero-in > *:nth-child(3) {
-  animation-delay: 0.26s;
+  animation-delay: 0.09s;
 }
 
 .hero-in > *:nth-child(4) {
-  animation-delay: 0.34s;
+  animation-delay: 0.14s;
 }
 
 .hero-in > *:nth-child(5) {
-  animation-delay: 0.42s;
+  animation-delay: 0.19s;
 }
 
 .hero-in > *:nth-child(6) {
-  animation-delay: 0.5s;
+  animation-delay: 0.24s;
 }
 
 .hero-in > *:nth-child(7) {
-  animation-delay: 0.58s;
+  animation-delay: 0.29s;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .rise,
-  .hero-in,
-  .hero-in > * {
+  .hero-in > * + * {
     animation: none;
   }
 

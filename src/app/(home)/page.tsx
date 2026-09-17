@@ -17,7 +17,7 @@ const HomePage: React.FC = (): React.JSX.Element => {
   return (
     <div className='flex flex-1 flex-col items-center px-6 pt-8 pb-16'>
       <SiteNav />
-      <div className='rise w-full max-w-[1080px]'>
+      <div className='w-full max-w-[1080px]'>
         <HeroSection />
       </div>
 
