@@ -59,10 +59,10 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
       </div>
 
       <ProjectShot
-        src='/shots/boardflow-canvas.jpg'
-        alt='A BoardFlow board: the toolbar, the style panel, a drawn diagram and a cursor labelled with a name'
-        width={1720}
-        height={930}
+        src='/shots/boardflow-q3.jpg'
+        alt='A BoardFlow board: a flow of shapes and a decision diamond, sticky notes, freehand marks and a timeline, with two people in the room'
+        width={1800}
+        height={855}
       />
     </article>
   );

@@ -397,15 +397,17 @@
   animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
-/* Sections wait until the reader reaches them. The attribute is set by the
-   Reveal component; without it nothing is hidden, so the page still reads if
-   the script never runs. */
-[data-reveal='out'] {
+/* Sections wait until the reader reaches them. They are hidden from the first
+   paint rather than by a script after it: hiding them in an effect meant the
+   browser painted them, then hid them, then brought them back, which is the
+   flicker. Without the script nothing hides at all, see the noscript rule in
+   the layout. */
+.reveal > * {
   opacity: 0;
   transform: translateY(1.25rem);
 }
 
-[data-reveal='in'] {
+.reveal > [data-reveal='in'] {
   opacity: 1;
   transform: none;
   transition:
@@ -452,8 +454,8 @@
     animation: none;
   }
 
-  [data-reveal='out'],
-  [data-reveal='in'] {
+  .reveal > *,
+  .reveal > [data-reveal='in'] {
     opacity: 1;
     transform: none;
     transition: none;

@@ -78,6 +78,12 @@ const RootLayout: React.FC<LayoutProps<'/'>> = ({
     >
       {/* Browser extensions inject attributes here before React hydrates. */}
       <body className='min-h-full flex flex-col' suppressHydrationWarning>
+        {/* Sections are hidden until the script reveals them, so without it
+            they would never appear. */}
+        <noscript>
+          <style>{'.reveal > * { opacity: 1; transform: none; }'}</style>
+        </noscript>
+
         {children}
         <Analytics />
         <script

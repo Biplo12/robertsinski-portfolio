@@ -29,8 +29,6 @@ const Reveal: React.FC<RevealProps> = ({
       return;
     }
 
-    for (const section of sections) section.dataset.reveal = 'out';
-
     /* Measured on scroll rather than with an observer. A jump from the rail
        takes a section from below the fold to above it without ever
        intersecting, and an observer reports no change for that, so skipped
@@ -72,7 +70,7 @@ const Reveal: React.FC<RevealProps> = ({
   }, []);
 
   return (
-    <div ref={host} className={className}>
+    <div ref={host} className={`reveal ${className ?? ''}`}>
       {children}
     </div>
   );
