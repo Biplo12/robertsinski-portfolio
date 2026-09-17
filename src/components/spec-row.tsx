@@ -1,5 +1,6 @@
-import { ArrowUpRight } from 'lucide-react';
 import React from 'react';
+
+import { ArrowUpRight } from 'lucide-react';
 
 interface SpecRowProps {
   name: string;

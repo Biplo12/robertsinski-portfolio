@@ -1,5 +1,6 @@
-import type { Metadata } from 'next';
 import React from 'react';
+
+import type { Metadata } from 'next';
 
 import FindingsSection from './_components/findings-section';
 import MethodSection from './_components/method-section';

@@ -1,5 +1,6 @@
-import type { Metadata } from 'next';
 import React from 'react';
+
+import type { Metadata } from 'next';
 
 import FlowSection from './_components/flow-section';
 import OrderflowHero from './_components/orderflow-hero';

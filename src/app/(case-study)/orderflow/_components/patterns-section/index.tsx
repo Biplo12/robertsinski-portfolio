@@ -1,8 +1,8 @@
 import React from 'react';
 
+import NumberedRow from '@/components/numbered-row';
 import SectionHeader from '@/components/section-header';
 
-import NumberedRow from '@/components/numbered-row';
 import { orderflowPatterns } from '@/lib/orderflow';
 
 const PatternsSection: React.FC = (): React.JSX.Element => {
@@ -15,16 +15,16 @@ const PatternsSection: React.FC = (): React.JSX.Element => {
       />
 
       <div className='min-w-0'>
-      <ul className='mt-5'>
-        {orderflowPatterns.map((pattern, index) => (
-          <NumberedRow
-            key={pattern.title}
-            index={index}
-            title={pattern.title}
-            body={pattern.body}
-          />
-        ))}
-      </ul>
+        <ul className='mt-5'>
+          {orderflowPatterns.map((pattern, index) => (
+            <NumberedRow
+              key={pattern.title}
+              index={index}
+              title={pattern.title}
+              body={pattern.body}
+            />
+          ))}
+        </ul>
       </div>
     </section>
   );

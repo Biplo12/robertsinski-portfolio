@@ -1,8 +1,9 @@
 import React from 'react';
 
 import LogoTile from '@/components/logo-tile';
-import { formatYears } from '@/lib/duration';
+
 import type { ResolvedJob, ResolvedRole } from '@/lib/experience';
+import { formatYears } from '@/lib/duration';
 
 interface RoleRowProps {
   job: ResolvedJob;

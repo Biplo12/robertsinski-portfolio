@@ -9,11 +9,7 @@ interface FactBandProps {
   facts: Fact[];
 }
 
-/**
- * A row of headline numbers. A case study that only explains how something is
- * built never says how much of it there is, and that is the part a reader
- * remembers.
- */
+/** A row of headline numbers: how much of the thing there actually is. */
 const FactBand: React.FC<FactBandProps> = ({ facts }): React.JSX.Element => {
   return (
     <dl className='grid grid-cols-2 gap-x-8 gap-y-7 sm:grid-cols-4'>

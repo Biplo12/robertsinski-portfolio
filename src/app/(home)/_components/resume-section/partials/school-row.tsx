@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LogoTile from '@/components/logo-tile';
+
 import type { School } from '@/lib/education';
 
 interface SchoolRowProps {

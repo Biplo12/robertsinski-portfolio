@@ -1,9 +1,11 @@
-import { ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
 import React from 'react';
+
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
 
 import LogoTile from '@/components/logo-tile';
+
 import type { Project } from '@/lib/projects';
 
 interface ProjectRowProps {

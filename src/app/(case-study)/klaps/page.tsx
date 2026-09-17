@@ -1,5 +1,6 @@
-import type { Metadata } from 'next';
 import React from 'react';
+
+import type { Metadata } from 'next';
 
 import ArchitectureSection from './_components/architecture-section';
 import DecisionsSection from './_components/decisions-section';

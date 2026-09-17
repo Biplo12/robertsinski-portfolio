@@ -1,3 +1,5 @@
+import type { Note, Term } from './case-study';
+
 export interface ScalingStage {
   step: number;
   change: string;
@@ -56,12 +58,7 @@ export const scalingStages: ScalingStage[] = [
   },
 ];
 
-export interface ScalingFinding {
-  title: string;
-  body: string;
-}
-
-export const scalingFindings: ScalingFinding[] = [
+export const scalingFindings: Note[] = [
   {
     title: 'The bottleneck was never where I expected',
     body: 'The task list ran 42 queries for one page, so that looked like the thing to fix. The query plan disagreed. One of those 42 was a sequential scan that threw away two million rows and took 62 of the 82 ms; the other 41 came to about 15 ms together. Removing the N+1 was worth doing and it came two steps later, after the index that actually mattered.',
@@ -88,12 +85,7 @@ export const scalingFindings: ScalingFinding[] = [
   },
 ];
 
-export interface ScalingFact {
-  label: string;
-  body: string;
-}
-
-export const scalingMethod: ScalingFact[] = [
+export const scalingMethod: Term[] = [
   {
     label: 'Machine',
     body: 'One desktop, six cores and twelve threads, 32 GB of RAM, NVMe disk. Node on Windows, Postgres and Redis in Docker. Nothing was upgraded between step 1 and step 8.',

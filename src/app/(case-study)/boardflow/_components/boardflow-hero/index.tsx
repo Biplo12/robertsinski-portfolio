@@ -1,10 +1,11 @@
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
 import React from 'react';
+
+import Link from 'next/link';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
 import FactBand from '@/components/fact-band';
 import LogoTile from '@/components/logo-tile';
-import ProjectShot from '@/components/project-shot';
+
 import { boardflowFacts } from '@/lib/boardflow';
 
 const BoardflowHero: React.FC = (): React.JSX.Element => {
@@ -52,17 +53,9 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
         </a>
       </div>
 
-      {/* The numbers sit between the claim and the proof, the same as Klaps. */}
       <div className='mt-9 border-t border-white/10 pt-7'>
         <FactBand facts={boardflowFacts} />
       </div>
-
-      <ProjectShot
-        src='/shots/boardflow-landing.jpg'
-        alt='A BoardFlow board with notes, a drawn line and two cursors labelled with names'
-        width={2030}
-        height={1029}
-      />
     </article>
   );
 };

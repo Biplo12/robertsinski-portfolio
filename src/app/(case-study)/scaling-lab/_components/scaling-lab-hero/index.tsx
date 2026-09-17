@@ -1,6 +1,7 @@
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
 import React from 'react';
+
+import Link from 'next/link';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
 const ScalingLabHero: React.FC = (): React.JSX.Element => {
   return (

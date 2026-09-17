@@ -1,8 +1,8 @@
 import React from 'react';
 
+import NumberedRow from '@/components/numbered-row';
 import SectionHeader from '@/components/section-header';
 
-import NumberedRow from '@/components/numbered-row';
 import { klapsDecisions } from '@/lib/klaps';
 
 const DecisionsSection: React.FC = (): React.JSX.Element => {
@@ -15,16 +15,16 @@ const DecisionsSection: React.FC = (): React.JSX.Element => {
       />
 
       <div className='min-w-0'>
-      <ul className='mt-5'>
-        {klapsDecisions.map((decision, index) => (
-          <NumberedRow
-            key={decision.title}
-            index={index}
-            title={decision.title}
-            body={decision.body}
-          />
-        ))}
-      </ul>
+        <ul className='mt-5'>
+          {klapsDecisions.map((decision, index) => (
+            <NumberedRow
+              key={decision.title}
+              index={index}
+              title={decision.title}
+              body={decision.body}
+            />
+          ))}
+        </ul>
       </div>
     </section>
   );

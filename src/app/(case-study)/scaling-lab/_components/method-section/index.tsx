@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SectionHeader from '@/components/section-header';
+
 import { scalingMethod } from '@/lib/scaling-lab';
 
 const MethodSection: React.FC = (): React.JSX.Element => {
@@ -12,8 +13,6 @@ const MethodSection: React.FC = (): React.JSX.Element => {
         stacked
       />
 
-      {/* A description list, because these really are terms and their
-          definitions, and the last one is what the numbers cannot tell you. */}
       <dl className='mt-5 min-w-0'>
         {scalingMethod.map((fact) => (
           <div

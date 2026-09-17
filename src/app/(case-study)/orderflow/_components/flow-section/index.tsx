@@ -2,8 +2,8 @@ import React from 'react';
 
 import DiagramFrame from '@/components/diagram-frame';
 import SectionHeader from '@/components/section-header';
-
 import SpecRow from '@/components/spec-row';
+
 import { orderflowProcesses } from '@/lib/orderflow';
 
 import QueueDiagram from './partials/queue-diagram';

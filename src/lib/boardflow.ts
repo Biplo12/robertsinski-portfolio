@@ -1,51 +1,34 @@
-export interface BoardflowFact {
-  value: string;
-  label: string;
-}
+import type { Fact, Note, Part } from './case-study';
 
-/* What the thing has actually gathered, plus the one product number that is
-   countable from the code. */
-export const boardflowFacts: BoardflowFact[] = [
+export const boardflowFacts: Fact[] = [
   { value: '200+', label: 'accounts' },
   { value: '150+', label: 'boards' },
   { value: '6', label: 'tools on the canvas' },
+  { value: '2', label: 'stores, split by lifetime' },
 ];
 
-export interface BoardflowPart {
-  name: string;
-  role: string;
-  stack: string[];
-}
-
-export interface BoardflowDecision {
-  title: string;
-  body: string;
-}
-
-export const boardflowParts: BoardflowPart[] = [
+export const boardflowParts: Part[] = [
   {
     name: 'The canvas',
-    role: 'Shapes, notes, text, images and freehand drawing, with selecting, resizing, deleting and reordering. Strokes are rendered from pressure points rather than plain lines.',
+    role: 'Six tools, with selecting, resizing, deleting and reordering. Strokes are rendered from pressure points rather than plain lines.',
     stack: ['Next.js 16', 'perfect-freehand', 'Redux Toolkit'],
   },
   {
     name: 'The room',
-    role: 'Everything on a board that other people need to see right now: cursors, current selections, the stroke being drawn, and the layers themselves.',
+    role: 'Everything other people need to see right now, the layers included.',
     stack: ['Liveblocks', 'LiveMap', 'LiveList'],
   },
   {
     name: 'The database',
-    role: 'Everything that has to survive a refresh: accounts, organisations, memberships, invitations, boards and favourites, with a search index on board titles scoped per organisation.',
+    role: 'Everything that has to survive a refresh, plus a search index on board titles scoped per organisation.',
     stack: ['Convex', 'Convex Auth'],
   },
 ];
 
-/* Three, not five. The ones left are the parts of a shared canvas that are
-   actually hard; access rules and the auth migration are in the repository. */
-export const boardflowDecisions: BoardflowDecision[] = [
+export const boardflowDecisions: Note[] = [
   {
     title: 'Two backends, one for each kind of data',
-    body: 'Organisations, boards and who belongs where live in Convex, because they have to still be there the next time you open the app. Cursors, selections and the shapes on the canvas live in a Liveblocks room, because they change dozens of times a second and only matter while someone is looking. Trying to keep both in one place would mean either writing every mouse move to a database or losing the board on refresh.',
+    body: 'Keeping both in one place means one of two bad days: writing every mouse move to a database, or losing the whole board on a refresh. The split is by lifetime, and it decides everything else on this page.',
   },
   {
     title: 'A stroke becomes a layer only once it is finished',

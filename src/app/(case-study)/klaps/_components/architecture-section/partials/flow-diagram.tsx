@@ -10,10 +10,8 @@ interface Node {
 const BOX_W = 124;
 const BOX_H = 52;
 
-/* A hub, not a chain. Everything on the right hangs off the API, which is the
-   rule this project is built on: one writer, one owner of the database. An
-   earlier version ran these boxes in a line and invented a path from the admin
-   panel through the bot to the mailer, which does not exist. */
+/* A hub, not a chain: one writer, one owner of the database, everything else
+   hanging off the API. */
 const nodes: Node[] = [
   { x: 6, y: 114, label: 'Cinema sites', note: '563 of them' },
   { x: 162, y: 114, label: 'Collector', note: 'schedule, enrich' },
@@ -26,7 +24,6 @@ const nodes: Node[] = [
 
 const arrows = ['M 130 140 L 158 140', 'M 286 140 L 314 140'];
 
-/* Off the spine: the site and the bot only read. */
 const reads = ['M 460 62 L 486 62', 'M 460 218 L 486 218'];
 
 const ARROW = 'url(#arrow)';
@@ -84,8 +81,7 @@ const FlowDiagram: React.FC = (): React.JSX.Element => {
           />
         ))}
 
-        {/* The stub and the spine carry no head: they are the fan-out, not a
-            direction of their own. */}
+        {/* The fan-out itself carries no arrowhead. */}
         <path
           d='M 442 140 L 460 140'
           fill='none'
@@ -99,8 +95,7 @@ const FlowDiagram: React.FC = (): React.JSX.Element => {
           strokeWidth='1.5'
         />
 
-        {/* Two heads: the admin panel is the one reader that writes back, and
-            it goes through the API like everything else. */}
+        {/* The admin panel is the one reader that also writes back. */}
         <path
           d='M 460 140 L 486 140'
           fill='none'

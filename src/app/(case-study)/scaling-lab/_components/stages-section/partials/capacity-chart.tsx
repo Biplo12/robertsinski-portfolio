@@ -2,19 +2,16 @@ import React from 'react';
 
 import { scalingStages } from '@/lib/scaling-lab';
 
-/* Sized like the other diagrams on these pages: the viewBox is about 660 wide,
-   so it scales to roughly 1.4x inside a panel and the type lands near the rest
-   of the page instead of towering over it. */
+/* A viewBox near 660, like the other diagrams, so the type lands at about the
+   size of the page around it. */
 const ROW = 26;
 const BAR = 14;
 const PLOT_X = 22;
 const PLOT_W = 500;
 const WIDTH = 660;
 
-/* Linear, measured from zero. A log scale would fit step 1 on the page, but it
-   would also flatten the thing the chart is for: the first version served one
-   request a second, and against 2600 that is supposed to look like nothing.
-   The value sits at the end of every bar, so no row is ever blank. */
+/* Linear and measured from zero. A log scale would fit step 1 on the page and
+   flatten the point of the chart, so every bar is labelled instead. */
 const max = Math.max(...scalingStages.map((stage) => stage.capacity));
 const height = scalingStages.length * ROW;
 

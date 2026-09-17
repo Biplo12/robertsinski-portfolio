@@ -1,10 +1,12 @@
-import { ArrowLeft, ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
 import React from 'react';
+
+import Link from 'next/link';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
 import FactBand from '@/components/fact-band';
 import LogoTile from '@/components/logo-tile';
 import ProjectClip from '@/components/project-clip';
+
 import { klapsFacts } from '@/lib/klaps';
 
 const KlapsHero: React.FC = (): React.JSX.Element => {
@@ -53,8 +55,6 @@ const KlapsHero: React.FC = (): React.JSX.Element => {
         </a>
       </div>
 
-      {/* The numbers sit between the claim and the proof, so a reader who only
-          looks at the top of the page still leaves with the size of it. */}
       <div className='mt-9 border-t border-white/10 pt-7'>
         <FactBand facts={klapsFacts} />
       </div>

@@ -1,15 +1,6 @@
-export interface OrderflowProcess {
-  name: string;
-  role: string;
-  stack: string[];
-}
+import type { Note, Part } from './case-study';
 
-export interface OrderflowPattern {
-  title: string;
-  body: string;
-}
-
-export const orderflowProcesses: OrderflowProcess[] = [
+export const orderflowProcesses: Part[] = [
   {
     name: 'api',
     role: 'Takes the order over HTTP and answers 202 straight away. It writes the order row and the event that announces it in a single transaction, then it is done.',
@@ -37,7 +28,7 @@ export const orderflowProcesses: OrderflowProcess[] = [
   },
 ];
 
-export const orderflowPatterns: OrderflowPattern[] = [
+export const orderflowPatterns: Note[] = [
   {
     title: 'The order and its event are written together',
     body: 'Writing the order to the database and publishing the event are two different systems, so doing them one after another leaves a window where the process can die and the order exists with nobody told about it. Both go into the same transaction: the row and an entry in an outbox table. Publishing happens later, from that table.',

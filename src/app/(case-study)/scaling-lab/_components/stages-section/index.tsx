@@ -2,6 +2,7 @@ import React from 'react';
 
 import DiagramFrame from '@/components/diagram-frame';
 import SectionHeader from '@/components/section-header';
+
 import { scalingStages } from '@/lib/scaling-lab';
 
 import CapacityChart from './partials/capacity-chart';
@@ -20,9 +21,8 @@ const StagesSection: React.FC = (): React.JSX.Element => {
         </DiagramFrame>
       </div>
 
-      {/* The chart shows the shape, the table holds the numbers. p99 is at 2000
-          requests asked for, which only means something once the server could
-          be pushed that far. */}
+      {/* p99 is at 2000 requests asked for, which only means anything once the
+          server could be pushed that far. */}
       <div className='-mx-1 mt-7 overflow-x-auto px-1'>
         <table className='w-full min-w-[520px] border-collapse text-left'>
           <thead>

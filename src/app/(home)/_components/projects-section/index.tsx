@@ -1,7 +1,9 @@
-import { ArrowUpRight } from 'lucide-react';
 import React from 'react';
 
+import { ArrowUpRight } from 'lucide-react';
+
 import SectionHeader from '@/components/section-header';
+
 import { projects } from '@/lib/projects';
 import { site } from '@/lib/site';
 

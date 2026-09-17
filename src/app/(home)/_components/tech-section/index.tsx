@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SectionHeader from '@/components/section-header';
+
 import { tech } from '@/lib/tech';
 
 import TechTile from './partials/tech-tile';

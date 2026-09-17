@@ -1,33 +1,13 @@
-export interface KlapsFact {
-  value: string;
-  label: string;
-}
+import type { Fact, Note, Part } from './case-study';
 
-/* The numbers come from the project itself. Change them here and the case
-   study, the card and the collector's line all move together. */
-export const klapsFacts: KlapsFact[] = [
+export const klapsFacts: Fact[] = [
   { value: '563', label: 'cinemas covered' },
   { value: '316', label: 'cities' },
   { value: '300k+', label: 'screenings, refreshed daily' },
   { value: '6', label: 'services, all mine' },
 ];
 
-export interface KlapsService {
-  name: string;
-  role: string;
-  stack: string[];
-  repo?: string;
-  tag?: string;
-}
-
-export interface KlapsDecision {
-  title: string;
-  body: string;
-}
-
-/* One line each. What any of them does in detail is in its own repository;
-   this list is here so the diagram above has names. */
-export const klapsServices: KlapsService[] = [
+export const klapsServices: Part[] = [
   {
     name: 'klaps.space',
     role: 'Listings by city and cinema, film pages, and a map.',
@@ -66,9 +46,7 @@ export const klapsServices: KlapsService[] = [
   },
 ];
 
-/* Three, not five. A decision without a number or a before and after is a
-   description, and those are in the repositories. */
-export const klapsDecisions: KlapsDecision[] = [
+export const klapsDecisions: Note[] = [
   {
     title: 'One writer, and it writes in batches',
     body: 'One pass touches hundreds of thousands of rows across cities, cinemas, showtimes and films, so the collector sends batch upserts instead of a request per record. Everything else reads. The admin panel is the exception and it edits through the same API.',

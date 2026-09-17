@@ -2,8 +2,8 @@ import React from 'react';
 
 import DiagramFrame from '@/components/diagram-frame';
 import SectionHeader from '@/components/section-header';
-
 import SpecRow from '@/components/spec-row';
+
 import { klapsServices } from '@/lib/klaps';
 
 import FlowDiagram from './partials/flow-diagram';

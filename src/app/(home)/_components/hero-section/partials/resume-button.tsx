@@ -1,5 +1,6 @@
-import { Download } from 'lucide-react';
 import React from 'react';
+
+import { Download } from 'lucide-react';
 
 import { site } from '@/lib/site';
 

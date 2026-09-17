@@ -2,6 +2,7 @@ import React from 'react';
 
 import NumberedRow from '@/components/numbered-row';
 import SectionHeader from '@/components/section-header';
+
 import { scalingFindings } from '@/lib/scaling-lab';
 
 const FindingsSection: React.FC = (): React.JSX.Element => {

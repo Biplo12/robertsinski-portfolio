@@ -5,12 +5,7 @@ interface DiagramFrameProps {
   caption?: string;
 }
 
-/**
- * A surface for a diagram or a chart. Drawn straight onto the panel they read
- * as loose shapes floating above whatever list follows them, with nothing to
- * say where the picture ends. The frame is the same fill and border the
- * project cards use, so a figure looks like a figure everywhere.
- */
+/** A surface for a diagram or a chart, so a figure reads as a figure. */
 const DiagramFrame: React.FC<DiagramFrameProps> = ({
   children,
   caption,

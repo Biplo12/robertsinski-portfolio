@@ -1,9 +1,10 @@
-import type { Metadata } from 'next';
 import React from 'react';
+
+import type { Metadata } from 'next';
 
 import BoardflowHero from './_components/boardflow-hero';
 import DecisionsSection from './_components/decisions-section';
-import SplitSection from './_components/split-section';
+import LayersSection from './_components/layers-section';
 
 const description =
   'How BoardFlow is built: what belongs in a realtime room, what belongs in a database, and where the line between them runs.';
@@ -25,7 +26,7 @@ const BoardflowPage: React.FC = (): React.JSX.Element => {
     <div className='flex flex-1 justify-center px-6 pt-8 pb-16'>
       <div className='stagger flex w-full max-w-[1080px] flex-col'>
         <BoardflowHero />
-        <SplitSection />
+        <LayersSection />
         <DecisionsSection />
       </div>
     </div>
