@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import LogoTile from '@/components/logo-tile';
+import ProjectShot from '@/components/project-shot';
 
 const BoardflowHero: React.FC = (): React.JSX.Element => {
   return (
@@ -54,6 +55,13 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
           <ArrowUpRight aria-hidden className='size-3.5' />
         </a>
       </div>
+
+      <ProjectShot
+        src='/shots/boardflow.png'
+        alt='The BoardFlow landing page'
+        width={1440}
+        height={900}
+      />
     </article>
   );
 };

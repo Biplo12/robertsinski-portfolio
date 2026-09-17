@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import LogoTile from '@/components/logo-tile';
+import ProjectShot from '@/components/project-shot';
 
 const KlapsHero: React.FC = (): React.JSX.Element => {
   return (
@@ -55,6 +56,13 @@ const KlapsHero: React.FC = (): React.JSX.Element => {
           <ArrowUpRight aria-hidden className='size-3.5' />
         </a>
       </div>
+
+      <ProjectShot
+        src='/shots/klaps.jpg'
+        alt='klaps.space showing the next screening'
+        width={1440}
+        height={900}
+      />
     </article>
   );
 };

@@ -37,7 +37,7 @@ const ResumeSection: React.FC<ResumeSectionProps> = ({
   }, [active]);
 
   return (
-    <section className='section-panel px-8 pt-7 pb-8'>
+    <section id='experience' className='section-panel scroll-mt-24 px-8 pt-7 pb-8'>
       <h2 className='sr-only'>Background</h2>
       <ResumeTabs active={active} onChange={setActive} />
 

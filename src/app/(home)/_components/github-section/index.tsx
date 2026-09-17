@@ -12,7 +12,7 @@ const GithubSection = async (): Promise<React.JSX.Element> => {
   const contributions = await getContributions('Biplo12');
 
   return (
-    <section className='section-panel px-8 pt-7 pb-8'>
+    <section id='activity' className='section-panel scroll-mt-24 px-8 pt-7 pb-8'>
       <SectionHeader
         title='GitHub activity'
         note={

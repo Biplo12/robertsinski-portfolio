@@ -7,7 +7,7 @@ import TechTile from './partials/tech-tile';
 
 const TechSection: React.FC = (): React.JSX.Element => {
   return (
-    <section className='section-panel px-8 pt-7 pb-8'>
+    <section id='tools' className='section-panel scroll-mt-24 px-8 pt-7 pb-8'>
       <SectionHeader
         title='Tools I use'
         note='What I reach for on most projects.'

@@ -9,7 +9,7 @@ import ProjectRow from './partials/project-row';
 
 const ProjectsSection: React.FC = (): React.JSX.Element => {
   return (
-    <section id='projects' className='section-panel px-8 pt-7 pb-8'>
+    <section id='projects' className='section-panel scroll-mt-24 px-8 pt-7 pb-8'>
       <SectionHeader
         title='Projects'
         note='Things I built and still run.'
