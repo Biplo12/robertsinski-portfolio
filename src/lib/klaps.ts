@@ -4,7 +4,7 @@ export const klapsFacts: Fact[] = [
   { value: '563', label: 'cinemas covered' },
   { value: '316', label: 'cities' },
   { value: '300k+', label: 'screenings, refreshed daily' },
-  { value: '6', label: 'services, all mine' },
+  { value: '6', label: 'services I run' },
 ];
 
 export const klapsServices: Part[] = [
@@ -34,7 +34,7 @@ export const klapsServices: Part[] = [
   },
   {
     name: 'studio.klaps.space',
-    role: 'Admin panel over what the collector saved, with the traffic numbers next to it.',
+    role: 'Admin panel for everything the collector saved, with the traffic numbers next to it.',
     stack: ['Next.js 16', 'TanStack Table', 'jose'],
     tag: 'private',
   },
@@ -48,15 +48,15 @@ export const klapsServices: Part[] = [
 
 export const klapsDecisions: Note[] = [
   {
-    title: 'One writer, and it writes in batches',
-    body: 'One pass touches hundreds of thousands of rows across cities, cinemas, showtimes and films, so the collector sends batch upserts instead of a request per record. Everything else reads. The admin panel is the exception and it edits through the same API.',
+    title: 'Only the collector writes',
+    body: 'One pass touches hundreds of thousands of rows across cities, cinemas, showtimes and films. One request per record would take hours, so the collector sends them in batches. Everything else only reads. The admin panel can edit, but it goes through the same API as everyone else.',
   },
   {
     title: 'Collecting runs in its own container',
-    body: 'The collector reads sites I do not control, so changed markup or a slow response would sit inside API requests. It runs on its own schedule instead, and when collecting breaks the site keeps serving what it already has.',
+    body: 'The collector reads sites I do not control. If it ran inside the API, changed markup or a slow response would hold up requests from real visitors. It runs in its own container on its own schedule, so when collecting breaks the site keeps serving what it already has.',
   },
   {
-    title: 'The model writes the text, the code writes the variety',
-    body: 'Gemini asked for a few hundred descriptions returns a few hundred versions of one sentence. The angle is chosen in code and seeded by the name of the film, and the text is requested again unless it lands between 130 and 160 characters.',
+    title: 'Gemini writes the descriptions',
+    body: 'Ask it for a few hundred in a row and you get a few hundred versions of one sentence. So the angle for each film is picked in code, seeded by the title, and passed in with the prompt. If the text comes back shorter than 130 characters or longer than 160, it is asked for again.',
   },
 ];

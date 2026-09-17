@@ -61,7 +61,7 @@ export const scalingStages: ScalingStage[] = [
 export const scalingFindings: Note[] = [
   {
     title: 'The bottleneck was never where I expected',
-    body: 'The task list ran 42 queries for one page, so that looked like the thing to fix. The query plan disagreed. One of those 42 was a sequential scan that threw away two million rows and took 62 of the 82 ms; the other 41 came to about 15 ms together. Removing the N+1 was worth doing and it came two steps later, after the index that actually mattered.',
+    body: 'The task list ran 42 queries for one page, so that looked like the thing to fix. The query plan disagreed. One of those 42 was a sequential scan that threw away two million rows and took 62 of the 82 ms; the other 41 came to about 15 ms together. Removing the N+1 was still worth doing, but it came two steps later, after the index that was the real problem.',
   },
   {
     title: 'Four indexes for one query',
@@ -72,12 +72,12 @@ export const scalingFindings: Note[] = [
     body: 'At 800 requests per second six workers dropped nothing and four dropped 120, so six looked better. At 1200 it reversed: six dropped 649 and four dropped 70. The load generator runs on the same machine and needs cores too, so the extra workers were competing with the thing measuring them.',
   },
   {
-    title: 'One step added no throughput and stayed in',
+    title: 'One step added no throughput and I kept it',
     body: 'Query timeouts, a pool timeout and a cap on requests in flight left capacity exactly where it was, at 1200. What changed is what happens above it. At 2000 asked for, p99 went from 1230 ms to 209 ms, and the server answers 503 with a retry-after instead of computing replies nobody is waiting for. Health and metrics skip the check, so a load balancer does not pull the server out at the worst possible moment.',
   },
   {
     title: 'My own code was 1.2 percent of the CPU',
-    body: 'Node was the limit and the database was idle, so I profiled it. Drizzle took 37 percent, writing to sockets 18.3, Node internals 13, the Postgres driver 9.9, Fastify 9.7. The single most expensive function in the server was a type check inside the ORM, at 13.9 percent, called every time it builds a piece of SQL. Preparing the statements once and handing Fastify a response schema took capacity from 1200 to 2000 without touching the database.',
+    body: 'The database was idle and Node was the limit, so I profiled Node. Drizzle took 37 percent, writing to sockets 18.3, Node internals 13, the Postgres driver 9.9, Fastify 9.7. The single most expensive function in the server was a type check inside the ORM, at 13.9 percent, called every time it builds a piece of SQL. Preparing the statements once and handing Fastify a response schema took capacity from 1200 to 2000 without touching the database.',
   },
   {
     title: 'The cache TTL turned out not to matter',

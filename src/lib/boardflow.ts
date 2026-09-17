@@ -15,7 +15,7 @@ export const boardflowParts: Part[] = [
   },
   {
     name: 'The room',
-    role: 'Everything other people need to see right now, the layers included.',
+    role: 'Everything other people need to see right now, including the layers themselves.',
     stack: ['Liveblocks', 'LiveMap', 'LiveList'],
   },
   {
@@ -28,11 +28,11 @@ export const boardflowParts: Part[] = [
 export const boardflowDecisions: Note[] = [
   {
     title: 'Two backends, one for each kind of data',
-    body: 'Keeping both in one place means one of two bad days: writing every mouse move to a database, or losing the whole board on a refresh. The split is by lifetime, and it decides everything else on this page.',
+    body: 'Put everything in the database and you are writing every mouse move to disk. Put everything in the realtime room and the board is gone on the next refresh. So the split is by how long a thing has to live, and that choice drives the rest.',
   },
   {
     title: 'A stroke becomes a layer only once it is finished',
-    body: 'While the pencil is down, the points travel as presence, next to the cursor position. Only the finished stroke becomes a layer in storage. Everyone sees the line appear as it is drawn, and the undo history gets one entry for the stroke instead of one for every point along it.',
+    body: 'While the pencil is down, the points are sent the same way as the cursor position. Only the finished stroke is stored as a layer. Everyone still sees the line appear as it is drawn, and undo gets one entry for the whole stroke instead of one per point.',
   },
   {
     title: 'Layer order is its own list',
