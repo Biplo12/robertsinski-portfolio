@@ -1,63 +1,59 @@
 import React from 'react';
 
-import { site } from '@/lib/site';
 
-import KlapsLogo from './partials/klaps-logo';
+import ContactButton from './partials/contact-button';
 import LocationPill from './partials/location-pill';
 import ResumeButton from './partials/resume-button';
+import SatinBackdrop from './partials/satin-backdrop';
 import SocialLinks from './partials/social-links';
 
 const HeroSection: React.FC = (): React.JSX.Element => {
   return (
-    <article className='glass glass-sheen rounded-[2rem] px-8 pt-9 pb-8'>
-      <h1 className='font-display text-[2.5rem] leading-[1.05] font-semibold tracking-tight'>
-        <span className='font-light text-foreground/60'>hey, </span>
-        Robert here.
-      </h1>
+    <section className='w-full'>
+      <article className='hero-in on-cloth stack-base relative isolate w-full overflow-hidden rounded-[2.25rem] px-7 py-11 shadow-[0_28px_70px_-30px_rgb(19_76_122/0.85),0_60px_140px_-50px_rgb(19_76_122/0.6)] sm:rounded-[74px] sm:px-14 sm:py-14'>
+        <SatinBackdrop />
 
-      <p className='mt-5 flex flex-wrap items-center gap-2 text-lg text-foreground/85'>
-        Fullstack developer
-        <LocationPill />
-      </p>
+        <p className='type-lead flex flex-wrap items-center gap-2.5 text-ink-strong'>
+          Fullstack developer
+          <LocationPill />
+        </p>
 
-      <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/85'>
-        I build web apps. Backend and frontend, 4 years so far.
-      </p>
+        <h1 className='type-display text-ink-strong'>
+          <span className='text-ink-faint'>hey, </span>
+          Robert here.
+        </h1>
 
-      <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>
-        Mostly TypeScript, Next.js, NestJS, Fastify, PostgreSQL, MySQL, Redis.
-      </p>
+        <p className='type-lead max-w-[46ch] text-ink'>
+          I build web apps, backend and frontend. Four years so far.
+        </p>
 
-      <p className='mt-3 max-w-[62ch] leading-relaxed text-foreground/85'>
-        In my free time I work on{' '}
-        <a
-          href='https://klaps.space'
-          target='_blank'
-          rel='noreferrer'
-          className='whitespace-nowrap underline decoration-white/25 underline-offset-4 transition-colors hover:decoration-white/60'
-        >
-          <KlapsLogo />
-          Klaps
-        </a>
-        . It shows which old films play in Polish cinemas.
-      </p>
+        <div className='stack-snug type-body max-w-[56ch] text-ink-muted'>
+          <p>
+            Right now I am at Hurtopony. I work on the company store, the
+            panels the team uses to run it, and the scrapers that keep over a
+            million records up to date.
+          </p>
 
-      <p className='mt-5 max-w-[62ch] leading-relaxed text-foreground/85'>
-        If you need something built,{' '}
-        <a
-          href={`mailto:${site.email}`}
-          className='text-signal underline decoration-signal/50 underline-offset-4 hover:decoration-signal'
-        >
-          write to me
-        </a>
-        . I answer within a day.
-      </p>
+          <p>
+            Mostly TypeScript, Next.js, NestJS, Fastify, PostgreSQL, MySQL,
+            Redis.
+          </p>
+        </div>
 
-      <div className='mt-7 flex items-center gap-2'>
-        <ResumeButton />
-        <SocialLinks />
-      </div>
-    </article>
+        <div className='flex flex-wrap items-center gap-3'>
+          <ContactButton />
+          <ResumeButton />
+
+          <span className='ml-1 flex items-center gap-2'>
+            <SocialLinks />
+          </span>
+        </div>
+
+        <p className='type-meta text-ink-muted'>
+          Write to me and I answer within a day.
+        </p>
+      </article>
+    </section>
   );
 };
 

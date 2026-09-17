@@ -1,0 +1,34 @@
+import React from 'react';
+
+import Reveal from '@/components/reveal';
+
+import { caseStudyMetadata } from '@/lib/case-study-page';
+
+import FindingsSection from './_components/findings-section';
+import MethodSection from './_components/method-section';
+import ScalingLabHero from './_components/scaling-lab-hero';
+import StagesSection from './_components/stages-section';
+
+const description =
+  'From 1 to 2600 requests per second on one desktop: eight measured steps on a normal Postgres API, including the one that added no throughput.';
+
+export const metadata = caseStudyMetadata({
+  title: 'ts-api-scaling-lab, a case study',
+  description,
+  path: '/scaling-lab',
+});
+
+const ScalingLabPage: React.FC = (): React.JSX.Element => {
+  return (
+    <div className='flex flex-1 justify-center px-6 pt-8 pb-16'>
+      <Reveal className='flex w-full max-w-[1080px] flex-col'>
+        <ScalingLabHero />
+        <StagesSection />
+        <FindingsSection />
+        <MethodSection />
+      </Reveal>
+    </div>
+  );
+};
+
+export default ScalingLabPage;

@@ -25,6 +25,8 @@ export interface Job {
 
 export interface ResolvedRole extends Role {
   period: string;
+  /** How long the role ran, in the same words a CV uses. */
+  length: string;
 }
 
 export interface ResolvedJob extends Omit<Job, 'roles'> {
@@ -42,7 +44,7 @@ export const experience: Job[] = [
         title: 'Fullstack Developer',
         start: '2025-04',
         summary:
-          'Frontend for the company store and the internal panels around it, and the NestJS service behind them. Also the scrapers and crawlers that keep the data in it current.',
+          'The company store and the panels the team runs it with, plus the NestJS service behind both. A few thousand people use the store every day. The scrapers that feed it hold over a million records.',
         stack: ['Next.js', 'NestJS', 'PostgreSQL', 'Playwright', 'TypeScript'],
       },
     ],
@@ -59,7 +61,7 @@ export const experience: Job[] = [
         start: '2025-01',
         end: '2026-08',
         summary:
-          'Built the site for the game and the wiki that goes with it, plus internal tools the team used day to day. Set up and configured the server everything runs on.',
+          'The site for the game and the wiki next to it, plus the internal tools the team used every day. I set up the server it all runs on.',
         stack: ['Next.js', 'Node', 'TypeScript', 'Docker'],
       },
     ],
@@ -90,7 +92,7 @@ export const experience: Job[] = [
         start: '2024-02',
         end: '2025-04',
         summary:
-          'Built features for company sites and apps. Serverless functions on Firestore and Parse, scripts in Node and Python, smart contract calls from the frontend.',
+          'Features across the company sites and apps. Serverless functions on Firestore and Parse, scripts in Node and Python, and smart contract calls from the frontend.',
         stack: ['Node', 'Python', 'Firestore', 'Parse'],
       },
       {
@@ -98,7 +100,7 @@ export const experience: Job[] = [
         start: '2022-09',
         end: '2024-01',
         summary:
-          'Features for the company sites and apps. Node and Python scripts that took over work done by hand. Testing and bug fixing.',
+          'Smaller features on the same sites and apps, plus Node and Python scripts that took over jobs people had been doing by hand. Testing and bug fixing.',
         stack: ['JavaScript', 'Node', 'Python'],
       },
     ],
@@ -123,6 +125,7 @@ export const resolveExperience = (now: Date = new Date()): ResolvedJob[] => {
       roles: job.roles.map((role) => ({
         ...role,
         period: formatPeriod(role.start, role.end),
+        length: formatDuration(monthsBetween(role.start, role.end ?? today)),
       })),
     };
   });

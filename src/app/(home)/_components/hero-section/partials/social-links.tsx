@@ -1,7 +1,7 @@
 import React from 'react';
+
 import type { IconType } from 'react-icons';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa6';
-import { HiOutlineEnvelope } from 'react-icons/hi2';
 
 import { site } from '@/lib/site';
 
@@ -28,13 +28,10 @@ const links: SocialLink[] = [
     target: '_blank',
     rel: 'noreferrer',
   },
-  {
-    Icon: HiOutlineEnvelope,
-    name: 'Email',
-    href: `mailto:${site.email}`,
-  },
 ];
 
+/* Icons rather than labels: more worded buttons would crowd the row. Mail
+   is absent on purpose, since Get in Touch already opens it. */
 const SocialLinks: React.FC = (): React.JSX.Element => {
   return (
     <>
@@ -46,9 +43,9 @@ const SocialLinks: React.FC = (): React.JSX.Element => {
           rel={rel}
           aria-label={name}
           title={name}
-          className='glass-pill inline-flex size-11 items-center justify-center rounded-full text-foreground/80 hover:text-foreground'
+          className='hero-pill hero-pill-quiet inline-flex size-[46px] items-center justify-center text-ink-strong'
         >
-          <Icon aria-hidden className='size-4' />
+          <Icon aria-hidden className='relative size-4' />
         </a>
       ))}
     </>

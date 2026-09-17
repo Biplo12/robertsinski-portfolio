@@ -6,7 +6,7 @@
     <style>
       @page {
         size: A4;
-        margin: 15mm 15mm;
+        margin: 13mm 14mm;
       }
 
       * {
@@ -20,10 +20,10 @@
 
       /* Scale knobs. Bump these, then re-render and confirm it is one page. */
       :root {
-        --fs: 8.5pt;
-        --lh: 1.34;
-        --sec: 9px;
-        --ent: 8px;
+        --fs: 8.2pt;
+        --lh: 1.28;
+        --sec: 7px;
+        --ent: 6px;
         --h1: 18pt;
         --company: 10pt;
         --small: 8.3pt;
@@ -263,7 +263,8 @@
               <p class="desc">
                 Frontend of the company store and the internal panels, the
                 NestJS service behind them, and the scrapers that keep its data
-                current.
+                current. A few thousand people use the store every day and the
+                scrapers hold over a million records.
               </p>
             </div>
           </li>
@@ -369,10 +370,9 @@
           </span>
         </div>
         <p class="desc">
-          A site that shows where and when older films are playing in Polish
-          cinemas. Six services: the site, an API, a collector, a social bot, an
-          admin panel and a mailer. Descriptions come from Gemini, with the
-          wording variant picked in code so they do not all read the same.
+          Where and when older films are playing in Polish cinemas. Six
+          services I built and run; the collector reaches 563 cinemas in 316
+          cities every day and keeps over 300 000 screenings current.
         </p>
       </div>
 
@@ -385,9 +385,24 @@
           </span>
         </div>
         <p class="desc">
-          A whiteboard people draw on together. Shapes, notes and images, with
-          everyone's changes showing up as they happen. Realtime state lives in
-          a Liveblocks room, accounts and boards in Convex.
+          A whiteboard people draw on together, with over 200 accounts and 150
+          boards so far. What only matters while someone is looking lives in a
+          Liveblocks room; what has to survive a refresh lives in Convex.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="line">
+          <span class="company">ts-api-scaling-lab</span>
+          <span class="meta">
+            <a href="https://github.com/Biplo12/ts-api-scaling-lab">github</a>
+          </span>
+        </div>
+        <p class="desc">
+          A REST API on Postgres written the plain way, then made faster in
+          eight measured steps: 1 request per second at the start, 2600 at the
+          end, same machine. Indexes, N+1, clustering, load shedding, prepared
+          statements, cache, measured after each.
         </p>
       </div>
 
@@ -400,7 +415,8 @@
         </div>
         <p class="desc">
           Order processing built so a failure in one step does not lose the
-          order. Queues, retries on their own, and an event log.
+          order. Five processes, no direct calls, six events as the only
+          channel. Outbox writes, idempotent consumers, compensation.
         </p>
       </div>
     </section>

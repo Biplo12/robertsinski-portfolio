@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LogoTile from '@/components/logo-tile';
+
 import type { School } from '@/lib/education';
 
 interface SchoolRowProps {
@@ -9,26 +10,30 @@ interface SchoolRowProps {
 
 const SchoolRow: React.FC<SchoolRowProps> = ({ school }): React.JSX.Element => {
   return (
-    <li className='flex gap-3 border-t border-white/10 py-4 first:border-t-0 first:pt-0 last:pb-0'>
-      <LogoTile src={school.logo} name={school.name} />
+    <li className='grid gap-x-6 gap-y-2 border-t border-white/8 px-4 py-5 first:border-t-0 sm:grid-cols-[8rem_16rem_minmax(0,1fr)_13rem]'>
+      <span className='block type-meta text-ink-faint sm:pt-px'>
+        {school.period}
+      </span>
 
-      <div className='min-w-0 flex-1'>
-        <div className='flex flex-wrap items-baseline gap-x-2'>
-          <h3 className='font-medium'>{school.name}</h3>
-          <span className='ml-auto text-xs text-foreground/60'>
-            {school.period}
-          </span>
-        </div>
-        <p className='mt-1 text-sm font-medium text-foreground'>
+      <span className='flex items-center gap-2.5 sm:items-start'>
+        <LogoTile src={school.logo} name={school.name} small />
+        <span className='type-name text-ink-strong'>
+          {school.name}
+        </span>
+      </span>
+
+      <span className='min-w-0'>
+        <span className='block type-body font-medium text-ink'>
           {school.field}
-        </p>
-
+        </span>
         {school.summary ? (
-          <p className='mt-1.5 max-w-[62ch] text-sm leading-relaxed text-foreground/60'>
+          <span className='mt-1.5 block max-w-[62ch] type-body text-ink-muted'>
             {school.summary}
-          </p>
+          </span>
         ) : null}
-      </div>
+      </span>
+
+      <span />
     </li>
   );
 };

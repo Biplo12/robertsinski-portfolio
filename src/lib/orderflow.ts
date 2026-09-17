@@ -1,15 +1,13 @@
-export interface OrderflowProcess {
-  name: string;
-  role: string;
-  stack: string[];
-}
+import type { Fact, Note, Part } from './case-study';
 
-export interface OrderflowPattern {
-  title: string;
-  body: string;
-}
+export const orderflowFacts: Fact[] = [
+  { value: '5', label: 'processes' },
+  { value: '0', label: 'calls between them' },
+  { value: '6', label: 'events, the only channel' },
+  { value: '7', label: 'tables, one per state' },
+];
 
-export const orderflowProcesses: OrderflowProcess[] = [
+export const orderflowProcesses: Part[] = [
   {
     name: 'api',
     role: 'Takes the order over HTTP and answers 202 straight away. It writes the order row and the event that announces it in a single transaction, then it is done.',
@@ -17,7 +15,7 @@ export const orderflowProcesses: OrderflowProcess[] = [
   },
   {
     name: 'outbox-relay',
-    role: 'Reads events that were written but not yet published and puts them on the queue. The only place where the database and the queue meet.',
+    role: 'Polls every 500 ms for events that were written but not published and moves them to the queue in batches of 50. The only place where the database and the queue meet.',
     stack: ['BullMQ 5', 'Redis 7'],
   },
   {
@@ -32,27 +30,23 @@ export const orderflowProcesses: OrderflowProcess[] = [
   },
   {
     name: 'notification-worker',
-    role: 'Sends the confirmation after the payment succeeds. Last step, and the only one the customer sees.',
+    role: 'Sends the confirmation once the payment goes through. The last step, and the only one the customer sees.',
     stack: ['BullMQ'],
   },
 ];
 
-export const orderflowPatterns: OrderflowPattern[] = [
+export const orderflowPatterns: Note[] = [
   {
     title: 'The order and its event are written together',
-    body: 'Writing the order to the database and publishing the event are two different systems, so doing them one after another leaves a window where the process can die and the order exists with nobody told about it. Both go into the same transaction: the row and an entry in an outbox table. Publishing happens later, from that table.',
+    body: 'The database and the queue are two different systems. Write to one and then the other, and if the process dies in between, the order exists and nothing downstream knows about it. Both writes go into one transaction instead: the order row and a row in an outbox table. Publishing happens later, from that table.',
   },
   {
     title: 'Every step can handle the same event twice',
-    body: 'A queue that guarantees delivery will eventually deliver twice. Each worker keys its state on the order id with a unique constraint, so a repeated event is a no-op instead of a second reservation or a second charge. This is what makes retries safe.',
+    body: 'A queue that guarantees delivery will eventually deliver twice. Each worker keys its state on the order id with a unique constraint, so the second copy of an event does nothing instead of reserving stock again or charging the card again.',
   },
   {
-    title: 'Failures retry with a growing delay',
-    body: 'A timeout usually means the other side is busy, not broken, so failing immediately just moves the problem. Jobs retry with an increasing wait between attempts, which gives whatever went wrong time to recover.',
-  },
-  {
-    title: 'Jobs that keep failing get moved aside',
-    body: 'A job that will never succeed, because the data is wrong rather than the service is down, would retry forever and hold up everything behind it. After a limit it lands in a dead letter table where it can be looked at, and the queue moves on.',
+    title: 'Retries stop after five attempts',
+    body: 'A timeout usually means the other side is busy, not broken, so a job gets five attempts with the wait doubling from one second. A job that will never succeed would retry forever and hold up everything behind it, so after the fifth it lands in the dead_letters table and the queue moves on.',
   },
   {
     title: 'A failed payment undoes the reservation',

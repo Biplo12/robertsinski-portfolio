@@ -19,7 +19,7 @@ export const projects: Project[] = [
     logo: '/klaps.svg',
     logoBleed: true,
     description:
-      'Nationwide guide to special screenings and classic cinema in Poland. Six services behind one site: the site itself, the API that owns the data, a collector, a social bot, an admin panel and a mailer for cinemas.',
+      'Shows where and when older films are playing in Polish cinemas. Six services behind one site. The collector checks 563 cinemas every day and holds over 300 000 screenings.',
     stack: ['Next.js', 'NestJS', 'Bun', 'PostgreSQL', 'Docker'],
     repo: 'https://github.com/klaps-hq',
     repoLabel: 'klaps-hq',
@@ -30,10 +30,10 @@ export const projects: Project[] = [
   },
   {
     name: 'BoardFlow',
-    logo: '/logos/boardflow-mark.png',
+    logo: '/logos/boardflow-mark.svg',
     caseStudy: '/boardflow',
     description:
-      'Whiteboard for teams. Shapes, notes, images, and everyone drawing on the same board at once.',
+      'A whiteboard a few people can draw on at the same time. Shapes, notes, images, and everyone on the same board. 200 accounts and 150 boards so far.',
     stack: ['Next.js', 'Convex', 'Liveblocks', 'Redux'],
     repo: 'https://github.com/Biplo12/BoardFlow',
     demo: 'https://board-flow.vercel.app/',
@@ -43,15 +43,16 @@ export const projects: Project[] = [
     name: 'orderflow-engine',
     caseStudy: '/orderflow',
     description:
-      'Order processing that keeps going when something breaks. Queues, retries, event log.',
+      'Order processing that keeps going when one step breaks. Five services, a queue between them, and retries that do not charge a card twice.',
     stack: ['Fastify', 'BullMQ', 'Redis', 'PostgreSQL'],
     repo: 'https://github.com/Biplo12/orderflow-engine',
   },
   {
-    name: 'backupmailer',
+    name: 'ts-api-scaling-lab',
+    caseStudy: '/scaling-lab',
     description:
-      'Backs up a database on a schedule and mails me the result, whether it worked or not. Runs as a container next to whatever it is backing up, with the dump and the logs written to the host.',
-    stack: ['Bun', 'Docker', 'MySQL', 'SMTP'],
-    repo: 'https://github.com/Biplo12/backupmailer',
+      'A REST API on Postgres written the simple way, then made faster in eight steps. It served one request per second at the start and 2600 at the end, on the same desktop. Every step has its own notes and its own numbers.',
+    stack: ['Fastify', 'PostgreSQL', 'Drizzle', 'Redis', 'k6'],
+    repo: 'https://github.com/Biplo12/ts-api-scaling-lab',
   },
 ];

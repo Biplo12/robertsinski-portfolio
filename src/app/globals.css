@@ -8,19 +8,38 @@
   --color-ring: var(--ring);
   --color-signal: var(--signal);
   --color-muted-foreground: var(--muted-foreground);
-  --font-sans: var(--font-geist);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-outfit);
+  --font-sans: var(--font-public-sans);
+  --font-mono: var(--font-mono-code);
+  --font-heading: var(--font-bricolage);
+
+  /* Ink: four steps of emphasis, so contrast carries hierarchy instead of a
+     scatter of one-off opacities. Redefined inside .on-cloth for the hero,
+     where the type sits on lit fabric rather than on black. */
+  --color-ink-strong: rgb(255 255 255 / 0.96);
+  --color-ink: rgb(242 243 247 / 0.86);
+  --color-ink-muted: rgb(242 243 247 / 0.62);
+  --color-ink-faint: rgb(242 243 247 / 0.42);
+
+  /* Leading: one ladder, tightest at the top. Every type step picks a rung
+     from here rather than inventing its own number. */
+  --leading-flat: 1;
+  --leading-tight: 1.12;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
 }
 
-/* One theme: cool near-black under translucent glass layers. */
+/* One theme: black under translucent glass layers. */
 :root {
-  --background: #05060a;
+  /* Without this the browser paints its light native scrollbar over a black
+     page: white track, grey thumb, straight down the right edge. */
+  color-scheme: dark;
+  --background: #000000;
   --foreground: #f2f3f7;
   --card: rgb(255 255 255 / 0.1);
   --border: rgb(255 255 255 / 0.14);
-  --ring: #6ea8ff;
-  --signal: #6ea8ff;
+  --ring: #5fa8d8;
+  --signal: #5fa8d8;
   --muted-foreground: #a2a7b8;
 }
 
@@ -35,52 +54,318 @@
 
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
-/* Display face: Outfit carries headlines; body text stays in Geist. */
+/* The native dark scrollbar is still a grey slab. Thin it down and tint it to
+   the ink scale, so it reads as part of the page rather than as chrome. */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(242 243 247 / 0.18) transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  /* The transparent border is what keeps the thumb off the very edge; padding
+     does not apply to scrollbar parts. */
+  background-clip: content-box;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-color: rgb(242 243 247 / 0.18);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(242 243 247 / 0.3);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Vertical rhythm.
+   Five named gaps instead of a different mt-* on every element. Applied with
+   the owl selector so a block spaces its own children and nothing has to know
+   what follows it. */
+.stack-hair > * + * {
+  margin-top: 0.375rem;
+}
+
+.stack-tight > * + * {
+  margin-top: 0.5rem;
+}
+
+.stack-snug > * + * {
+  margin-top: 0.75rem;
+}
+
+.stack-base > * + * {
+  margin-top: 1.25rem;
+}
+
+.stack-loose > * + * {
+  margin-top: 1.75rem;
+}
+
+/* On the cloth the same ink roles need more light to hold against a lit,
+   moving background. */
+.on-cloth {
+  --color-ink-strong: rgb(255 255 255 / 0.98);
+  --color-ink: rgb(255 255 255 / 0.9);
+  --color-ink-muted: rgb(255 255 255 / 0.68);
+  --color-ink-faint: rgb(255 255 255 / 0.48);
+}
+
+/* Type scale.
+   Two families and seven steps. Display steps take Bricolage, which runs wide
+   and needs tracking pulled in hard; text steps take Public Sans at its
+   natural spacing. Each step fixes size, weight, leading and tracking
+   together, because those four are what make a step read as itself. */
+
+.type-display,
+.type-title,
+.type-heading,
+.type-name {
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+}
+
+.type-display {
+  text-wrap: balance;
+  font-size: clamp(2.25rem, 5.2vw, 3.5rem);
+  font-weight: 600;
+  line-height: var(--leading-flat);
+  letter-spacing: -0.042em;
+}
+
+.type-title {
+  text-wrap: balance;
+  font-size: clamp(1.75rem, 3.4vw, 2.375rem);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.032em;
+}
+
+.type-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: -0.022em;
+}
+
+.type-name {
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: -0.02em;
+}
+
+.type-lead {
+  text-wrap: balance;
+  font-size: clamp(1.0625rem, 1.5vw, 1.1875rem);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  letter-spacing: -0.008em;
+}
+
+.type-body {
+  text-wrap: pretty;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: var(--leading-relaxed);
+  letter-spacing: -0.002em;
+}
+
+.type-meta {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: var(--leading-normal);
+}
+
+.type-micro {
+  font-family: var(--font-mono-code), ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: var(--leading-snug);
+  letter-spacing: 0.02em;
+}
+
+/* Kept for pages that still set their own sizes. */
 .font-display {
-  font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
-/* Aurora: the colour that glass refracts. */
-body::before {
-  content: '';
-  position: fixed;
-  inset: -20%;
-  z-index: -1;
+/* Satin: a lit fold of blue silk, the surface the hero headline sits on. */
+/* Promoting the card to its own layer makes Chrome antialias the rounded
+   clip; without it the 74px corner saws through the image underneath. */
+.satin {
+  transform: translateZ(0);
+  background-image: linear-gradient(
+    124deg,
+    #5499c7 10%,
+    #062e6b 31%,
+    #054277 69%,
+    #43799b 100%
+  );
+}
+/* Glow: the lamp sitting off the top-left corner of the cloth. */
+.satin-glow {
+  pointer-events: none;
   background-image:
-    radial-gradient(52% 52% at 28% 30%, rgb(62 96 220 / 0.22), transparent 72%),
-    radial-gradient(46% 48% at 74% 74%, rgb(112 84 210 / 0.16), transparent 72%);
-  filter: blur(60px);
+    radial-gradient(
+      40% 48% at 10% -6%,
+      rgb(232 247 255 / 0.4),
+      transparent 64%
+    ),
+    radial-gradient(46% 56% at 90% 100%, rgb(2 10 32 / 0.34), transparent 72%);
 }
-
-/* Liquid glass: translucent fill, blurred backdrop, specular edge. */
-.glass {
+/* Hero pills: no halo, just a lit edge. A bright inset line along the top
+   left and a fainter one along the bottom right stand in for the rim of glass
+   catching the lamp; the two gradients are the sheen across the face. */
+.hero-pill {
   position: relative;
-  background: var(--card);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid var(--border);
+  isolation: isolate;
+  border-radius: 100px;
+  background: rgb(255 255 255 / 0.04);
   box-shadow:
-    0 18px 44px -16px rgb(0 0 0 / 0.45),
-    inset 0 1px 0 rgb(255 255 255 / 0.14);
+    inset 1px 1px 0 rgb(255 255 255 / 0.2),
+    inset -1px -1px 0 rgb(255 255 255 / 0.08);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
-.glass-sheen::before {
+.hero-pill::before,
+.hero-pill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero-pill::before {
+  background: linear-gradient(
+    rgb(205 236 250 / 0.28) 0%,
+    rgb(0 114 156 / 0) 64%
+  );
+}
+
+.hero-pill::after {
+  background: linear-gradient(
+    rgb(0 114 156 / 0) 83%,
+    rgb(205 236 250 / 0.18) 100%
+  );
+}
+
+.hero-pill:hover {
+  background: rgb(18 16 16 / 0.42);
+  box-shadow:
+    inset 1px 1px 0 rgb(255 255 255 / 0.3),
+    inset -1px -1px 0 rgb(255 255 255 / 0.12);
+  transform: scale(1.02);
+}
+
+/* Quiet pill: dimmer sheen, and it stays put on hover. */
+.hero-pill-quiet::before {
+  background: linear-gradient(
+    rgb(205 236 250 / 0.16) 0%,
+    rgb(0 114 156 / 0) 64%
+  );
+}
+
+.hero-pill-quiet::after {
+  background: linear-gradient(
+    rgb(0 114 156 / 0) 83%,
+    rgb(205 236 250 / 0.1) 100%
+  );
+}
+
+.hero-pill-quiet:hover {
+  background: rgb(20 20 20 / 0.22);
+  transform: none;
+}
+
+/* Card edge: a lit rim, brighter at the top left and faint at the bottom
+   right. Drawn with inset shadows rather than a masked gradient border: a mask
+   clipped to a 74px radius does not land on the curve and the rim comes out
+   stepped, while inset shadows are antialiased against the same radius. */
+.card-edge {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  /* Tinted to the cloth rather than white: a blue rim sits closer to what it
+     borders, so the stair-stepping along the curve stops reading as a seam. */
+  box-shadow:
+    inset 1px 1px 0 rgb(122 190 236 / 0.55),
+    inset 2px 2px 3px -2px rgb(122 190 236 / 0.35);
+}
+
+/* The lower rim is a corner, not an outline: masked so it is only there where
+   the light would leave the cloth, and gone by the middle of each edge. */
+.card-edge::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  pointer-events: none;
-  background: linear-gradient(
-    145deg,
-    rgb(255 255 255 / 0.12) 0%,
-    rgb(255 255 255 / 0.02) 26%,
-    transparent 50%
-  );
+  box-shadow: inset -1px -1px 0 rgb(86 150 200 / 0.3);
+  -webkit-mask-image: linear-gradient(to top left, #000 0%, transparent 42%);
+  mask-image: linear-gradient(to top left, #000 0%, transparent 42%);
 }
 
+/* Pointer sheen: the highlight rides on top and is screened, so it only ever
+   adds light to the cloth. */
+.pointer-sheen {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pointer-sheen {
+    display: none;
+  }
+}
+
+/* Section panels: plain on the black, separated by a hairline instead of a
+   glass card. The satin hero is the only surface on the page, so everything
+   below it stays flat and lets the type carry the structure. */
+.section-panel {
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.section-panel:first-of-type {
+  border-top: 0;
+}
+
+/* Glass pill: the one translucent surface left, used for small controls. */
 .glass-pill {
   background: rgb(255 255 255 / 0.1);
   backdrop-filter: blur(18px) saturate(160%);
@@ -112,41 +397,69 @@ body::before {
   animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
-/* Page load: sections arrive one after another, top to bottom. */
-.stagger > * {
-  animation: rise 0.62s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+/* Sections wait until the reader reaches them. They are hidden from the first
+   paint rather than by a script after it: hiding them in an effect meant the
+   browser painted them, then hid them, then brought them back, which is the
+   flicker. Without the script nothing hides at all, see the noscript rule in
+   the layout. */
+.reveal > * {
+  opacity: 0;
+  transform: translateY(1.25rem);
 }
 
-.stagger > *:nth-child(1) {
+.reveal > [data-reveal='in'] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* The hero is on screen at load, so it arrives on its own: the card first,
+   then its lines one after another. */
+/* Only the lines move. The card holds a canvas, a large texture and two blend
+   layers, and animating that whole subtree at once is what made the entrance
+   stutter. The card is simply there; its contents arrive. */
+.hero-in > * + * {
+  animation: rise 0.44s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.hero-in > *:nth-child(2) {
   animation-delay: 0.04s;
 }
 
-.stagger > *:nth-child(2) {
-  animation-delay: 0.12s;
+.hero-in > *:nth-child(3) {
+  animation-delay: 0.09s;
 }
 
-.stagger > *:nth-child(3) {
-  animation-delay: 0.2s;
+.hero-in > *:nth-child(4) {
+  animation-delay: 0.14s;
 }
 
-.stagger > *:nth-child(4) {
-  animation-delay: 0.28s;
+.hero-in > *:nth-child(5) {
+  animation-delay: 0.19s;
 }
 
-.stagger > *:nth-child(5) {
-  animation-delay: 0.36s;
+.hero-in > *:nth-child(6) {
+  animation-delay: 0.24s;
 }
 
-.stagger > *:nth-child(6) {
-  animation-delay: 0.44s;
+.hero-in > *:nth-child(7) {
+  animation-delay: 0.29s;
 }
 
-.stagger > *:nth-child(7) {
-  animation-delay: 0.52s;
-}
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .hero-in > * + * {
+    animation: none;
+  }
 
-.stagger > *:nth-child(8) {
-  animation-delay: 0.6s;
+  .reveal > *,
+  .reveal > [data-reveal='in'] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Panel swap: content fades up as the card resizes under it. */
@@ -167,12 +480,54 @@ body::before {
 
 @media (prefers-reduced-motion: reduce) {
   .rise,
-  .panel-in,
-  .stagger > * {
+  .panel-in {
     animation: none;
   }
 
-  .glass-pill:hover {
+  .glass-pill:hover,
+  .hero-pill:hover {
     transform: none;
+  }
+}
+
+/* One rule instead of a tooltip element per day. The grid draws 365 cells and
+   each carried its own hidden span, which was most of the weight of the page;
+   the label rides on the cell and only exists while the pointer is on it. */
+.day::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 20;
+  display: none;
+  margin-bottom: 0.5rem;
+  transform: translateX(-50%);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 0.375rem;
+  background: #101116;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: var(--leading-normal);
+  white-space: nowrap;
+  color: var(--foreground);
+  box-shadow: 0 10px 20px -6px rgb(0 0 0 / 0.55);
+}
+
+/* A tooltip near the edge would hang off the grid. */
+.day-start::after {
+  left: 0;
+  transform: none;
+}
+
+.day-end::after {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+@media (min-width: 640px) {
+  .day:hover::after {
+    display: block;
   }
 }

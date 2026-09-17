@@ -32,17 +32,17 @@ const dayLabel = (day: ContributionDay): string => {
   return `${day.count} contributions on ${when}`;
 };
 
-/* A tooltip is wider than a few columns, so it only fits centred over the middle third. */
+/* A tooltip is wider than a few columns, so the ones near an edge align to it. */
 const tooltipAnchor = (index: number, total: number): string => {
   if (index < total / 3) {
-    return 'left-0';
+    return 'day-start';
   }
 
   if (index > (total * 2) / 3) {
-    return 'right-0';
+    return 'day-end';
   }
 
-  return 'left-1/2 -translate-x-1/2';
+  return '';
 };
 
 const ContributionGrid: React.FC<ContributionGridProps> = ({
@@ -50,8 +50,8 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
 }): React.JSX.Element => {
   return (
     <div className='-mx-1 overflow-x-auto px-1 pb-1 sm:mx-0 sm:overflow-visible sm:px-0 sm:pb-0'>
-      <div className='w-full min-w-[760px] sm:min-w-0'>
-        <div className='flex w-full gap-[2px]'>
+      <div className='w-full min-w-[700px] sm:min-w-0'>
+        <div className='flex w-full gap-[4px]'>
           {weeks.map((week, index) => {
             const previous = weeks[index - 1];
             const isNewMonth =
@@ -62,7 +62,7 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
             return (
               <span
                 key={week[0].date}
-                className='flex-1 text-[0.6875rem] whitespace-nowrap text-foreground/60'
+                className='flex-1 type-micro whitespace-nowrap text-ink-faint'
               >
                 {isNewMonth ? monthName(week[0].date) : ''}
               </span>
@@ -70,24 +70,15 @@ const ContributionGrid: React.FC<ContributionGridProps> = ({
           })}
         </div>
 
-        <div className='mt-1 flex w-full gap-[2px]'>
+        <div className='mt-1 flex w-full gap-[4px]'>
           {weeks.map((week, index) => (
-            <div key={week[0].date} className='flex flex-1 flex-col gap-[2px]'>
+            <div key={week[0].date} className='flex flex-1 flex-col gap-[4px]'>
               {week.map((day) => (
                 <span
                   key={day.date}
-                  className='group relative aspect-square w-full'
-                >
-                  <span
-                    className={`block size-full rounded-[2px] ${levelClass[day.level]}`}
-                  />
-                  <span
-                    role='tooltip'
-                    className={`pointer-events-none absolute bottom-full z-20 mb-2 hidden rounded-md border border-white/10 bg-[#14161d] px-2 py-1 text-xs whitespace-nowrap text-foreground shadow-lg sm:group-hover:block ${tooltipAnchor(index, weeks.length)}`}
-                  >
-                    {dayLabel(day)}
-                  </span>
-                </span>
+                  data-label={dayLabel(day)}
+                  className={`day relative block aspect-square w-full rounded-[2px] ${levelClass[day.level]} ${tooltipAnchor(index, weeks.length)}`}
+                />
               ))}
             </div>
           ))}

@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { education } from '@/lib/education';
 import type { ResolvedJob } from '@/lib/experience';
 
-import JobRow from './partials/job-row';
+import RoleRow from './partials/role-row';
 import type { ResumeTab } from './partials/resume-tabs';
 import ResumeTabs from './partials/resume-tabs';
 import SchoolRow from './partials/school-row';
@@ -37,7 +37,7 @@ const ResumeSection: React.FC<ResumeSectionProps> = ({
   }, [active]);
 
   return (
-    <section className='glass glass-sheen rounded-[2rem] px-8 pt-7 pb-8'>
+    <section id='experience' className='section-panel scroll-mt-24 px-8 pt-7 pb-8'>
       <h2 className='sr-only'>Background</h2>
       <ResumeTabs active={active} onChange={setActive} />
 
@@ -54,9 +54,16 @@ const ResumeSection: React.FC<ResumeSectionProps> = ({
               aria-label='Work'
               className='panel-in'
             >
-              {jobs.map((job) => (
-                <JobRow key={job.company} job={job} />
-              ))}
+              {jobs.flatMap((job) =>
+                job.roles.map((role, index) => (
+                  <RoleRow
+                    key={`${job.company}-${role.title}`}
+                    job={job}
+                    role={role}
+                    leading={index === 0}
+                  />
+                )),
+              )}
             </ul>
           ) : (
             <ul
