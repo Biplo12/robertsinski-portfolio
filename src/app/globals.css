@@ -320,8 +320,19 @@
      borders, so the stair-stepping along the curve stops reading as a seam. */
   box-shadow:
     inset 1px 1px 0 rgb(122 190 236 / 0.55),
-    inset 2px 2px 3px -2px rgb(122 190 236 / 0.35),
-    inset -1px -1px 0 rgb(86 150 200 / 0.2);
+    inset 2px 2px 3px -2px rgb(122 190 236 / 0.35);
+}
+
+/* The lower rim is a corner, not an outline: masked so it is only there where
+   the light would leave the cloth, and gone by the middle of each edge. */
+.card-edge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset -1px -1px 0 rgb(86 150 200 / 0.3);
+  -webkit-mask-image: linear-gradient(to top left, #000 0%, transparent 42%);
+  mask-image: linear-gradient(to top left, #000 0%, transparent 42%);
 }
 
 /* Pointer sheen: the highlight rides on top and is screened, so it only ever

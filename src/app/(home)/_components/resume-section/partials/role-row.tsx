@@ -34,7 +34,7 @@ const RoleRow: React.FC<RoleRowProps> = ({
             that makes the role current carries it on its own. */}
         <span
           className={`block type-meta ${
-            current ? 'text-ink-muted' : 'text-ink-faint'
+            current ? 'text-ink-muted' : 'text-ink'
           }`}
         >
           {formatYears(role.start, role.end)}
@@ -45,12 +45,15 @@ const RoleRow: React.FC<RoleRowProps> = ({
             </>
           ) : null}
         </span>
-        <span className='mt-0.5 block type-meta text-ink-faint'>
-          {role.length}
-        </span>
+        {/* Three lines that are three different things: the range, how long it
+            ran, and what kind of engagement it was. Same size and colour made
+            them read as one paragraph. */}
+        <span className='block type-meta text-ink-faint'>{role.length}</span>
 
         {leading && job.contract ? (
-          <span className='block type-meta text-ink-faint'>contract</span>
+          <span className='mt-1 block type-micro text-ink-faint uppercase'>
+            contract
+          </span>
         ) : null}
       </span>
 
