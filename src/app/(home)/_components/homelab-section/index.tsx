@@ -1,5 +1,3 @@
-import { ArrowUpRight } from 'lucide-react';
-import Link from 'next/link';
 import React from 'react';
 
 import SectionHeader from '@/components/section-header';
@@ -13,15 +11,6 @@ const HomelabSection: React.FC = (): React.JSX.Element => {
         title='Homelab'
         note='One box at home, running more than it should.'
         stacked
-        action={
-          <Link
-            href='/homelab'
-            className='inline-flex items-center gap-1.5 type-meta text-signal transition-colors hover:text-foreground'
-          >
-            the homelab in detail
-            <ArrowUpRight aria-hidden className='size-3.5' />
-          </Link>
-        }
       />
 
       <div className='min-w-0'>

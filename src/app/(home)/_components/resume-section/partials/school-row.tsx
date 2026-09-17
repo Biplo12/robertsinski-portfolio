@@ -16,7 +16,7 @@ const SchoolRow: React.FC<SchoolRowProps> = ({ school }): React.JSX.Element => {
 
       <span className='flex items-center gap-2.5 sm:items-start'>
         <LogoTile src={school.logo} name={school.name} small />
-        <span className='type-body font-semibold text-ink-strong'>
+        <span className='type-name text-ink-strong'>
           {school.name}
         </span>
       </span>

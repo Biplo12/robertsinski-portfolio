@@ -22,8 +22,8 @@ export const metadata: Metadata = {
 
 const BoardflowPage: React.FC = (): React.JSX.Element => {
   return (
-    <div className='flex flex-1 justify-center px-6 py-16'>
-      <div className='stagger flex w-full max-w-3xl flex-col gap-3'>
+    <div className='flex flex-1 justify-center px-6 pt-8 pb-16'>
+      <div className='stagger flex w-full max-w-[1080px] flex-col'>
         <BoardflowHero />
         <SplitSection />
         <DecisionsSection />

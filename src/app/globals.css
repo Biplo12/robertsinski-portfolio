@@ -35,8 +35,8 @@
   --foreground: #f2f3f7;
   --card: rgb(255 255 255 / 0.1);
   --border: rgb(255 255 255 / 0.14);
-  --ring: #6ea8ff;
-  --signal: #6ea8ff;
+  --ring: #5fa8d8;
+  --signal: #5fa8d8;
   --muted-foreground: #a2a7b8;
 }
 
@@ -102,7 +102,8 @@
 
 .type-display,
 .type-title,
-.type-heading {
+.type-heading,
+.type-name {
   font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -127,6 +128,14 @@
   font-weight: 600;
   line-height: var(--leading-snug);
   letter-spacing: -0.022em;
+}
+
+.type-name {
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  letter-spacing: -0.02em;
 }
 
 .type-lead {
@@ -269,10 +278,12 @@
   z-index: 2;
   pointer-events: none;
   border-radius: inherit;
+  /* Tinted to the cloth rather than white: a blue rim sits closer to what it
+     borders, so the stair-stepping along the curve stops reading as a seam. */
   box-shadow:
-    inset 1px 1px 0 rgb(216 239 255 / 0.5),
-    inset 2px 2px 3px -2px rgb(216 239 255 / 0.3),
-    inset -1px -1px 0 rgb(186 220 248 / 0.16);
+    inset 1px 1px 0 rgb(122 190 236 / 0.55),
+    inset 2px 2px 3px -2px rgb(122 190 236 / 0.35),
+    inset -1px -1px 0 rgb(86 150 200 / 0.2);
 }
 
 /* Pointer sheen: the highlight rides on top and is screened, so it only ever

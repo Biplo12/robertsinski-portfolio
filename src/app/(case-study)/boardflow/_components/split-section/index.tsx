@@ -1,18 +1,20 @@
 import React from 'react';
 
+import SectionHeader from '@/components/section-header';
+
 import SpecRow from '@/components/spec-row';
 import { boardflowParts } from '@/lib/boardflow';
 
 const SplitSection: React.FC = (): React.JSX.Element => {
   return (
-    <section className='section-panel px-8 pt-7 pb-8'>
-      <h2 className='type-heading'>
-        Where each thing lives
-      </h2>
-      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
-        Three layers. What goes where depends on how long it has to last.
-      </p>
+    <section className='section-panel grid gap-x-10 gap-y-6 px-8 pt-7 pb-8 sm:grid-cols-[16rem_minmax(0,1fr)]'>
+      <SectionHeader
+        title='Where each thing lives'
+        note='Three layers. What goes where depends on how long it has to last.'
+        stacked
+      />
 
+      <div className='min-w-0'>
       <ul className='mt-5'>
         {boardflowParts.map((part) => (
           <SpecRow
@@ -23,6 +25,7 @@ const SplitSection: React.FC = (): React.JSX.Element => {
           />
         ))}
       </ul>
+      </div>
     </section>
   );
 };

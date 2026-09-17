@@ -53,7 +53,7 @@ const RoleRow: React.FC<RoleRowProps> = ({
           />
         ) : null}
 
-        <span className='type-body font-semibold text-ink-strong'>
+        <span className='type-name text-ink-strong'>
           {job.company}
         </span>
       </span>

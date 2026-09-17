@@ -30,7 +30,7 @@ export const projects: Project[] = [
   },
   {
     name: 'BoardFlow',
-    logo: '/logos/boardflow-mark.png',
+    logo: '/logos/boardflow-mark.svg',
     caseStudy: '/boardflow',
     description:
       'Whiteboard for teams. Shapes, notes, images, and everyone drawing on the same board at once.',

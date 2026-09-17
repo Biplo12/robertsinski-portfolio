@@ -22,7 +22,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
     <div
       className={
         stacked
-          ? 'flex flex-col items-start gap-3'
+          ? 'flex flex-col items-start gap-3 sm:self-start'
           : 'flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2'
       }
     >

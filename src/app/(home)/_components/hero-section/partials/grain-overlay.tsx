@@ -12,7 +12,7 @@ const GrainOverlay: React.FC = (): React.JSX.Element => {
       <filter id='hero-grain' colorInterpolationFilters='sRGB'>
         <feTurbulence
           type='fractalNoise'
-          baseFrequency='0.85'
+          baseFrequency='0.62'
           numOctaves='4'
           stitchTiles='stitch'
           result='noise'

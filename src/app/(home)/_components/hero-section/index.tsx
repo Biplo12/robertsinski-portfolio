@@ -1,9 +1,6 @@
 import React from 'react';
 
-import { site } from '@/lib/site';
-
 import ContactButton from './partials/contact-button';
-import KlapsLogo from './partials/klaps-logo';
 import LocationPill from './partials/location-pill';
 import ResumeButton from './partials/resume-button';
 import SatinBackdrop from './partials/satin-backdrop';
@@ -40,32 +37,6 @@ const HeroSection: React.FC = (): React.JSX.Element => {
             Mostly TypeScript, Next.js, NestJS, Fastify, PostgreSQL, MySQL,
             Redis.
           </p>
-
-          <p>
-            In my free time I work on{' '}
-            <a
-              href='https://klaps.space'
-              target='_blank'
-              rel='noreferrer'
-              className='whitespace-nowrap text-ink-strong underline decoration-current/35 underline-offset-4 transition-colors hover:decoration-current'
-            >
-              <KlapsLogo />
-              Klaps
-            </a>
-            . It shows which old films play in Polish cinemas. Six services, and
-            I built all of them.
-          </p>
-
-          <p>
-            If you need something built,{' '}
-            <a
-              href={`mailto:${site.email}`}
-              className='text-ink-strong underline decoration-current/45 underline-offset-4 transition-colors hover:decoration-current'
-            >
-              write to me
-            </a>
-            . I answer within a day.
-          </p>
         </div>
 
         <div className='flex flex-wrap items-center gap-3'>
@@ -76,6 +47,10 @@ const HeroSection: React.FC = (): React.JSX.Element => {
             <SocialLinks />
           </span>
         </div>
+
+        <p className='type-meta text-ink-muted'>
+          Write to me and I answer within a day.
+        </p>
       </article>
     </section>
   );

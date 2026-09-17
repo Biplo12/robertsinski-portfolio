@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SectionHeader from '@/components/section-header';
+
 import SpecRow from '@/components/spec-row';
 import { klapsServices } from '@/lib/klaps';
 
@@ -8,13 +10,10 @@ import FlowDiagram from './partials/flow-diagram';
 const ArchitectureSection: React.FC = (): React.JSX.Element => {
   return (
     <section className='section-panel px-8 pt-7 pb-8'>
-      <h2 className='type-heading'>
-        How it fits together
-      </h2>
-      <p className='mt-2 max-w-[62ch] type-body text-ink-muted'>
-        Six services, and data moves in one direction. Only the collector
-        writes, only the API owns the database, everything else reads.
-      </p>
+      <SectionHeader
+        title='How it fits together'
+        note='Six services, and data moves in one direction. Only the collector writes, only the API owns the database, everything else reads.'
+      />
 
       <div className='mt-5 text-foreground'>
         <FlowDiagram />

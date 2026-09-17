@@ -16,7 +16,7 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
       </Link>
 
       <div className='mt-5 flex items-center gap-3'>
-        <LogoTile src='/logos/boardflow-mark.png' name='BoardFlow' />
+        <LogoTile src='/logos/boardflow-mark.svg' name='BoardFlow' />
         <h1 className='type-title'>
           BoardFlow
         </h1>

@@ -29,7 +29,7 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
               />
             ) : null}
 
-            <h3 className='type-body font-semibold text-ink-strong'>
+            <h3 className='type-name text-ink-strong'>
               {project.name}
             </h3>
           </div>
