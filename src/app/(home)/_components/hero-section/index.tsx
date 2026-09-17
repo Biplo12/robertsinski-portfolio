@@ -30,7 +30,7 @@ const HeroSection: React.FC = (): React.JSX.Element => {
           <p>
             Right now at Hurtopony: the company store and the internal panels
             around it, the NestJS service behind them, and the Playwright
-            scrapers that keep the data current.
+            scrapers that keep over a million records current.
           </p>
 
           <p>

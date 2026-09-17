@@ -42,7 +42,7 @@ export const experience: Job[] = [
         title: 'Fullstack Developer',
         start: '2025-04',
         summary:
-          'Frontend for the company store and the internal panels around it, and the NestJS service behind them. Also the scrapers and crawlers that keep the data in it current.',
+          'Frontend for the company store and the internal panels around it, and the NestJS service behind them. A few thousand people use the store every day. The scrapers and crawlers that feed it hold over a million records.',
         stack: ['Next.js', 'NestJS', 'PostgreSQL', 'Playwright', 'TypeScript'],
       },
     ],

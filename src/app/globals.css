@@ -31,6 +31,9 @@
 
 /* One theme: black under translucent glass layers. */
 :root {
+  /* Without this the browser paints its light native scrollbar over a black
+     page: white track, grey thumb, straight down the right edge. */
+  color-scheme: dark;
   --background: #000000;
   --foreground: #f2f3f7;
   --card: rgb(255 255 255 / 0.1);
@@ -59,6 +62,41 @@
       scroll-behavior: auto;
     }
   }
+}
+
+/* The native dark scrollbar is still a grey slab. Thin it down and tint it to
+   the ink scale, so it reads as part of the page rather than as chrome. */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(242 243 247 / 0.18) transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  /* The transparent border is what keeps the thumb off the very edge; padding
+     does not apply to scrollbar parts. */
+  background-clip: content-box;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-color: rgb(242 243 247 / 0.18);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(242 243 247 / 0.3);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /* Vertical rhythm.

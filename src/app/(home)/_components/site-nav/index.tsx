@@ -13,7 +13,6 @@ const items: NavItem[] = [
   { id: 'experience', label: 'Experience' },
   { id: 'projects', label: 'Projects' },
   { id: 'tools', label: 'Tools' },
-  { id: 'activity', label: 'Activity' },
 ];
 
 /**

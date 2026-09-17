@@ -23,17 +23,26 @@ const RoleRow: React.FC<RoleRowProps> = ({
     <li
       className={`grid gap-x-6 gap-y-2 rounded-xl px-4 py-5 sm:grid-cols-[8rem_16rem_minmax(0,1fr)_13rem] ${
         leading ? 'border-t border-white/8 first:border-t-0' : ''
-      } ${current ? 'bg-white/4' : ''}`}
+      }`}
     >
       {/* Dates and employment type are both metadata, so they share the first
           column and the company cell keeps one shape whatever it holds. */}
       <span className='sm:pt-px'>
+        {/* The open end is the marker, and it is only type: a filled row read
+            as a stray panel and a coloured dot as an ornament, so the one word
+            that makes the role current carries it on its own. */}
         <span
           className={`block type-meta ${
-            current ? 'text-ink' : 'text-ink-faint'
+            current ? 'text-ink-muted' : 'text-ink-faint'
           }`}
         >
           {formatYears(role.start, role.end)}
+          {current ? (
+            <>
+              {'–'}
+              <span className='font-medium text-ink-strong'>now</span>
+            </>
+          ) : null}
         </span>
         {leading && job.contract ? (
           <span className='block type-meta text-ink-faint'>contract</span>
