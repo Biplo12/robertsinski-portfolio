@@ -57,7 +57,7 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
       </div>
 
       <ProjectShot
-        src='/shots/boardflow.png'
+        src='/shots/boardflow.jpg'
         alt='The BoardFlow landing page'
         width={1440}
         height={900}
