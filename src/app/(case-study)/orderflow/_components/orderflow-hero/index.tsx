@@ -1,5 +1,9 @@
 import React from 'react';
 
+import FactBand from '@/components/fact-band';
+
+import { orderflowFacts } from '@/lib/orderflow';
+
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
@@ -42,6 +46,10 @@ const OrderflowHero: React.FC = (): React.JSX.Element => {
           Read the code
           <ArrowUpRight aria-hidden className='size-3.5' />
         </a>
+      </div>
+
+      <div className='mt-9 border-t border-white/10 pt-7'>
+        <FactBand facts={orderflowFacts} />
       </div>
     </article>
   );

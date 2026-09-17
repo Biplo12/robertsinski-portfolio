@@ -1,4 +1,11 @@
-import type { Note, Part } from './case-study';
+import type { Fact, Note, Part } from './case-study';
+
+export const orderflowFacts: Fact[] = [
+  { value: '5', label: 'processes' },
+  { value: '0', label: 'calls between them' },
+  { value: '6', label: 'events, the only channel' },
+  { value: '7', label: 'tables, one per state' },
+];
 
 export const orderflowProcesses: Part[] = [
   {
@@ -8,7 +15,7 @@ export const orderflowProcesses: Part[] = [
   },
   {
     name: 'outbox-relay',
-    role: 'Reads events that were written but not yet published and puts them on the queue. The only place where the database and the queue meet.',
+    role: 'Polls every 500 ms for events that were written but not published and moves them to the queue in batches of 50. The only place where the database and the queue meet.',
     stack: ['BullMQ 5', 'Redis 7'],
   },
   {
@@ -39,11 +46,11 @@ export const orderflowPatterns: Note[] = [
   },
   {
     title: 'Failures retry with a growing delay',
-    body: 'A timeout usually means the other side is busy, not broken, so failing immediately just moves the problem. Jobs retry with an increasing wait between attempts, which gives whatever went wrong time to recover.',
+    body: 'A timeout usually means the other side is busy, not broken, so failing immediately only moves the problem. A job gets five attempts with the wait doubling from one second, which gives whatever went wrong time to come back.',
   },
   {
     title: 'Jobs that keep failing get moved aside',
-    body: 'A job that will never succeed, because the data is wrong rather than the service is down, would retry forever and hold up everything behind it. After a limit it lands in a dead letter table where it can be looked at, and the queue moves on.',
+    body: 'A job that will never succeed, because the data is wrong rather than the service down, would retry forever and hold up everything behind it. After the fifth attempt it lands in the dead_letters table where it can be read, and the queue moves on.',
   },
   {
     title: 'A failed payment undoes the reservation',

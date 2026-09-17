@@ -25,6 +25,8 @@ export interface Job {
 
 export interface ResolvedRole extends Role {
   period: string;
+  /** How long the role ran, in the same words a CV uses. */
+  length: string;
 }
 
 export interface ResolvedJob extends Omit<Job, 'roles'> {
@@ -123,6 +125,7 @@ export const resolveExperience = (now: Date = new Date()): ResolvedJob[] => {
       roles: job.roles.map((role) => ({
         ...role,
         period: formatPeriod(role.start, role.end),
+        length: formatDuration(monthsBetween(role.start, role.end ?? today)),
       })),
     };
   });

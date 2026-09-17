@@ -45,6 +45,10 @@ const RoleRow: React.FC<RoleRowProps> = ({
             </>
           ) : null}
         </span>
+        <span className='mt-0.5 block type-meta text-ink-faint'>
+          {role.length}
+        </span>
+
         {leading && job.contract ? (
           <span className='block type-meta text-ink-faint'>contract</span>
         ) : null}
