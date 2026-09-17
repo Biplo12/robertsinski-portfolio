@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Reveal from '@/components/reveal';
+
 import type { Metadata } from 'next';
 
 import BoardflowHero from './_components/boardflow-hero';
@@ -24,11 +26,11 @@ export const metadata: Metadata = {
 const BoardflowPage: React.FC = (): React.JSX.Element => {
   return (
     <div className='flex flex-1 justify-center px-6 pt-8 pb-16'>
-      <div className='stagger flex w-full max-w-[1080px] flex-col'>
+      <Reveal className='flex w-full max-w-[1080px] flex-col'>
         <BoardflowHero />
         <LayersSection />
         <DecisionsSection />
-      </div>
+      </Reveal>
     </div>
   );
 };

@@ -10,7 +10,7 @@ import SocialLinks from './partials/social-links';
 const HeroSection: React.FC = (): React.JSX.Element => {
   return (
     <section className='w-full'>
-      <article className='on-cloth stack-base relative isolate w-full overflow-hidden rounded-[2.25rem] px-7 py-11 shadow-[0_28px_70px_-30px_rgb(19_76_122/0.85),0_60px_140px_-50px_rgb(19_76_122/0.6)] sm:rounded-[74px] sm:px-14 sm:py-14'>
+      <article className='hero-in on-cloth stack-base relative isolate w-full overflow-hidden rounded-[2.25rem] px-7 py-11 shadow-[0_28px_70px_-30px_rgb(19_76_122/0.85),0_60px_140px_-50px_rgb(19_76_122/0.6)] sm:rounded-[74px] sm:px-14 sm:py-14'>
         <SatinBackdrop />
 
         <p className='type-lead flex flex-wrap items-center gap-2.5 text-ink-strong'>

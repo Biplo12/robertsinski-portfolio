@@ -2,6 +2,8 @@ import React from 'react';
 
 import { resolveExperience } from '@/lib/experience';
 
+import Reveal from '@/components/reveal';
+
 import AwaySection from './_components/away-section';
 import GithubSection from './_components/github-section';
 import HeroSection from './_components/hero-section';
@@ -19,14 +21,14 @@ const HomePage: React.FC = (): React.JSX.Element => {
         <HeroSection />
       </div>
 
-      <div className='stagger mt-12 flex w-full max-w-[1080px] flex-col gap-3'>
+      <Reveal className='mt-12 flex w-full max-w-[1080px] flex-col gap-3'>
         <ResumeSection jobs={resolveExperience()} />
         <ProjectsSection />
         <GithubSection />
         <TechSection />
         <AwaySection />
         <SiteFooter />
-      </div>
+      </Reveal>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Reveal from '@/components/reveal';
+
 import type { Metadata } from 'next';
 
 import FindingsSection from './_components/findings-section';
@@ -25,12 +27,12 @@ export const metadata: Metadata = {
 const ScalingLabPage: React.FC = (): React.JSX.Element => {
   return (
     <div className='flex flex-1 justify-center px-6 pt-8 pb-16'>
-      <div className='stagger flex w-full max-w-[1080px] flex-col'>
+      <Reveal className='flex w-full max-w-[1080px] flex-col'>
         <ScalingLabHero />
         <StagesSection />
         <FindingsSection />
         <MethodSection />
-      </div>
+      </Reveal>
     </div>
   );
 };
