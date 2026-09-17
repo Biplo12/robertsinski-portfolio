@@ -9,7 +9,7 @@ const MethodSection: React.FC = (): React.JSX.Element => {
     <section className='section-panel grid gap-x-10 gap-y-6 px-8 pt-7 pb-8 sm:grid-cols-[16rem_minmax(0,1fr)]'>
       <SectionHeader
         title='How it was measured'
-        note='A number is worth what the setup behind it is worth, so here is the setup.'
+        note='Where these numbers come from, and what they do not cover.'
         stacked
       />
 

@@ -10,7 +10,7 @@ const FindingsSection: React.FC = (): React.JSX.Element => {
     <section className='section-panel grid gap-x-10 gap-y-6 px-8 pt-7 pb-8 sm:grid-cols-[16rem_minmax(0,1fr)]'>
       <SectionHeader
         title='What the numbers said'
-        note='Six things the measurements contradicted, including two I had already written the code for.'
+        note='Six things I had wrong before I measured them.'
         stacked
       />
 

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { site } from '@/lib/site';
 
 import ContactButton from './partials/contact-button';
 import LocationPill from './partials/location-pill';
@@ -25,14 +24,14 @@ const HeroSection: React.FC = (): React.JSX.Element => {
         </h1>
 
         <p className='type-lead max-w-[46ch] text-ink'>
-          I build web apps end to end, backend and frontend. 4 years so far.
+          I build web apps, backend and frontend. Four years so far.
         </p>
 
         <div className='stack-snug type-body max-w-[56ch] text-ink-muted'>
           <p>
-            Right now at Hurtopony: the company store and the internal panels
-            around it, the NestJS service behind them, and the Playwright
-            scrapers that keep over a million records current.
+            Right now I am at Hurtopony. I work on the company store, the
+            panels the team uses to run it, and the scrapers that keep over a
+            million records up to date.
           </p>
 
           <p>
@@ -50,16 +49,7 @@ const HeroSection: React.FC = (): React.JSX.Element => {
           </span>
         </div>
 
-        <p className='type-meta flex flex-wrap items-center gap-x-2 gap-y-1 text-ink-muted'>
-          {site.availability ? (
-            <span className='inline-flex items-center gap-2 text-ink'>
-              <span
-                aria-hidden
-                className='size-1.5 rounded-full bg-emerald-400 shadow-[0_0_0_3px_rgb(52_211_153/0.2)]'
-              />
-              {site.availability}.
-            </span>
-          ) : null}
+        <p className='type-meta text-ink-muted'>
           Write to me and I answer within a day.
         </p>
       </article>

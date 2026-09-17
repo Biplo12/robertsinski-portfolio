@@ -29,7 +29,7 @@ const AwaySection: React.FC = (): React.JSX.Element => {
     <section className='section-panel grid gap-x-10 gap-y-6 px-8 pt-7 pb-8 sm:grid-cols-[16rem_minmax(0,1fr)]'>
       <SectionHeader
         title='Away from work'
-        note='One box at home, and what I do when I am not near it.'
+        note='A machine at home, films, and golf.'
         stacked
       />
 
