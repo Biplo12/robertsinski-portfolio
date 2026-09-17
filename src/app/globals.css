@@ -361,7 +361,10 @@
   border-top: 1px solid rgb(255 255 255 / 0.08);
 }
 
-.section-panel:first-of-type {
+/* Only the first panel in a column loses its rule. This was :first-of-type,
+   which counts per tag, so the footer counted as the first <footer> and threw
+   away the line that seats it against the section above. */
+.section-panel:first-child {
   border-top: 0;
 }
 
