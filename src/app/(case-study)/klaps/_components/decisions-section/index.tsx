@@ -10,7 +10,7 @@ const DecisionsSection: React.FC = (): React.JSX.Element => {
     <section className='section-panel grid gap-x-10 gap-y-6 px-8 pt-7 pb-8 sm:grid-cols-[16rem_minmax(0,1fr)]'>
       <SectionHeader
         title='Decisions'
-        note='Five choices that shaped the rest of the project.'
+        note='Three choices that shaped the rest of the project.'
         stacked
       />
 

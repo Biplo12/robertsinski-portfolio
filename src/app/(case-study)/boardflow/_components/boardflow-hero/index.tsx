@@ -2,8 +2,10 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
+import FactBand from '@/components/fact-band';
 import LogoTile from '@/components/logo-tile';
 import ProjectShot from '@/components/project-shot';
+import { boardflowFacts } from '@/lib/boardflow';
 
 const BoardflowHero: React.FC = (): React.JSX.Element => {
   return (
@@ -23,16 +25,10 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
         </h1>
       </div>
 
-      <p className='mt-5 max-w-[62ch] type-body text-ink'>
-        A whiteboard several people draw on at the same time. Shapes, notes,
-        text, images and freehand strokes, with cursors moving around and
-        changes showing up as they happen.
-      </p>
-
-      <p className='mt-3 max-w-[62ch] type-body text-ink'>
-        Boards live inside organisations you can invite people to. Anything on a
-        board can be selected, resized, deleted or moved between layers, and the
-        whole board has undo and redo.
+      <p className='mt-5 max-w-[58ch] type-lead text-ink'>
+        A whiteboard several people draw on at once. Shapes, notes, text,
+        images and freehand strokes, with everyone&rsquo;s cursor on the canvas
+        and changes landing as they happen.
       </p>
 
       <div className='mt-7 flex flex-wrap items-center gap-2'>
@@ -56,11 +52,16 @@ const BoardflowHero: React.FC = (): React.JSX.Element => {
         </a>
       </div>
 
+      {/* The numbers sit between the claim and the proof, the same as Klaps. */}
+      <div className='mt-9 border-t border-white/10 pt-7'>
+        <FactBand facts={boardflowFacts} />
+      </div>
+
       <ProjectShot
-        src='/shots/boardflow.jpg'
-        alt='The BoardFlow landing page'
-        width={1440}
-        height={900}
+        src='/shots/boardflow-landing.jpg'
+        alt='A BoardFlow board with notes, a drawn line and two cursors labelled with names'
+        width={2030}
+        height={1029}
       />
     </article>
   );

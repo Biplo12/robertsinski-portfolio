@@ -1,5 +1,6 @@
 import React from 'react';
 
+import DiagramFrame from '@/components/diagram-frame';
 import SectionHeader from '@/components/section-header';
 
 import SpecRow from '@/components/spec-row';
@@ -12,14 +13,16 @@ const ArchitectureSection: React.FC = (): React.JSX.Element => {
     <section className='section-panel px-8 pt-7 pb-8'>
       <SectionHeader
         title='How it fits together'
-        note='Six services, and data moves in one direction. Only the collector writes, only the API owns the database, everything else reads.'
+        note='One service owns the database and one writes to it in bulk. Everything else hangs off the API.'
       />
 
-      <div className='mt-5 text-foreground'>
-        <FlowDiagram />
+      <div className='mt-5'>
+        <DiagramFrame>
+          <FlowDiagram />
+        </DiagramFrame>
       </div>
 
-      <ul className='mt-5'>
+      <ul className='mt-7 border-t border-white/10 pt-5'>
         {klapsServices.map((service) => (
           <SpecRow
             key={service.name}

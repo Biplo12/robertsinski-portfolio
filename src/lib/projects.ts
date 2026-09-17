@@ -19,7 +19,7 @@ export const projects: Project[] = [
     logo: '/klaps.svg',
     logoBleed: true,
     description:
-      'Nationwide guide to special screenings and classic cinema in Poland. Six services behind one site: the site itself, the API that owns the data, a collector, a social bot, an admin panel and a mailer for cinemas.',
+      'Nationwide guide to special screenings and classic cinema in Poland. Six services behind one site, among them a collector that reaches 563 cinemas every day and keeps over 300 000 screenings current.',
     stack: ['Next.js', 'NestJS', 'Bun', 'PostgreSQL', 'Docker'],
     repo: 'https://github.com/klaps-hq',
     repoLabel: 'klaps-hq',
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     logo: '/logos/boardflow-mark.svg',
     caseStudy: '/boardflow',
     description:
-      'Whiteboard for teams. Shapes, notes, images, and everyone drawing on the same board at once.',
+      'Whiteboard for teams. Shapes, notes, images, and everyone drawing on the same board at once. Over 200 accounts and 150 boards so far.',
     stack: ['Next.js', 'Convex', 'Liveblocks', 'Redux'],
     repo: 'https://github.com/Biplo12/BoardFlow',
     demo: 'https://board-flow.vercel.app/',
@@ -48,10 +48,11 @@ export const projects: Project[] = [
     repo: 'https://github.com/Biplo12/orderflow-engine',
   },
   {
-    name: 'backupmailer',
+    name: 'ts-api-scaling-lab',
+    caseStudy: '/scaling-lab',
     description:
-      'Backs up a database on a schedule and mails me the result, whether it worked or not. Runs as a container next to whatever it is backing up, with the dump and the logs written to the host.',
-    stack: ['Bun', 'Docker', 'MySQL', 'SMTP'],
-    repo: 'https://github.com/Biplo12/backupmailer',
+      'A REST API on Postgres written the plain way, then made faster in eight measured steps. One request per second at the start, 2600 at the end, on the same desktop. Each step has its own notes and numbers, including the one that bought no throughput and was worth keeping anyway.',
+    stack: ['Fastify', 'PostgreSQL', 'Drizzle', 'Redis', 'k6'],
+    repo: 'https://github.com/Biplo12/ts-api-scaling-lab',
   },
 ];

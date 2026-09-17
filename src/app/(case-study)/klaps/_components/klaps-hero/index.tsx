@@ -2,8 +2,10 @@ import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
+import FactBand from '@/components/fact-band';
 import LogoTile from '@/components/logo-tile';
-import ProjectShot from '@/components/project-shot';
+import ProjectClip from '@/components/project-clip';
+import { klapsFacts } from '@/lib/klaps';
 
 const KlapsHero: React.FC = (): React.JSX.Element => {
   return (
@@ -23,17 +25,11 @@ const KlapsHero: React.FC = (): React.JSX.Element => {
         </h1>
       </div>
 
-      <p className='mt-5 max-w-[62ch] type-body text-ink'>
-        Klaps shows where and when older films are playing in Polish cinemas.
-        These screenings sit on the websites of single cinemas, each one in a
-        different format, often only a week ahead, so finding them means
-        checking a dozen places by hand.
-      </p>
-
-      <p className='mt-3 max-w-[62ch] type-body text-ink'>
-        It runs as six services: the site, the API that owns the data, a
-        collector, a social bot, an admin panel and a mailer for cinemas. I
-        built all of them.
+      <p className='mt-5 max-w-[58ch] type-lead text-ink'>
+        Older films play in Polish cinemas every day, but each screening only
+        exists on the cinema&rsquo;s own site, in the cinema&rsquo;s own format.
+        Finding one means checking a dozen places by hand. Klaps checks them
+        instead.
       </p>
 
       <div className='mt-7 flex flex-wrap items-center gap-2'>
@@ -57,11 +53,18 @@ const KlapsHero: React.FC = (): React.JSX.Element => {
         </a>
       </div>
 
-      <ProjectShot
-        src='/shots/klaps.jpg'
-        alt='klaps.space showing the next screening'
-        width={1440}
-        height={900}
+      {/* The numbers sit between the claim and the proof, so a reader who only
+          looks at the top of the page still leaves with the size of it. */}
+      <div className='mt-9 border-t border-white/10 pt-7'>
+        <FactBand facts={klapsFacts} />
+      </div>
+
+      <ProjectClip
+        src='/shots/klaps-demo.webm'
+        poster='/shots/klaps-landing.jpg'
+        label='klaps.space loading its front page and scrolling into the listing'
+        width={1260}
+        height={760}
       />
     </article>
   );

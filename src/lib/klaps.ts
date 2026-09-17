@@ -1,3 +1,17 @@
+export interface KlapsFact {
+  value: string;
+  label: string;
+}
+
+/* The numbers come from the project itself. Change them here and the case
+   study, the card and the collector's line all move together. */
+export const klapsFacts: KlapsFact[] = [
+  { value: '563', label: 'cinemas covered' },
+  { value: '316', label: 'cities' },
+  { value: '300k+', label: 'screenings, refreshed daily' },
+  { value: '6', label: 'services, all mine' },
+];
+
 export interface KlapsService {
   name: string;
   role: string;
@@ -11,64 +25,60 @@ export interface KlapsDecision {
   body: string;
 }
 
+/* One line each. What any of them does in detail is in its own repository;
+   this list is here so the diagram above has names. */
 export const klapsServices: KlapsService[] = [
   {
     name: 'klaps.space',
-    role: 'The site people visit. Listings by city and cinema, film pages, and a map for finding a screening nearby.',
+    role: 'Listings by city and cinema, film pages, and a map.',
     stack: ['Next.js 16', 'React 19', 'Tailwind 4', 'Leaflet', 'Bun'],
     repo: 'https://github.com/klaps-hq/klaps.space',
   },
   {
     name: 'api.klaps.space',
-    role: 'The only service that talks to the database. Serves the site and takes writes from the collector through internal endpoints, behind an API key, with rate limits and health checks on top.',
+    role: 'The only service that touches the database.',
     stack: ['NestJS 11', 'Drizzle', 'PostgreSQL', 'Pino', 'Jest'],
     repo: 'https://github.com/klaps-hq/api.klaps.space',
   },
   {
     name: 'klaps-scrapper',
-    role: 'Collects cities, cinemas and showtimes, fills in film and director data, writes the Polish descriptions, and pushes everything to the API in batches.',
+    role: 'Reads 563 cinemas a day, fills in film data, writes the descriptions.',
     stack: ['Bun', 'cheerio', 'TMDB', 'Gemini', 'croner', 'Vitest'],
     tag: 'private',
   },
   {
     name: 'klaps.radar',
-    role: 'Picks the most interesting screening coming up, renders a branded image for it, and publishes it to Instagram, Facebook and Threads on a schedule.',
+    role: 'Picks a screening, renders an image, posts it to three networks.',
     stack: ['Bun', 'satori', 'sharp', 'croner'],
     repo: 'https://github.com/klaps-hq/klaps.radar',
   },
   {
     name: 'studio.klaps.space',
-    role: 'Admin panel on its own subdomain for browsing and editing what the collector saved. Traffic numbers from Google Analytics and Search Console sit next to the data they explain.',
+    role: 'Admin panel over what the collector saved, with the traffic numbers next to it.',
     stack: ['Next.js 16', 'TanStack Table', 'jose'],
     tag: 'private',
   },
   {
     name: 'outreach',
-    role: 'Mailer that tells cinemas their page exists. Takes contacts from a list and page slugs from the public sitemap, sends one branded email each, and reads the replies back over IMAP.',
+    role: 'Tells cinemas their page exists and reads the replies back.',
     stack: ['Bun', 'Nodemailer', 'ImapFlow', 'sharp'],
     tag: 'private',
   },
 ];
 
+/* Three, not five. A decision without a number or a before and after is a
+   description, and those are in the repositories. */
 export const klapsDecisions: KlapsDecision[] = [
   {
+    title: 'One writer, and it writes in batches',
+    body: 'One pass touches hundreds of thousands of rows across cities, cinemas, showtimes and films, so the collector sends batch upserts instead of a request per record. Everything else reads. The admin panel is the exception and it edits through the same API.',
+  },
+  {
     title: 'Collecting runs in its own container',
-    body: 'The collector talks to sources I do not control, so a slow response or changed markup would sit inside API requests. It runs as a long-lived container on its own schedule, waits until the API answers before it starts, and can be triggered by hand for a single entity. When collecting breaks, the site keeps serving what it already has.',
+    body: 'The collector reads sites I do not control, so changed markup or a slow response would sit inside API requests. It runs on its own schedule instead, and when collecting breaks the site keeps serving what it already has.',
   },
   {
-    title: 'The descriptions come from a model, the variety from code',
-    body: 'Descriptions come from Gemini. Asking it for a few hundred texts in a row gives a few hundred variations of the same sentence. The keyword and the style are chosen in code, seeded by the name of the film or cinema, so each entity gets a different angle. Length has to land between 130 and 160 characters and the text is requested again when it misses.',
-  },
-  {
-    title: 'Images get copied to our own storage',
-    body: 'Stills, posters and photos come from an open movie database. Linking straight to their files means the site breaks when a path changes or a host throttles. Every image is mirrored to our own object storage as the film is saved, and a separate script fills in the ones added before that was in place.',
-  },
-  {
-    title: 'Every service ships the same way',
-    body: 'Each repository has the same workflows: build, typecheck, tests where there are tests, and a check that the pull request title follows conventional commits. Merging to dev deploys to the development environment, merging to main deploys to production, and the target is read from the branch instead of being written down twice. GitHub environments hold the secrets for each, images go to the registry, and the server pulls them.',
-  },
-  {
-    title: 'Only one service writes, and it writes in batches',
-    body: 'One pass touches thousands of rows across cities, cinemas, showtimes and films, so the collector sends batch upserts to internal endpoints instead of a request per record. Everything else reads. The admin panel is the one exception and it edits through the same API, never the database.',
+    title: 'The model writes the text, the code writes the variety',
+    body: 'Gemini asked for a few hundred descriptions returns a few hundred versions of one sentence. The angle is chosen in code and seeded by the name of the film, and the text is requested again unless it lands between 130 and 160 characters.',
   },
 ];

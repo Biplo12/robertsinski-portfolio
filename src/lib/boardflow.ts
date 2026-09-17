@@ -1,3 +1,16 @@
+export interface BoardflowFact {
+  value: string;
+  label: string;
+}
+
+/* What the thing has actually gathered, plus the one product number that is
+   countable from the code. */
+export const boardflowFacts: BoardflowFact[] = [
+  { value: '200+', label: 'accounts' },
+  { value: '150+', label: 'boards' },
+  { value: '6', label: 'tools on the canvas' },
+];
+
 export interface BoardflowPart {
   name: string;
   role: string;
@@ -27,6 +40,8 @@ export const boardflowParts: BoardflowPart[] = [
   },
 ];
 
+/* Three, not five. The ones left are the parts of a shared canvas that are
+   actually hard; access rules and the auth migration are in the repository. */
 export const boardflowDecisions: BoardflowDecision[] = [
   {
     title: 'Two backends, one for each kind of data',
@@ -39,13 +54,5 @@ export const boardflowDecisions: BoardflowDecision[] = [
   {
     title: 'Layer order is its own list',
     body: 'Layers sit in a map keyed by id, and their order in a separate list of ids. Sending a shape to the front means reordering a short list of strings, not rewriting the shapes. Two people editing different shapes never touch the same value, so their changes cannot collide.',
-  },
-  {
-    title: 'Access comes from being in the organisation',
-    body: 'A board belongs to an organisation, and being in an organisation is a row with a role. Invitations are separate rows with a token and an email. Opening a room checks that membership first, so a shared URL alone does not get anyone in.',
-  },
-  {
-    title: 'Auth moved from Clerk to Convex Auth',
-    body: 'The project started on Clerk and now runs on Convex Auth, which put everything behind one system instead of two. Existing accounts were kept: a migration reads users from the Clerk API and matches them by their old id, which is why the users table still has that field.',
   },
 ];
