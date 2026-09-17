@@ -10,8 +10,8 @@
 import { deflateSync } from "node:zlib";
 import { writeFileSync } from "node:fs";
 
-const WIDTH = 1440;
-const HEIGHT = 880;
+const WIDTH = 1200;
+const HEIGHT = 740;
 const SEED = 0x9e3779b1;
 
 // --- value noise -----------------------------------------------------------
