@@ -55,4 +55,15 @@ export const projects: Project[] = [
     stack: ['Fastify', 'PostgreSQL', 'Drizzle', 'Redis', 'k6'],
     repo: 'https://github.com/Biplo12/ts-api-scaling-lab',
   },
+  {
+    name: 'Veloria Estate Winery',
+    logo: '/logos/veloria.png',
+    logoBleed: true,
+    description:
+      'A fictional Tuscan estate, built as a design piece. Fifteen prerendered pages, no backend, and every colour in the interface sampled from its own hand-painted illustrations.',
+    stack: ['Next.js 16', 'React 19', 'Tailwind 4', 'TypeScript'],
+    repo: 'https://github.com/Biplo12/veloria-estate-winery',
+    demo: 'https://veloria-estate-winery.vercel.app',
+    demoLabel: 'Live',
+  },
 ];
