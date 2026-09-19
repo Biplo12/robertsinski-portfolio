@@ -14,7 +14,7 @@ const ProjectsSection: React.FC = (): React.JSX.Element => {
     <section id='projects' className='section-panel scroll-mt-24 px-8 pt-7 pb-8'>
       <SectionHeader
         title='Projects'
-        note='Things I built and still run.'
+        note='Things I built.'
         action={
           <a
             href={site.github}
