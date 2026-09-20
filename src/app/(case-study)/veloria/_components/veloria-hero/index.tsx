@@ -26,8 +26,8 @@ const VeloriaHero: React.FC = (): React.JSX.Element => {
 
       <p className='mt-5 max-w-[58ch] type-lead text-ink'>
         A winery in the hills south of Siena that does not exist. I built the
-        whole site for it so there would be one thing here that is only about
-        how it looks.
+        whole site for it, because everything else here is backend and I wanted
+        one thing that is just nice to look at.
       </p>
 
       <div className='mt-7 flex flex-wrap items-center gap-2'>

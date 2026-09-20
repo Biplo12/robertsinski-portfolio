@@ -26,8 +26,8 @@ const FairwayHero: React.FC = (): React.JSX.Element => {
 
       <p className='mt-5 max-w-[58ch] type-lead text-ink'>
         A golf shop near St Andrews that I made up so I could build the whole
-        storefront for it. It does not make clubs, it chooses them, and the
-        site is written from that position rather than a maker&rsquo;s.
+        storefront for it. It does not make clubs, it picks them, and
+        everything on the site is written that way.
       </p>
 
       <div className='mt-7 flex flex-wrap items-center gap-2'>
