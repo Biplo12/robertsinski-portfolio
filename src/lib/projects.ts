@@ -41,6 +41,7 @@ export const projects: Project[] = [
   },
   {
     name: 'FAIRWAY',
+    caseStudy: '/fairway',
     logo: '/logos/fairway.png',
     description:
       'A golf shop I made up so I could build the storefront for it. 515 products from twelve makers. The filters are links, so you can send someone the exact shelf you are looking at.',
@@ -51,6 +52,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Veloria Estate Winery',
+    caseStudy: '/veloria',
     logo: '/logos/veloria.png',
     logoBleed: true,
     description:
