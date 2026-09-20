@@ -56,6 +56,16 @@ export const projects: Project[] = [
     repo: 'https://github.com/Biplo12/ts-api-scaling-lab',
   },
   {
+    name: 'FAIRWAY',
+    logo: '/logos/fairway.png',
+    description:
+      'A multi brand golf shop with a fitting studio at its centre, built as a design and engineering project. 515 products across twelve makers, every product page prerendered at build, and no CMS behind any of it.',
+    stack: ['Next.js 16', 'React 19', 'Tailwind 4', 'TypeScript'],
+    demo: 'https://fairway-roan-delta.vercel.app',
+    demoLabel: 'Live',
+    private: true,
+  },
+  {
     name: 'Veloria Estate Winery',
     logo: '/logos/veloria.png',
     logoBleed: true,
