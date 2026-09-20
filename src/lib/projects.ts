@@ -59,7 +59,7 @@ export const projects: Project[] = [
     name: 'FAIRWAY',
     logo: '/logos/fairway.png',
     description:
-      'A multi brand golf shop with a fitting studio at its centre, built as a design and engineering project. 515 products across twelve makers, every product page prerendered at build, and no CMS behind any of it.',
+      'A golf shop I made up so I could build the storefront for it. 515 products from twelve makers, kept in one typed file instead of a CMS. The filters are plain links, so every shelf has an address you can send to someone.',
     stack: ['Next.js 16', 'React 19', 'Tailwind 4', 'TypeScript'],
     demo: 'https://fairway-roan-delta.vercel.app',
     demoLabel: 'Live',
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     logo: '/logos/veloria.png',
     logoBleed: true,
     description:
-      'A fictional Tuscan estate, built as a design piece. Fifteen prerendered pages, no backend, and every colour in the interface sampled from its own hand-painted illustrations.',
+      'A site for a winery that does not exist. Fifteen pages, no backend, and every colour in it taken from the hand-painted illustrations rather than picked to sit next to them.',
     stack: ['Next.js 16', 'React 19', 'Tailwind 4', 'TypeScript'],
     repo: 'https://github.com/Biplo12/veloria-estate-winery',
     demo: 'https://veloria-estate-winery.vercel.app',
