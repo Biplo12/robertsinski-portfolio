@@ -44,9 +44,9 @@ export const projects: Project[] = [
     caseStudy: '/fairway',
     logo: '/logos/fairway.png',
     description:
-      'A golf shop I made up so I could build the storefront for it. 515 products from twelve makers. The filters are links, so you can send someone the exact shelf you are looking at.',
+      'A golf shop I made up so I could build the storefront for it. The filters are links, so you can send someone the exact shelf you are looking at.',
     stack: ['Next.js 16', 'React 19', 'Tailwind 4', 'TypeScript'],
-    demo: 'https://fairway-roan-delta.vercel.app',
+    demo: 'https://fairway-shop.vercel.app',
     demoLabel: 'Live',
     private: true,
   },

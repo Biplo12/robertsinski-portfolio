@@ -10,7 +10,7 @@ import { veloriaNotes, veloriaShots } from '@/lib/veloria';
 import VeloriaHero from './_components/veloria-hero';
 
 const description =
-  'A site for a winery that does not exist: fifteen pages, no backend, and an interface coloured from its own hand-painted illustrations.';
+  'A site for a winery that does not exist, with an interface coloured from its own hand-painted illustrations.';
 
 export const metadata = caseStudyMetadata({
   title: 'Veloria Estate Winery, a case study',
@@ -26,7 +26,7 @@ const VeloriaPage: React.FC = (): React.JSX.Element => {
 
         <ScreensSection
           title='The pages'
-          note='Four of the fifteen.'
+          note='Four of them.'
           shots={veloriaShots}
         />
 

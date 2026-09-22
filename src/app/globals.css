@@ -335,25 +335,6 @@
   mask-image: linear-gradient(to top left, #000 0%, transparent 42%);
 }
 
-/* Pointer sheen: the highlight rides on top and is screened, so it only ever
-   adds light to the cloth. */
-.pointer-sheen {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  border-radius: inherit;
-  mix-blend-mode: screen;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pointer-sheen {
-    display: none;
-  }
-}
-
 /* Section panels: plain on the black, separated by a hairline instead of a
    glass card. The satin hero is the only surface on the page, so everything
    below it stays flat and lets the type carry the structure. */
