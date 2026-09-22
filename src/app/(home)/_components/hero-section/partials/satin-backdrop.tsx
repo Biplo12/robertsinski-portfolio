@@ -3,7 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 
 import GrainOverlay from './grain-overlay';
-import PointerSheen from './pointer-sheen';
 
 /**
  * The folded blue cloth behind the headline. The folds are a generated image
@@ -30,7 +29,6 @@ const SatinBackdrop: React.FC = (): React.JSX.Element => {
       />
       <div className='satin-glow absolute inset-0' />
       <div className='card-edge' />
-      <PointerSheen />
       <div className='absolute inset-0 opacity-25 mix-blend-overlay'>
         <GrainOverlay />
       </div>

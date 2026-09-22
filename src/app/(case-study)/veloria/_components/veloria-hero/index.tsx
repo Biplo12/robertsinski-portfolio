@@ -3,10 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
-import FactBand from '@/components/fact-band';
 import LogoTile from '@/components/logo-tile';
-
-import { veloriaFacts } from '@/lib/veloria';
 
 const VeloriaHero: React.FC = (): React.JSX.Element => {
   return (
@@ -49,10 +46,6 @@ const VeloriaHero: React.FC = (): React.JSX.Element => {
           github.com/Biplo12/veloria-estate-winery
           <ArrowUpRight aria-hidden className='size-3.5' />
         </a>
-      </div>
-
-      <div className='mt-9 border-t border-white/10 pt-7'>
-        <FactBand facts={veloriaFacts} />
       </div>
     </article>
   );

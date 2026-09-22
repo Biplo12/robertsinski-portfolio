@@ -10,7 +10,7 @@ import { fairwayDisclaimer, fairwayNotes, fairwayShots } from '@/lib/fairway';
 import FairwayHero from './_components/fairway-hero';
 
 const description =
-  'A storefront for a golf shop that does not exist: 515 products across twelve makers, every product page prerendered, and no CMS.';
+  'A storefront for a golf shop that does not exist, built end to end: shelves, filters, product pages and a bag.';
 
 export const metadata = caseStudyMetadata({
   title: 'FAIRWAY, a case study',

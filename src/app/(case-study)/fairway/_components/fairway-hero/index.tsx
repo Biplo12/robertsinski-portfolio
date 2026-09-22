@@ -3,10 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 
-import FactBand from '@/components/fact-band';
 import LogoTile from '@/components/logo-tile';
-
-import { fairwayFacts } from '@/lib/fairway';
 
 const FairwayHero: React.FC = (): React.JSX.Element => {
   return (
@@ -32,7 +29,7 @@ const FairwayHero: React.FC = (): React.JSX.Element => {
 
       <div className='mt-7 flex flex-wrap items-center gap-2'>
         <a
-          href='https://fairway-roan-delta.vercel.app'
+          href='https://fairway-shop.vercel.app'
           target='_blank'
           rel='noreferrer'
           className='inline-flex h-10 items-center gap-2 rounded-full bg-foreground px-4 type-body font-medium text-background transition-transform hover:-translate-y-0.5'
@@ -43,10 +40,6 @@ const FairwayHero: React.FC = (): React.JSX.Element => {
         <span className='glass-pill inline-flex h-10 items-center rounded-full px-4 type-body text-ink-muted'>
           Repository is private
         </span>
-      </div>
-
-      <div className='mt-9 border-t border-white/10 pt-7'>
-        <FactBand facts={fairwayFacts} />
       </div>
     </article>
   );

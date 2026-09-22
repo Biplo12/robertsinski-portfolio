@@ -1,13 +1,6 @@
 import type { Shot } from "@/components/shot-gallery";
 
-import type { Fact, Note } from "./case-study";
-
-export const veloriaFacts: Fact[] = [
-  { value: "15", label: "pages, all prerendered" },
-  { value: "4", label: "wines, a page each" },
-  { value: "4", label: "family pages" },
-  { value: "7", label: "colour tokens" },
-];
+import type { Note } from "./case-study";
 
 export const veloriaShots: Shot[] = [
   {
@@ -17,8 +10,8 @@ export const veloriaShots: Shot[] = [
   },
   {
     src: "/shots/veloria-wines.jpg",
-    alt: "The wines index, four bottles painted in a row",
-    caption: "Four wines. The bottles are painted, not photographed.",
+    alt: "The wines index, the bottles painted in a row",
+    caption: "The wines. The bottles are painted, not photographed.",
   },
   {
     src: "/shots/veloria-wine.jpg",
@@ -40,7 +33,7 @@ export const veloriaNotes: Note[] = [
   },
   {
     title: "The colours come out of the paintings",
-    body: "Seven of them, all picked out of the artwork itself. There are no hex values in the components and no grey, black or white anywhere as a surface, so the interface and the pictures match by default.",
+    body: "They are all picked out of the artwork itself. There are no hex values in the components and no grey, black or white anywhere as a surface, so the interface and the pictures match by default.",
   },
   {
     title: "A script looks for seams",

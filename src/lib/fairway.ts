@@ -1,13 +1,6 @@
 import type { Shot } from "@/components/shot-gallery";
 
-import type { Fact, Note } from "./case-study";
-
-export const fairwayFacts: Fact[] = [
-  { value: "515", label: "products" },
-  { value: "12", label: "makers" },
-  { value: "6", label: "categories" },
-  { value: "1299", label: "photographs" },
-];
+import type { Note } from "./case-study";
 
 export const fairwayShots: Shot[] = [
   {
@@ -18,9 +11,9 @@ export const fairwayShots: Shot[] = [
   },
   {
     src: "/shots/fairway-shelf.jpg",
-    alt: "The clubs shelf with its filters and result count",
+    alt: "The clubs shelf with its filters down the side",
     caption:
-      "203 clubs behind one shelf. Every filter is a link, so this exact view has an address.",
+      "The clubs shelf. Every filter is a link, so this exact view has an address.",
   },
   {
     src: "/shots/fairway-product.jpg",
@@ -30,8 +23,8 @@ export const fairwayShots: Shot[] = [
   },
   {
     src: "/shots/fairway-brands.jpg",
-    alt: "The brand index, eight makers with stock and four to order",
-    caption: "Eight makers on the rack, four more to order.",
+    alt: "The brand index, each maker with its own card",
+    caption: "The brands. The ones on the rack first, the rest to order.",
   },
 ];
 
