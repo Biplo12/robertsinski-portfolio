@@ -17,37 +17,29 @@ const ProjectRow: React.FC<ProjectRowProps> = ({
 }): React.JSX.Element => {
   return (
     <li className='flex flex-col rounded-2xl border border-white/8 bg-white/2 p-6 transition-colors hover:border-white/14 hover:bg-white/4'>
-      <div className='flex items-start justify-between gap-3'>
-        <div className='min-w-0'>
-          {/* Logo and name share one flex line, so the mark centres on the
-              name instead of hanging off the top of the block. */}
-          <div className='flex items-center gap-2.5'>
-            {project.logo ? (
-              <LogoTile
-                src={project.logo}
-                name={project.name}
-                small
-                bleed={project.logoBleed}
-              />
-            ) : null}
-
-            <h3 className='type-name text-ink-strong'>
-              {project.name}
-            </h3>
-          </div>
-
-          {project.repoLabel ? (
-            <p className='mt-1.5 type-meta text-ink-faint'>
-              @{project.repoLabel}
-              {project.repoNote ? ` · ${project.repoNote}` : null}
-            </p>
+      <div className='min-w-0'>
+        {/* Logo and name share one flex line, so the mark centres on the
+            name instead of hanging off the top of the block. */}
+        <div className='flex items-center gap-2.5'>
+          {project.logo ? (
+            <LogoTile
+              src={project.logo}
+              name={project.name}
+              small
+              bleed={project.logoBleed}
+            />
           ) : null}
+
+          <h3 className='type-name text-ink-strong'>
+            {project.name}
+          </h3>
         </div>
 
-        {project.private ? (
-          <span className='shrink-0 rounded-full border border-white/15 px-2 py-0.5 type-meta text-ink-faint'>
-            private
-          </span>
+        {project.repoLabel ? (
+          <p className='mt-1.5 type-meta text-ink-faint'>
+            @{project.repoLabel}
+            {project.repoNote ? ` · ${project.repoNote}` : null}
+          </p>
         ) : null}
       </div>
 

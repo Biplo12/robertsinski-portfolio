@@ -10,7 +10,6 @@ export interface Project {
   demo?: string;
   demoLabel?: string;
   caseStudy?: string;
-  private?: boolean;
 }
 
 export const projects: Project[] = [
@@ -46,9 +45,9 @@ export const projects: Project[] = [
     description:
       'A golf shop I made up so I could build the storefront for it. The filters are links, so you can send someone the exact shelf you are looking at.',
     stack: ['Next.js 16', 'React 19', 'Tailwind 4', 'TypeScript'],
+    repo: 'https://github.com/Biplo12/fairway-shop',
     demo: 'https://fairway-shop.vercel.app',
     demoLabel: 'Live',
-    private: true,
   },
   {
     name: 'Veloria Estate Winery',
