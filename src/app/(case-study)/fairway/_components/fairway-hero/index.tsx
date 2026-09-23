@@ -37,9 +37,15 @@ const FairwayHero: React.FC = (): React.JSX.Element => {
           Open the shop
           <ArrowUpRight aria-hidden className='size-3.5' />
         </a>
-        <span className='glass-pill inline-flex h-10 items-center rounded-full px-4 type-body text-ink-muted'>
-          Repository is private
-        </span>
+        <a
+          href='https://github.com/Biplo12/fairway-shop'
+          target='_blank'
+          rel='noreferrer'
+          className='glass-pill inline-flex h-10 items-center gap-2 rounded-full px-4 type-body'
+        >
+          github.com/Biplo12/fairway-shop
+          <ArrowUpRight aria-hidden className='size-3.5' />
+        </a>
       </div>
     </article>
   );
