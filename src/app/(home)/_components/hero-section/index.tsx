@@ -23,8 +23,8 @@ const HeroSection: React.FC = (): React.JSX.Element => {
           Robert here.
         </h1>
 
-        <p className='type-lead max-w-[46ch] text-ink'>
-          I build web apps, backend and frontend. Four years so far.
+        <p className='type-lead max-w-[56ch] text-ink'>
+          I build web apps and the services behind them. Four years so far.
         </p>
 
         <div className='stack-snug type-body max-w-[56ch] text-ink-muted'>

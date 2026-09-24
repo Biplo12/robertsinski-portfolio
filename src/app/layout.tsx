@@ -31,7 +31,7 @@ const mono = JetBrains_Mono({
 });
 
 const description =
-  'Fullstack developer in Katowice, Poland. I build web apps, backend and frontend.';
+  'Fullstack developer in Katowice, Poland. I build web apps and the services behind them.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
