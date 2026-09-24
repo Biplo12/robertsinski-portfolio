@@ -80,7 +80,7 @@ const Image = async (): Promise<ImageResponse> => {
                 maxWidth: 720,
               }}
             >
-              {'I build web apps end to end, backend and frontend. 4 years so far.'}
+              {'I build web apps and the services behind them. Four years so far.'}
             </div>
 
           </div>

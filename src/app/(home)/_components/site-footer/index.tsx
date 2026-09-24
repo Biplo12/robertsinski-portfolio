@@ -20,7 +20,7 @@ const SiteFooter: React.FC = (): React.JSX.Element => {
   return (
     /* Not a section-panel: no rule above it and a wide gap instead, so the
        page ends rather than adding one more block. */
-    <footer className='mt-20 px-2 pb-2 sm:mt-28 sm:px-8'>
+    <footer className='mt-16 px-2 pb-2 sm:mt-20 sm:px-8'>
       {/* The hero is three thousand pixels up by now, so the address is here
           in full rather than behind a button. */}
       <p className='type-meta text-ink-faint'>The short way to reach me</p>
